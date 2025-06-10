@@ -43,7 +43,7 @@ const translations = {
     no: "Nem, sajnos nem leszek ott",
     guests: "Vendégek száma (magaddal együtt)",
     dietary:
-      "Étkezési igények (pl. vegetáriánus, gluténmentes, nem szeretem a tenger gyümölcseit stb.)",
+      "Étkezési igények (pl. vegetáriánus, gluténmentes, nem szeretem a tenger gyümölcseit, stb.)",
     message: "További üzenet (opcionális)",
     submit: "Visszajelzés küldése",
     success:
