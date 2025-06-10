@@ -43,14 +43,39 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className="language-selector">
-          <select
-            value={language}
-            onChange={(e) => setLanguage(e.target.value)}
+          <button
+            className={`language-button ${language === "en" ? "active" : ""}`}
+            onClick={() => setLanguage("en")}
           >
-            <option value="en">English</option>
-            <option value="pl">Polski</option>
-            <option value="hu">Magyar</option>
-          </select>
+            <img
+              src="https://flagcdn.com/w80/gb.png"
+              alt="English"
+              className="flag-icon"
+            />
+            <span>English</span>
+          </button>
+          <button
+            className={`language-button ${language === "pl" ? "active" : ""}`}
+            onClick={() => setLanguage("pl")}
+          >
+            <img
+              src="https://flagcdn.com/w80/pl.png"
+              alt="Polski"
+              className="flag-icon"
+            />
+            <span>Polski</span>
+          </button>
+          <button
+            className={`language-button ${language === "hu" ? "active" : ""}`}
+            onClick={() => setLanguage("hu")}
+          >
+            <img
+              src="https://flagcdn.com/w80/hu.png"
+              alt="Magyar"
+              className="flag-icon"
+            />
+            <span>Magyar</span>
+          </button>
         </div>
 
         <h1>{translations[language].title}</h1>
