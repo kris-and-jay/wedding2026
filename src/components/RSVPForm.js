@@ -13,7 +13,8 @@ const translations = {
     dietary: "Any dietary requirements?",
     message: "Additional message (optional)",
     submit: "Send RSVP",
-    success: "Thank you for your RSVP!",
+    success:
+      "Thank you for your RSVP! We will update our guest list accordingly and once we've done this you will see your attendance status confirmed on this page.",
     error: "There was an error sending your RSVP. Please try again.",
     required: "This field is required",
   },
@@ -28,23 +29,27 @@ const translations = {
     dietary: "Wymagania dietetyczne?",
     message: "Dodatkowa wiadomość (opcjonalnie)",
     submit: "Wyślij potwierdzenie",
-    success: "Dziękujemy za potwierdzenie!",
+    success:
+      "Dziękujemy za potwierdzenie! Zaktualizujemy naszą listę gości, a po zakończeniu aktualizacji zobaczysz swój status uczestnictwa potwierdzony na tej stronie.",
     error: "Wystąpił błąd podczas wysyłania. Spróbuj ponownie.",
     required: "To pole jest wymagane",
   },
   hu: {
     title: "Visszajelzés",
-    name: "Teljes név",
+    name: "Név",
     email: "Email cím",
-    attending: "Részt veszel?",
-    yes: "Igen, részt veszek",
-    no: "Nem, nem tudok részt venni",
+    attending: "Ott leszel?",
+    yes: "Igen, ott leszek",
+    no: "Nem, sajnos nem leszek ott",
     guests: "Vendégek száma (magaddal együtt)",
-    dietary: "Étrendi követelmények?",
+    dietary:
+      "Étkezési igények (pl. vegetáriánus, gluténmentes, nem szeretem a tenger gyümölcseit stb.)",
     message: "További üzenet (opcionális)",
     submit: "Visszajelzés küldése",
-    success: "Köszönjük a visszajelzést!",
-    error: "Hiba történt a küldés során. Kérjük, próbáld újra.",
+    success:
+      "Köszönjük a visszajelzést! Frissítjük a vendéglistát, és amint elkészültünk vele, látni fogod a részvételi státuszodat ezen az oldalon.",
+    error:
+      "Valamit elcseszett a programozó és valamilyen hiba történt. Próbálkozz újra és ha nagyon nem megy, írj egy üzit.",
     required: "Ez a mező kötelező",
   },
 };
