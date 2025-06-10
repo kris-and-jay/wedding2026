@@ -3,7 +3,7 @@ import "./App.css";
 
 const translations = {
   en: {
-    title: "Justyna & Krisztian - Sorrento, 26th June 2026",
+    title: "Justyna & Krisztian - Sorrento, 27th June 2026",
     subtitle:
       "We are so excited that you'll be joining us on our special day! Please, enter your unique code to view all the relevant information for the wedding",
     enterCode: "Enter your code",
@@ -11,7 +11,7 @@ const translations = {
     language: "Language",
   },
   pl: {
-    title: "Justyna & Krisztian - Sorrento, 26 czerwca 2026",
+    title: "Justyna & Krisztian - Sorrento, 27 czerwca 2026",
     subtitle:
       "Jesteśmy bardzo podekscytowani, że dołączysz do nas w ten wyjątkowy dzień! Prosimy, wprowadź swój unikalny kod, aby zobaczyć wszystkie istotne informacje dotyczące ślubu",
     enterCode: "Wprowadź swój kod",
@@ -19,7 +19,7 @@ const translations = {
     language: "Język",
   },
   hu: {
-    title: "Justyna & Krisztian - Sorrento, 2026. június 26.",
+    title: "Justyna & Krisztian - Sorrento, 2026. június 27.",
     subtitle:
       "Nagyon örülünk, hogy csatlakozol hozzánk ezen a különleges napon! Kérjük, add meg az egyedi kódodat, hogy megtekinthesd az esküvővel kapcsolatos összes fontos információt",
     enterCode: "Add meg a kódodat",
