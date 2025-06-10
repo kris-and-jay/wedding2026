@@ -1,0 +1,231 @@
+import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
+
+const translations = {
+  en: {
+    title: "RSVP",
+    name: "Full Name",
+    email: "Email Address",
+    attending: "Will you attend?",
+    yes: "Yes, I will attend",
+    no: "No, I cannot attend",
+    guests: "Number of guests (including yourself)",
+    dietary: "Any dietary requirements?",
+    message: "Additional message (optional)",
+    submit: "Send RSVP",
+    success: "Thank you for your RSVP!",
+    error: "There was an error sending your RSVP. Please try again.",
+    required: "This field is required",
+  },
+  pl: {
+    title: "Potwierdzenie obecności",
+    name: "Imię i nazwisko",
+    email: "Adres email",
+    attending: "Czy będziesz obecny/a?",
+    yes: "Tak, będę obecny/a",
+    no: "Nie, nie mogę przyjść",
+    guests: "Liczba gości (włącznie z Tobą)",
+    dietary: "Wymagania dietetyczne?",
+    message: "Dodatkowa wiadomość (opcjonalnie)",
+    submit: "Wyślij potwierdzenie",
+    success: "Dziękujemy za potwierdzenie!",
+    error: "Wystąpił błąd podczas wysyłania. Spróbuj ponownie.",
+    required: "To pole jest wymagane",
+  },
+  hu: {
+    title: "Visszajelzés",
+    name: "Teljes név",
+    email: "Email cím",
+    attending: "Részt veszel?",
+    yes: "Igen, részt veszek",
+    no: "Nem, nem tudok részt venni",
+    guests: "Vendégek száma (magaddal együtt)",
+    dietary: "Étrendi követelmények?",
+    message: "További üzenet (opcionális)",
+    submit: "Visszajelzés küldése",
+    success: "Köszönjük a visszajelzést!",
+    error: "Hiba történt a küldés során. Kérjük, próbáld újra.",
+    required: "Ez a mező kötelező",
+  },
+};
+
+const RSVPForm = ({ language }) => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    attending: "",
+    guests: "1",
+    dietary: "",
+    message: "",
+  });
+  const [status, setStatus] = useState({ type: "", message: "" });
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name) newErrors.name = translations[language].required;
+    if (!formData.email) newErrors.email = translations[language].required;
+    if (!formData.attending)
+      newErrors.attending = translations[language].required;
+    if (
+      formData.attending === "yes" &&
+      (!formData.guests || formData.guests < 1)
+    ) {
+      newErrors.guests = translations[language].required;
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!validateForm()) return;
+
+    try {
+      await emailjs.send(
+        "service_wr2l3v8", // You'll need to replace this with your EmailJS service ID
+        "template_c4rvljx", // You'll need to replace this with your EmailJS template ID
+        {
+          to_email: "krisztian.ivan@gmail.com,justyna0lisiecka@gmail.com",
+          from_name: formData.name,
+          from_email: formData.email,
+          attending: formData.attending === "yes" ? "Yes" : "No",
+          guests: formData.guests,
+          dietary: formData.dietary,
+          message: formData.message,
+        },
+        "PxXElfb83R8jwCj_F" // You'll need to replace this with your EmailJS public key
+      );
+
+      setStatus({ type: "success", message: translations[language].success });
+      setFormData({
+        name: "",
+        email: "",
+        attending: "",
+        guests: "1",
+        dietary: "",
+        message: "",
+      });
+    } catch (error) {
+      setStatus({ type: "error", message: translations[language].error });
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="rsvp-form">
+      <div className="form-group">
+        <label htmlFor="name">{translations[language].name}</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          className={errors.name ? "error" : ""}
+        />
+        {errors.name && <span className="error-message">{errors.name}</span>}
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="email">{translations[language].email}</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          className={errors.email ? "error" : ""}
+        />
+        {errors.email && <span className="error-message">{errors.email}</span>}
+      </div>
+
+      <div className="form-group">
+        <label>{translations[language].attending}</label>
+        <div className="radio-group">
+          <label>
+            <input
+              type="radio"
+              name="attending"
+              value="yes"
+              checked={formData.attending === "yes"}
+              onChange={handleChange}
+            />
+            {translations[language].yes}
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="attending"
+              value="no"
+              checked={formData.attending === "no"}
+              onChange={handleChange}
+            />
+            {translations[language].no}
+          </label>
+        </div>
+        {errors.attending && (
+          <span className="error-message">{errors.attending}</span>
+        )}
+      </div>
+
+      {formData.attending === "yes" && (
+        <div className="form-group">
+          <label htmlFor="guests">{translations[language].guests}</label>
+          <input
+            type="number"
+            id="guests"
+            name="guests"
+            min="1"
+            value={formData.guests}
+            onChange={handleChange}
+            className={errors.guests ? "error" : ""}
+          />
+          {errors.guests && (
+            <span className="error-message">{errors.guests}</span>
+          )}
+        </div>
+      )}
+
+      <div className="form-group">
+        <label htmlFor="dietary">{translations[language].dietary}</label>
+        <textarea
+          id="dietary"
+          name="dietary"
+          value={formData.dietary}
+          onChange={handleChange}
+          rows="2"
+        />
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="message">{translations[language].message}</label>
+        <textarea
+          id="message"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          rows="3"
+        />
+      </div>
+
+      {status.message && (
+        <div className={`status-message ${status.type}`}>{status.message}</div>
+      )}
+
+      <button type="submit" className="submit-button">
+        {translations[language].submit}
+      </button>
+    </form>
+  );
+};
+
+export default RSVPForm;
