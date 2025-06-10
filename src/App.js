@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import GuestPage from "./components/GuestPage";
 
 const translations = {
   en: {
@@ -9,6 +10,7 @@ const translations = {
     enterCode: "Enter your code",
     submit: "Submit",
     language: "Language",
+    invalidCode: "Invalid code. Please try again.",
   },
   pl: {
     title: "Justyna & Krisztian - Sorrento, 27 czerwca 2026",
@@ -17,6 +19,7 @@ const translations = {
     enterCode: "Wprowadź swój kod",
     submit: "Potwierdź",
     language: "Język",
+    invalidCode: "Nieprawidłowy kod. Spróbuj ponownie.",
   },
   hu: {
     title: "Justyna & Krisztian - Sorrento, 2026. június 27.",
@@ -25,19 +28,76 @@ const translations = {
     enterCode: "Add meg a kódodat",
     submit: "Beküldés",
     language: "Nyelv",
+    invalidCode: "Érvénytelen kód. Kérjük, próbáld újra.",
   },
+};
+
+// Guest codes and their corresponding languages
+const guestLanguages = {
+  // Hungarian guests
+  IL2026: "hu", // Ildiko
+  HG2026: "hu", // Hugi
+  AT2026B: "hu", // Ati
+  SZ2026: "hu", // Szilvi
+  ZZ2026: "hu", // Zaza
+  KR2026: "hu", // Karina
+  GB2026: "hu", // Gabi
+  TM2026: "hu", // Tomi
+  ER2026: "hu", // Era
+  PT2026: "hu", // Peti
+  AG2026B: "hu", // Agi
+
+  // Polish guests
+  MK2026: "pl", // Monika
+  AD2026: "pl", // Adam
+  WS2026: "pl", // Wiesia
+  AG2026: "pl", // Aga
+  AT2026: "pl", // Auntie Teresa
+  UD2026: "pl", // Uncle Darek
+  AM2026: "pl", // Aunti Monia
+  KL2026: "pl", // Klaudia
+  PL2026: "pl", // Paulina
+  KS2026: "pl", // Kasia
+  SD2026: "pl", // Sandra
+
+  // English guests (default)
+  YN2026: "en", // Yann
+  GA2026: "en", // Gaia
+  PR2026: "en", // Pierre
+  SM2026: "en", // Sam
 };
 
 function App() {
   const [language, setLanguage] = useState("en");
   const [code, setCode] = useState("");
   const [error, setError] = useState("");
+  const [isValidCode, setIsValidCode] = useState(false);
+  const [guestLanguage, setGuestLanguage] = useState("en");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: Implement code validation and navigation
-    console.log("Submitted code:", code);
+    const upperCode = code.toUpperCase().trim();
+    console.log("Submitted code:", upperCode);
+    console.log("Is valid code:", guestLanguages[upperCode]);
+
+    if (guestLanguages[upperCode]) {
+      console.log("Setting guest language to:", guestLanguages[upperCode]);
+      setError("");
+      setIsValidCode(true);
+      setGuestLanguage(guestLanguages[upperCode]);
+    } else {
+      console.log("Invalid code");
+      setError(translations[language].invalidCode);
+      setIsValidCode(false);
+    }
   };
+
+  console.log("Current state:", { isValidCode, guestLanguage, code });
+
+  if (isValidCode) {
+    console.log("Rendering GuestPage with language:", guestLanguage);
+    return <GuestPage language={guestLanguage} />;
+  }
 
   return (
     <div className="App">
