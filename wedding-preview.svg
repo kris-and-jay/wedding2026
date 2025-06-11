@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sky gradient -->
+  <rect width="1200" height="630" fill="url(#skyGradient)" />
+  
+  <!-- Sun -->
+  <circle cx="600" cy="400" r="150" fill="url(#sunGradient)" />
+  
+  <!-- Sea -->
+  <path d="M0 450C0 450 300 400 600 400C900 400 1200 450 1200 450V630H0V450Z" fill="url(#seaGradient)" />
+  
+  <!-- Hills -->
+  <path d="M0 450C0 450 200 350 400 380C600 410 800 350 1000 380C1200 410 1200 450 1200 450V630H0V450Z" fill="url(#hillGradient)" />
+  
+  <!-- Gradient definitions -->
+  <defs>
+    <linearGradient id="skyGradient" x1="0" y1="0" x2="0" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e76f51" />
+      <stop offset="0.4" stop-color="#d4a373" />
+      <stop offset="0.8" stop-color="#f8f4e3" />
+    </linearGradient>
+    
+    <radialGradient id="sunGradient" cx="600" cy="400" r="150" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f8f4e3" />
+      <stop offset="1" stop-color="#e76f51" />
+    </radialGradient>
+    
+    <linearGradient id="seaGradient" x1="0" y1="450" x2="0" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2c3e50" />
+      <stop offset="1" stop-color="#34495e" />
+    </linearGradient>
+    
+    <linearGradient id="hillGradient" x1="0" y1="350" x2="0" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2c3e50" />
+      <stop offset="1" stop-color="#34495e" />
+    </linearGradient>
+  </defs>
+</svg> 
