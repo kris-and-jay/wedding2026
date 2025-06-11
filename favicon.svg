@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sky gradient -->
+  <rect width="32" height="32" fill="url(#skyGradient)" />
+  
+  <!-- Sun -->
+  <circle cx="16" cy="20" r="8" fill="url(#sunGradient)" />
+  
+  <!-- Silhouette -->
+  <path d="M0 24C0 24 4 20 8 20C12 20 16 24 16 24C16 24 20 20 24 20C28 20 32 24 32 24V32H0V24Z" fill="#2c3e50" />
+  
+  <!-- Gradient definitions -->
+  <defs>
+    <linearGradient id="skyGradient" x1="0" y1="0" x2="0" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e76f51" />
+      <stop offset="0.5" stop-color="#d4a373" />
+      <stop offset="1" stop-color="#f8f4e3" />
+    </linearGradient>
+    <radialGradient id="sunGradient" cx="16" cy="20" r="8" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f8f4e3" />
+      <stop offset="1" stop-color="#e76f51" />
+    </radialGradient>
+  </defs>
+</svg> 
