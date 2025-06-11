@@ -347,8 +347,8 @@ h1::after {
 }
 
 .status-message.success {
-  background-color: rgba(46, 213, 115, 0.1);
-  color: #2ed573;
+  background-color: rgba(34, 139, 34, 0.1);
+  color: #228B22;
 }
 
 .status-message.error {
