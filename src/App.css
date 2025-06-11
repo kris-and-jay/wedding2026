@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #f8f4e3 0%, #e8d5b5 100%);
+  background: linear-gradient(135deg, #f8f4e3 0%, #f7e06b 100%);
   position: relative;
   overflow: hidden;
 }
@@ -13,8 +13,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("https://images.unsplash.com/photo-1516483638261-f4dbaf036963?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80")
-    center/cover;
+  background: url("/public/1.png") center/cover;
   opacity: 0.1;
   z-index: 0;
 }
@@ -37,13 +36,13 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  color: #2c3e50;
+  color: #7bb661;
   position: relative;
   z-index: 1;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #7ec6e3;
 }
 
 @keyframes App-logo-spin {
@@ -61,10 +60,10 @@
   right: 20px;
   display: flex;
   gap: 10px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   padding: 10px;
   border-radius: 12px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(184, 139, 74, 0.08);
 }
 
 .language-button {
@@ -81,12 +80,12 @@
 }
 
 .language-button:hover {
-  background: rgba(212, 163, 115, 0.1);
+  background: rgba(247, 224, 107, 0.15);
 }
 
 .language-button.active {
-  border-color: #d4a373;
-  background: rgba(212, 163, 115, 0.1);
+  border-color: #b88b4a;
+  background: rgba(184, 139, 74, 0.08);
 }
 
 .flag-icon {
@@ -94,21 +93,21 @@
   height: 20px;
   object-fit: cover;
   border-radius: 2px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(184, 139, 74, 0.08);
 }
 
 .language-button span {
   font-size: 12px;
-  color: #2c3e50;
+  color: #7bb661;
   font-family: "Playfair Display", serif;
 }
 
 h1 {
   font-size: 3rem;
   margin-bottom: 1.5rem;
-  color: #2c3e50;
+  color: #b88b4a;
   font-family: "Playfair Display", serif;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  text-shadow: 2px 2px 4px rgba(184, 139, 74, 0.08);
   position: relative;
   padding-bottom: 20px;
 }
@@ -121,7 +120,7 @@ h1::after {
   transform: translateX(-50%);
   width: 100px;
   height: 3px;
-  background: linear-gradient(90deg, #d4a373, #e76f51);
+  background: linear-gradient(90deg, #b88b4a, #f7e06b);
 }
 
 .subtitle {
@@ -129,7 +128,7 @@ h1::after {
   max-width: 700px;
   margin: 0 auto 3rem;
   line-height: 1.8;
-  color: #34495e;
+  color: #7bb661;
   font-family: "Playfair Display", serif;
   font-style: italic;
 }
@@ -140,37 +139,37 @@ h1::after {
   gap: 1.5rem;
   max-width: 400px;
   width: 100%;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(184, 139, 74, 0.08);
 }
 
 .code-input {
   padding: 15px 20px;
   font-size: 1.2rem;
-  border: 2px solid #d4a373;
+  border: 2px solid #b88b4a;
   border-radius: 8px;
   text-align: center;
   letter-spacing: 2px;
   text-transform: uppercase;
-  background: white;
-  color: #2c3e50;
+  background: #fff;
+  color: #7bb661;
   font-family: "Playfair Display", serif;
   transition: all 0.3s ease;
 }
 
 .code-input:focus {
   outline: none;
-  border-color: #e76f51;
-  box-shadow: 0 0 0 3px rgba(231, 111, 81, 0.2);
+  border-color: #7ec6e3;
+  box-shadow: 0 0 0 3px rgba(126, 198, 227, 0.18);
 }
 
 .submit-button {
   padding: 15px 30px;
   font-size: 1.2rem;
-  background: linear-gradient(135deg, #d4a373 0%, #e76f51 100%);
-  color: white;
+  background: linear-gradient(135deg, #b88b4a 0%, #7bb661 100%);
+  color: #fff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -182,7 +181,7 @@ h1::after {
 
 .submit-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(126, 198, 227, 0.18);
 }
 
 .submit-button:active {
@@ -221,15 +220,15 @@ h1::after {
 }
 
 .section {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 15px;
   padding: 30px;
   margin-bottom: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(184, 139, 74, 0.08);
 }
 
 .section h2 {
-  color: #2c3e50;
+  color: #7bb661;
   font-family: "Playfair Display", serif;
   font-size: 2rem;
   margin-bottom: 20px;
@@ -244,11 +243,11 @@ h1::after {
   left: 0;
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, #d4a373, #e76f51);
+  background: linear-gradient(90deg, #b88b4a, #f7e06b);
 }
 
 .section p {
-  color: #34495e;
+  color: #7bb661;
   font-size: 1.2rem;
   line-height: 1.6;
   font-style: italic;
@@ -286,7 +285,7 @@ h1::after {
 
 .form-group label {
   font-family: "Playfair Display", serif;
-  color: #2c3e50;
+  color: #b88b4a;
   font-size: 1.1rem;
 }
 
@@ -295,19 +294,19 @@ h1::after {
 .form-group input[type="number"],
 .form-group textarea {
   padding: 12px;
-  border: 2px solid #d4a373;
+  border: 2px solid #b88b4a;
   border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
-  background: white;
+  background: #fff;
   transition: all 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #e76f51;
-  box-shadow: 0 0 0 3px rgba(231, 111, 81, 0.2);
+  border-color: #7ec6e3;
+  box-shadow: 0 0 0 3px rgba(126, 198, 227, 0.18);
 }
 
 .form-group input.error,
@@ -336,7 +335,7 @@ h1::after {
 .radio-group input[type="radio"] {
   width: 18px;
   height: 18px;
-  accent-color: #d4a373;
+  accent-color: #b88b4a;
 }
 
 .status-message {
@@ -347,13 +346,13 @@ h1::after {
 }
 
 .status-message.success {
-  background-color: rgba(46, 213, 115, 0.1);
-  color: #2ed573;
+  background-color: rgba(123, 182, 97, 0.12);
+  color: #7bb661;
 }
 
 .status-message.error {
-  background-color: rgba(255, 71, 87, 0.1);
-  color: #ff4757;
+  background-color: rgba(247, 224, 107, 0.12);
+  color: #b88b4a;
 }
 
 @media (max-width: 768px) {
