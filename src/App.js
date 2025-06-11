@@ -77,26 +77,24 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const upperCode = code.toUpperCase().trim();
-    console.log("Submitted code:", upperCode);
-    console.log("Is valid code:", guestLanguages[upperCode]);
 
     if (guestLanguages[upperCode]) {
-      console.log("Setting guest language to:", guestLanguages[upperCode]);
       setError("");
       setIsValidCode(true);
       setGuestLanguage(guestLanguages[upperCode]);
     } else {
-      console.log("Invalid code");
       setError(translations[language].invalidCode);
       setIsValidCode(false);
     }
   };
 
-  console.log("Current state:", { isValidCode, guestLanguage, code });
-
   if (isValidCode) {
-    console.log("Rendering GuestPage with language:", guestLanguage);
-    return <GuestPage language={guestLanguage} />;
+    return (
+      <GuestPage
+        language={guestLanguage}
+        guestCode={code.toUpperCase().trim()}
+      />
+    );
   }
 
   return (

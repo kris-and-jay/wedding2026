@@ -25,13 +25,13 @@ const translations = {
   },
 };
 
-const GuestPage = ({ language }) => {
+const GuestPage = ({ language, guestCode }) => {
   console.log("GuestPage rendered with language:", language);
   return (
     <div className="guest-page">
       <div className="section">
         <h2>{translations[language].rsvp}</h2>
-        <RSVPForm language={language} />
+        <RSVPForm language={language} guestCode={guestCode} />
       </div>
       <div className="section">
         <h2>{translations[language].travel}</h2>

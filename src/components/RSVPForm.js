@@ -54,7 +54,7 @@ const translations = {
   },
 };
 
-const RSVPForm = ({ language }) => {
+const RSVPForm = ({ language, guestCode }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -65,6 +65,16 @@ const RSVPForm = ({ language }) => {
   });
   const [status, setStatus] = useState({ type: "", message: "" });
   const [errors, setErrors] = useState({});
+
+  // Special thank you messages for specific guests
+  const specialThankYouMessages = {
+    IL2026: {
+      en: "Thank you so much for confirming your attendance! We are super excited to have you on our special day!",
+      pl: "Bardzo dziękujemy za potwierdzenie obecności! Jesteśmy bardzo podekscytowani, że będziesz z nami w tym wyjątkowym dniu!",
+      hu: "Köszönjük, hogy visszajeleztél! Nagyon örülünk, hogy velünk ünnepelsz ezen a különleges napon!",
+    },
+    // Add more guest codes here as needed
+  };
 
   const validateForm = () => {
     const newErrors = {};
@@ -89,8 +99,8 @@ const RSVPForm = ({ language }) => {
 
     try {
       await emailjs.send(
-        "service_wr2l3v8", // You'll need to replace this with your EmailJS service ID
-        "template_c4rvljx", // You'll need to replace this with your EmailJS template ID
+        "service_wr2l3v8",
+        "template_c4rvljx",
         {
           to_email: "krisztian.ivan@gmail.com,justyna0lisiecka@gmail.com",
           from_name: formData.name,
@@ -100,7 +110,7 @@ const RSVPForm = ({ language }) => {
           dietary: formData.dietary,
           message: formData.message,
         },
-        "PxXElfb83R8jwCj_F" // You'll need to replace this with your EmailJS public key
+        "PxXElfb83R8jwCj_F"
       );
 
       setStatus({ type: "success", message: translations[language].success });
@@ -125,6 +135,15 @@ const RSVPForm = ({ language }) => {
     }));
   };
 
+  // If guest is in the special thank you list, show only the thank you message
+  if (specialThankYouMessages[guestCode]) {
+    return (
+      <div className="status-message success" style={{ marginBottom: 20 }}>
+        {specialThankYouMessages[guestCode][language]}
+      </div>
+    );
+  }
+  // Otherwise, show the RSVP form as usual
   return (
     <form onSubmit={handleSubmit} className="rsvp-form">
       <div className="form-group">
@@ -139,7 +158,6 @@ const RSVPForm = ({ language }) => {
         />
         {errors.name && <span className="error-message">{errors.name}</span>}
       </div>
-
       <div className="form-group">
         <label htmlFor="email">{translations[language].email}</label>
         <input
@@ -152,7 +170,6 @@ const RSVPForm = ({ language }) => {
         />
         {errors.email && <span className="error-message">{errors.email}</span>}
       </div>
-
       <div className="form-group">
         <label>{translations[language].attending}</label>
         <div className="radio-group">
@@ -181,7 +198,6 @@ const RSVPForm = ({ language }) => {
           <span className="error-message">{errors.attending}</span>
         )}
       </div>
-
       {formData.attending === "yes" && (
         <div className="form-group">
           <label htmlFor="guests">{translations[language].guests}</label>
@@ -199,7 +215,6 @@ const RSVPForm = ({ language }) => {
           )}
         </div>
       )}
-
       <div className="form-group">
         <label htmlFor="dietary">{translations[language].dietary}</label>
         <textarea
@@ -210,7 +225,6 @@ const RSVPForm = ({ language }) => {
           rows="2"
         />
       </div>
-
       <div className="form-group">
         <label htmlFor="message">{translations[language].message}</label>
         <textarea
@@ -221,11 +235,9 @@ const RSVPForm = ({ language }) => {
           rows="3"
         />
       </div>
-
       {status.message && (
         <div className={`status-message ${status.type}`}>{status.message}</div>
       )}
-
       <button type="submit" className="submit-button">
         {translations[language].submit}
       </button>
