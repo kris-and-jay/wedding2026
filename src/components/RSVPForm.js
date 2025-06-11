@@ -65,6 +65,7 @@ const RSVPForm = ({ language, guestCode }) => {
   });
   const [status, setStatus] = useState({ type: "", message: "" });
   const [errors, setErrors] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   // Special thank you messages for specific guests
   const specialThankYouMessages = {
@@ -114,14 +115,7 @@ const RSVPForm = ({ language, guestCode }) => {
       );
 
       setStatus({ type: "success", message: translations[language].success });
-      setFormData({
-        name: "",
-        email: "",
-        attending: "",
-        guests: "1",
-        dietary: "",
-        message: "",
-      });
+      setIsSubmitted(true);
     } catch (error) {
       setStatus({ type: "error", message: translations[language].error });
     }
@@ -143,7 +137,17 @@ const RSVPForm = ({ language, guestCode }) => {
       </div>
     );
   }
-  // Otherwise, show the RSVP form as usual
+
+  // If form was submitted successfully, show only the success message
+  if (isSubmitted) {
+    return (
+      <div className="status-message success" style={{ marginBottom: 20 }}>
+        {status.message}
+      </div>
+    );
+  }
+
+  // Otherwise, show the RSVP form
   return (
     <form onSubmit={handleSubmit} className="rsvp-form">
       <div className="form-group">
