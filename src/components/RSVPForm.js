@@ -10,7 +10,7 @@ const translations = {
     yes: "Yes, I will attend",
     no: "No, I cannot attend",
     guests: "Number of guests (including yourself)",
-    dietary: "Any dietary requirements?",
+    dietary: "Any dietary requirements? (e.g. vegetarian, gluten-free, I don't like seafood, etc.)",
     message: "Additional message (optional)",
     submit: "Send RSVP",
     success:
