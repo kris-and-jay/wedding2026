@@ -26,7 +26,7 @@ const translations = {
     yes: "Tak, będę obecny/a",
     no: "Nie, nie mogę przyjść",
     guests: "Liczba gości (włącznie z Tobą)",
-    dietary: "Wymagania dietetyczne?",
+    dietary: "Specjalne wymagania dietetyczne? (np. dieta wegetariańska, bezglutenowa, nie lubię owoców morza itp.)",
     message: "Dodatkowa wiadomość (opcjonalnie)",
     submit: "Wyślij potwierdzenie",
     success:
