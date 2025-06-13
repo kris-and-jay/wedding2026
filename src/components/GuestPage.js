@@ -9,7 +9,7 @@ const translations = {
     itinerary: "Itinerary",
     location: "Location",
     comingSoon: "Coming soon...",
-    locationText: "The ceremony and reception will be hosted at Fattoria Terranova, a working farm and restaurant on the beatiful Sorrento hills, with views to the Bay of Naples, Vesuvius, and various islands including Capri.\n\nThere is a swimming pool with sun loungers, multiple garden areas and activities and all food served is grown locally. They even produce their own olive oil and lemoncello from the famous Sorrento lemons!\n\nMore details on their website: ",
+    locationText: "Our ceremony and reception will be held at Fattoria Terranova, a working farm and restaurant in the beautiful Sorrento hills, with wonderful views of the Bay of Naples, Vesuvius, and Capri.\n\nGuests are welcome to enjoy the swimming pool and garden areas. All the food served is grown on the farm, which also produces its own olive oil and limoncello from the region's famous Sorrento lemons.\n\nYou can find more details on their website: ",
     websiteLink: "fattoriaterranova.it",
   },
   pl: {
@@ -19,7 +19,7 @@ const translations = {
     itinerary: "Plan wydarzeń",
     location: "Lokalizacja",
     comingSoon: "Wkrótce...",
-    locationText: "Ceremonia i przyjęcie odbędą się w Fattoria Terranova, działającej farmie i restauracji na pięknych wzgórzach Sorrento, z widokiem na Zatokę Neapolitańską, Wezuwiusz i różne wyspy, w tym Capri.\n\nNa miejscu znajduje się basen z leżakami, liczne ogrody i atrakcje, a wszystkie serwowane potrawy są uprawiane lokalnie. Produkują nawet własną oliwę z oliwek i limoncello ze słynnych cytryn z Sorrento!\n\nWięcej szczegółów na ich stronie internetowej: ",
+    locationText: "Nasza ceremonia i przyjęcie odbędą się w Fattoria Terranova – gospodarstwie z restauracją, położonym na pięknych wzgórzach Sorrento, z których roztaczają się wspaniałe widoki na Zatokę Neapolitańską, Wezuwiusza i Capri.\n\nGoście będą mogli korzystać z basenu oraz terenów ogrodowych. Wszystkie serwowane dania powstają z lokalnych produktów, a gospodarstwo wytwarza nawet własną oliwę z oliwek i limoncello ze słynnych cytryn z Sorrento!\n\nWięcej szczegółów znajdą na ich stronie internetowej: ",
     websiteLink: "fattoriaterranova.it",
   },
   hu: {
@@ -29,13 +29,12 @@ const translations = {
     itinerary: "Program",
     location: "Helyszín",
     comingSoon: "Hamarosan...",
-    locationText: "Az esküvő és a vacsora a Fattoria Terranovában lesz, ami egy működő farm és étterem a gyönyörű Sorrento dombjain, kilátással a Nápolyi-öbölre, a Vezúvra és különböző szigetekre, köztük Caprira.\n\nVan egy medencéjük napozóágyakkal, több kertes liget és mindenféle elfoglaltság. Minden felszolgált ételt helyben termesztett alapanyagokból főznek. Még saját olívaolajat és limoncellót is készítenek a híres sorrentói citromból!\n\nTovábbi részletek a weboldalukon: ",
+    locationText: "A szertartást és a fogadást a Fattoria Terranovában tartjuk, egy étteremként is működő gazdaságban a gyönyörű Sorrento-i dombokon, ahonnan csodálatos kilátás nyílik a Nápolyi-öbölre, a Vezúvra és Capri szigetére.\n\nA vendégek rendelkezésére áll az úszómedence és a kert is. Minden felszolgált étel a farmon termesztett alapanyagokból készül, sőt, a gazdaság saját olívaolajat és limoncello-t is készít a híres Sorrento-i citromból!\n\nTovábbi részletek a weboldalukon: ",
     websiteLink: "fattoriaterranova.it",
   },
 };
 
 const GuestPage = ({ language, guestCode }) => {
-  console.log("GuestPage rendered with language:", language);
   return (
     <div className="guest-page">
       <div className="section">
