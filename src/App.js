@@ -6,7 +6,7 @@ const translations = {
   en: {
     title: "Justyna & Krisztian - Sorrento, 27th June 2026",
     subtitle:
-      "We are so excited that you'll be joining us on our special day! Please, enter your unique code to view all the relevant information for the wedding.",
+      "We are so excited that you'll be joining us on our special day! Please, enter your unique code to view all the details for the wedding.",
     enterCode: "Enter your code",
     submit: "Submit",
     language: "Language",
@@ -15,7 +15,7 @@ const translations = {
   pl: {
     title: "Justyna & Krisztian - Sorrento, 27 czerwca 2026",
     subtitle:
-      "Jesteśmy bardzo podekscytowani, że dołączysz do nas w ten wyjątkowy dzień! Prosimy, wprowadź swój unikalny kod, aby zobaczyć wszystkie istotne informacje dotyczące ślubu.",
+      "Bardzo się cieszymy, że będziecie z nami w tym wyjątkowym dniu. Prosimy, wprowadźcie swój unikalny kod, aby zobaczyć wszystkie szczegóły dotyczące ślubu.",
     enterCode: "Wprowadź swój kod",
     submit: "Potwierdź",
     language: "Język",
@@ -24,7 +24,7 @@ const translations = {
   hu: {
     title: "Justyna & Krisztián - Sorrento, 2026. június 27.",
     subtitle:
-      "Annyira örülünk, hogy csatlakozol hozzánk! Add meg az egyedi kódodat, és máris mutatjuk az esküvővel kapcsolatos összes fontos információt.",
+      "Annyira örülünk, hogy csatlakozol hozzánk ezen a különleges napon! Kérjük, add meg az egyedi kódodat, és máris mutatjuk az esküvővel kapcsolatos összes fontos információt.",
     enterCode: "Add meg a kódodat",
     submit: "Belépés",
     language: "Nyelv",
