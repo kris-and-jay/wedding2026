@@ -26,14 +26,14 @@ const translations = {
     attending: "Czy będziesz obecny/a?",
     yes: "Tak, będę obecny/a",
     no: "Nie, niestety nie mogę dołączyć",
-    guests: "Liczba gości (włącznie z Tobą)",
+    guests: "Liczba gości z ktorymi do nas dołączysz (włącznie z Tobą)",
     dietary:
       "Czy masz specjalne wymagania dietetyczne? (np. dieta wegetariańska, bezglutenowa, nie lubię owoców morza itp.)",
     message: "Dodatkowa wiadomość (opcjonalnie)",
     submit: "Wyślij potwierdzenie",
     success:
-      "Dziękujemy za potwierdzenie obecności! Bardzo się cieszymy, że będziesz z nami w tym niezwykle ważnym dla nas dniu! Po tym jak zaaktualizacujemy naszą listę gości, będziesz mógł / mogła zobaczyc tutaj swój status uczestnictwa.",
-    error: "Wystąpił błąd podczas przesyłania informacji. Spróbuj ponownie.",
+      "Dziękujemy za twoją odpowiedź! Wkrótce zaaktualizujemy naszą listę gości i wtedy będziesz mógł / mogła zobaczyć tutaj swój status uczestnictwa.",
+    error: "Wystąpił błąd podczas przesyłania danych. Spróbuj ponownie.",
     required: "To pole jest wymagane",
   },
   hu: {
@@ -226,16 +226,18 @@ const RSVPForm = ({ language, guestCode }) => {
           )}
         </div>
       )}
-      <div className="form-group">
-        <label htmlFor="dietary">{translations[language].dietary}</label>
-        <textarea
-          id="dietary"
-          name="dietary"
-          value={formData.dietary}
-          onChange={handleChange}
-          rows="2"
-        />
-      </div>
+      {formData.attending === "yes" && (
+        <div className="form-group">
+          <label htmlFor="dietary">{translations[language].dietary}</label>
+          <textarea
+            id="dietary"
+            name="dietary"
+            value={formData.dietary}
+            onChange={handleChange}
+            rows="2"
+          />
+        </div>
+      )}
       <div className="form-group">
         <label htmlFor="message">{translations[language].message}</label>
         <textarea
