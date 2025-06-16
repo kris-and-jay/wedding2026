@@ -10,7 +10,8 @@ const translations = {
     yes: "Yes, I will attend",
     no: "No, I cannot attend",
     guests: "Number of guests (including yourself)",
-    dietary: "Any dietary requirements? (e.g. vegetarian, gluten-free, I don't like seafood, etc.)",
+    dietary:
+      "Any dietary requirements? (e.g. vegetarian, gluten-free, I don't like seafood, etc.)",
     message: "Additional message (optional)",
     submit: "Send RSVP",
     success:
@@ -24,14 +25,15 @@ const translations = {
     email: "Adres email",
     attending: "Czy będziesz obecny/a?",
     yes: "Tak, będę obecny/a",
-    no: "Nie, nie mogę przyjść",
+    no: "Nie, niestety nie mogę dołączyć",
     guests: "Liczba gości (włącznie z Tobą)",
-    dietary: "Specjalne wymagania dietetyczne? (np. dieta wegetariańska, bezglutenowa, nie lubię owoców morza itp.)",
+    dietary:
+      "Czy masz specjalne wymagania dietetyczne? (np. dieta wegetariańska, bezglutenowa, nie lubię owoców morza itp.)",
     message: "Dodatkowa wiadomość (opcjonalnie)",
     submit: "Wyślij potwierdzenie",
     success:
-      "Dziękujemy za potwierdzenie! Zaktualizujemy naszą listę gości, a po zakończeniu aktualizacji zobaczysz swój status uczestnictwa potwierdzony na tej stronie.",
-    error: "Wystąpił błąd podczas wysyłania. Spróbuj ponownie.",
+      "Dziękujemy za potwierdzenie obecności! Bardzo się cieszymy, że będziesz z nami w tym niezwykle ważnym dla nas dniu! Po tym jak zaaktualizacujemy naszą listę gości, będziesz mógł / mogła zobaczyc tutaj swój status uczestnictwa.",
+    error: "Wystąpił błąd podczas przesyłania informacji. Spróbuj ponownie.",
     required: "To pole jest wymagane",
   },
   hu: {

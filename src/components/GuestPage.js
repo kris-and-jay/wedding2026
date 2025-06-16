@@ -10,18 +10,18 @@ const translations = {
     location: "Location",
     comingSoon: "Coming soon...",
     locationText:
-      "Our ceremony and reception will be held at Fattoria Terranova, a working farm and restaurant in the beautiful Sorrento hills, with wonderful views of the Bay of Naples, Vesuvius, and Capri.\n\nGuests are welcome to enjoy the swimming pool and garden areas. All the food served is grown on the farm, which also produces its own olive oil and limoncello from the region's famous Sorrento lemons.\n\nYou can find more details on their website: ",
+      "Our ceremony and reception will be held at Fattoria Terranova, a working farm, hotel and restaurant situated in the beautiful Sorrento hills, featuring a swimming pool and garden areas with wonderful views of the Bay of Naples, Vesuvius, and Capri island.\n\nAll the food served is grown on the farm, which also produces its own olive oil and limoncello from the region's famous Sorrento lemons.\n\nYou can find more details on their website: ",
     websiteLink: "fattoriaterranova.it",
   },
   pl: {
     rsvp: "Potwierdzenie obecności",
     travel: "Podróż",
-    accommodation: "Zakwaterowanie",
+    accommodation: "Nocleg",
     itinerary: "Plan wydarzeń",
     location: "Lokalizacja",
-    comingSoon: "Wkrótce...",
+    comingSoon: "Informacje wkrótce...",
     locationText:
-      "Nasza ceremonia i przyjęcie odbędą się w Fattoria Terranova – gospodarstwie z restauracją, położonym na pięknych wzgórzach Sorrento, z których roztaczają się wspaniałe widoki na Zatokę Neapolitańską, Wezuwiusza i Capri.\n\nGoście będą mogli korzystać z basenu oraz terenów ogrodowych. Wszystkie serwowane dania powstają z lokalnych produktów, a gospodarstwo wytwarza nawet własną oliwę z oliwek i limoncello ze słynnych cytryn z Sorrento!\n\nWięcej szczegółów znajdą na ich stronie internetowej: ",
+      "Nasza ceremonia ślubna i przyjęcie weselne odbędą się w Fattoria Terranova – gospodarstwie agroturystycznym z restauracją, basenem i terenami ogrodowymi, położonym na pięknych wzgórzach Sorrento, z których roztaczają się oszałamiające widoki na Zatokę Neapolitańską, Wezuwiusza i wyspę Capri.\n\nWszystkie dania serwowane w restauracji powstają z lokalnych produktów, a gospodarstwo wytwarza nawet własną oliwę z oliwek i limoncello ze słynnych cytryn z Sorrento!\n\nWięcej szczegółów znajdziecie na ich stronie internetowej: ",
     websiteLink: "fattoriaterranova.it",
   },
   hu: {

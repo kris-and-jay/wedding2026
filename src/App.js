@@ -15,8 +15,8 @@ const translations = {
   pl: {
     title: "Justyna & Krisztian - Sorrento, 27 czerwca 2026",
     subtitle:
-      "Bardzo się cieszymy, że będziecie z nami w tym wyjątkowym dniu. Prosimy, wprowadźcie swój unikalny kod, aby zobaczyć wszystkie szczegóły dotyczące ślubu.",
-    enterCode: "Wprowadź swój kod",
+      "Bardzo się cieszymy, że będziecie z nami w tym wyjątkowym dniu. Wpisz proszę swój unikalny kod, aby zobaczyć wszystkie niezbędne szczegóły dotyczące naszego ślubu.",
+    enterCode: "Wp swój kod",
     submit: "Potwierdź",
     language: "Język",
     invalidCode: "Nieprawidłowy kod. Spróbuj ponownie.",
