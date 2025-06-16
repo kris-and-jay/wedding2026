@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import GuestPage from "./components/GuestPage";
+import Countdown from "./components/Countdown";
 
 const translations = {
   en: {
@@ -153,6 +154,8 @@ function App() {
         </form>
 
         {error && <p className="error">{error}</p>}
+
+        <Countdown language={language} />
       </header>
     </div>
   );
