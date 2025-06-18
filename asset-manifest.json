@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/wedding2026/static/css/main.2abec5e0.css",
-    "main.js": "/wedding2026/static/js/main.b5c2c8e1.js",
+    "main.js": "/wedding2026/static/js/main.1dd2333e.js",
     "static/js/453.bf21f4fb.chunk.js": "/wedding2026/static/js/453.bf21f4fb.chunk.js",
     "index.html": "/wedding2026/index.html",
     "main.2abec5e0.css.map": "/wedding2026/static/css/main.2abec5e0.css.map",
-    "main.b5c2c8e1.js.map": "/wedding2026/static/js/main.b5c2c8e1.js.map",
+    "main.1dd2333e.js.map": "/wedding2026/static/js/main.1dd2333e.js.map",
     "453.bf21f4fb.chunk.js.map": "/wedding2026/static/js/453.bf21f4fb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2abec5e0.css",
-    "static/js/main.b5c2c8e1.js"
+    "static/js/main.1dd2333e.js"
   ]
 }
