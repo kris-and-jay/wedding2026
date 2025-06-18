@@ -38,7 +38,7 @@ const guestLanguages = {
   // Hungarian guests
   IL2026: "hu", // Ildiko
   HG2026: "hu", // Hugi
-  AT2026B: "hu", // Ati
+  AT2026: "hu", // Ati
   SZ2026: "hu", // Szilvi
   ZZ2026: "hu", // Zaza
   KR2026: "hu", // Karina
@@ -46,16 +46,16 @@ const guestLanguages = {
   TM2026: "hu", // Tomi
   ER2026: "hu", // Era
   PT2026: "hu", // Peti
-  AG2026B: "hu", // Agi
+  AGI2026: "hu", // Agi
 
   // Polish guests
   MK2026: "pl", // Monika
   AD2026: "pl", // Adam
   WS2026: "pl", // Wiesia
   AG2026: "pl", // Aga
-  AT2026: "pl", // Auntie Teresa
-  UD2026: "pl", // Uncle Darek
-  AM2026: "pl", // Aunti Monia
+  CT2026: "pl", // Auntie Teresa
+  WD2026: "pl", // Uncle Darek
+  CM2026: "pl", // Aunti Monia
   KL2026: "pl", // Klaudia
   PL2026: "pl", // Paulina
   KS2026: "pl", // Kasia

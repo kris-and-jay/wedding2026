@@ -42,7 +42,7 @@ const customAccommodationMessages = {
     "Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek, velünk ünnepelnétek, és csodás emlékeket szereznétek.\n\nA további részletekről (bejelentkezés, pontos szoba, stb.) később küldünk tájékoztatást...",
   HG2026:
     "Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek, velünk ünnepelnétek, és csodás emlékeket szereznétek.\n\nA további részletekről (bejelentkezés, pontos szoba, stb.) később küldünk tájékoztatást...",
-  AT2026B:
+  AT2026:
     "Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek, velünk ünnepelnétek, és csodás emlékeket szereznétek.\n\nA további részletekről (bejelentkezés, pontos szoba, stb.) később küldünk tájékoztatást...",
   SZ2026:
     "Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek, velünk ünnepelnétek, és csodás emlékeket szereznétek.\n\nA további részletekről (bejelentkezés, pontos szoba, stb.) később küldünk tájékoztatást...",
