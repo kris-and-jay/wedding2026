@@ -58,6 +58,20 @@ const customAccommodationMessages = {
     "Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek, velünk ünnepelnétek, és csodás emlékeket szereznétek.\n\nA további részletekről (bejelentkezés, pontos szoba, stb.) később küldünk tájékoztatást...",
   PT2026:
     "Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek, velünk ünnepelnétek, és csodás emlékeket szereznétek.\n\nA további részletekről (bejelentkezés, pontos szoba, stb.) később küldünk tájékoztatást...",
+  MK2026:
+    "W wyrazie naszej głębokiej wdzięczności i radości że będziecie mogli nam towarzyszyć na naszym ślubie i weselu, chelibyśmy Was właściwie ugościć. Dlatego zapewniamy i opłacamy dla Was nocleg na cały weekend od piątku 26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byście odpoczęli, wspaniale się z nami bawili i zabrali ze sobą niezapomniane wspomnienia. Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania prześlemy Wam wkrótce.",
+  WS2026:
+    "W wyrazie naszej głębokiej wdzięczności i radości że będziecie mogli nam towarzyszyć na naszym ślubie i weselu, chelibyśmy Was właściwie ugościć. Dlatego zapewniamy i opłacamy dla Was nocleg na cały weekend od piątku 26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byście odpoczęli, wspaniale się z nami bawili i zabrali ze sobą niezapomniane wspomnienia. Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania prześlemy Wam wkrótce.",
+  AD2026:
+    "W wyrazie naszej głębokiej wdzięczności i radości że będziecie mogli nam towarzyszyć na naszym ślubie i weselu, chelibyśmy Was właściwie ugościć. Dlatego zapewniamy i opłacamy dla Was nocleg na cały weekend od piątku 26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byście odpoczęli, wspaniale się z nami bawili i zabrali ze sobą niezapomniane wspomnienia. Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania prześlemy Wam wkrótce.",
+  AG2026:
+    "W wyrazie naszej głębokiej wdzięczności i radości że będziecie mogli nam towarzyszyć na naszym ślubie i weselu, chelibyśmy Was właściwie ugościć. Dlatego zapewniamy i opłacamy dla Was nocleg na cały weekend od piątku 26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byście odpoczęli, wspaniale się z nami bawili i zabrali ze sobą niezapomniane wspomnienia. Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania prześlemy Wam wkrótce.",
+  CT2026:
+    "W wyrazie naszej głębokiej wdzięczności i radości że będziecie mogli nam towarzyszyć na naszym ślubie i weselu, chelibyśmy Was właściwie ugościć. Dlatego zapewniamy i opłacamy dla Was nocleg na cały weekend od piątku 26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byście odpoczęli, wspaniale się z nami bawili i zabrali ze sobą niezapomniane wspomnienia. Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania prześlemy Wam wkrótce.",
+  WD2026:
+    "W wyrazie naszej głębokiej wdzięczności i radości że będziecie mogli nam towarzyszyć na naszym ślubie i weselu, chelibyśmy Was właściwie ugościć. Dlatego zapewniamy i opłacamy dla Was nocleg na cały weekend od piątku 26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byście odpoczęli, wspaniale się z nami bawili i zabrali ze sobą niezapomniane wspomnienia. Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania prześlemy Wam wkrótce.",
+  KL2026:
+    "W wyrazie naszej głębokiej wdzięczności i radości że będziecie mogli nam towarzyszyć na naszym ślubie i weselu, chelibyśmy Was właściwie ugościć. Dlatego zapewniamy i opłacamy dla Was nocleg na cały weekend od piątku 26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byście odpoczęli, wspaniale się z nami bawili i zabrali ze sobą niezapomniane wspomnienia. Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania prześlemy Wam wkrótce.",
 };
 
 const GuestPage = ({ language, guestCode }) => {

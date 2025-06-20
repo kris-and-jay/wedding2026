@@ -5,7 +5,9 @@ import Countdown from "./components/Countdown";
 
 const translations = {
   en: {
-    title: "Justyna & Krisztian - Sorrento, 27th June 2026",
+    title: "Justyna & Krisztian",
+    location: "Sorrento, Italy",
+    date: "27th June 2026",
     subtitle:
       "We are so excited that you'll be joining us on our special day! Please, enter your unique code to view all the details for the wedding.",
     enterCode: "Enter your code",
@@ -14,16 +16,20 @@ const translations = {
     invalidCode: "Invalid code. Please try again.",
   },
   pl: {
-    title: "Justyna & Krisztian - Sorrento, 27 czerwca 2026",
+    title: "Justyna & Krisztian",
+    location: "Sorrento, Włochy",
+    date: "27 czerwca 2026",
     subtitle:
       "Bardzo się cieszymy, że będziecie z nami w tym wyjątkowym dniu. Wpisz proszę swój unikalny kod, aby zobaczyć wszystkie niezbędne szczegóły dotyczące naszego ślubu.",
-    enterCode: "Wp swój kod",
+    enterCode: "Wpisz swój kod",
     submit: "Potwierdź",
     language: "Język",
     invalidCode: "Nieprawidłowy kod. Spróbuj ponownie.",
   },
   hu: {
-    title: "Justyna & Krisztián - Sorrento, 2026. június 27.",
+    title: "Justyna & Krisztián",
+    location: "Sorrento, Olaszország",
+    date: "2026. június 27.",
     subtitle:
       "Annyira örülünk, hogy csatlakozol hozzánk ezen a különleges napon! Kérjük, add meg az egyedi kódodat, és máris mutatjuk az esküvővel kapcsolatos összes fontos információt.",
     enterCode: "Add meg a kódodat",
@@ -137,7 +143,13 @@ function App() {
           </button>
         </div>
 
-        <h1>{translations[language].title}</h1>
+        <h1>
+          {translations[language].title}
+          <br />
+          {translations[language].location}
+          <br />
+          {translations[language].date}
+        </h1>
         <p className="subtitle">{translations[language].subtitle}</p>
 
         <form onSubmit={handleSubmit} className="code-form">
