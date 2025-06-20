@@ -74,9 +74,24 @@ const RSVPForm = ({ language, guestCode }) => {
     IL2026: {
       en: "Thank you so much for confirming your attendance! We are super excited to have you on our special day!",
       pl: "Bardzo dziękujemy za potwierdzenie obecności! Jesteśmy bardzo podekscytowani, że będziesz z nami w tym wyjątkowym dniu!",
-      hu: "Köszönjük, hogy visszajeleztél! Nagyon örülünk, hogy velünk ünnepelsz ezen a különleges napon!",
+      hu: "Köszönjük, hogy visszajeleztél! Nagyon örülünk, hogy velünk ünnepeltek ezen a különleges napon!",
     },
     HG2026: {
+      en: "Thank you so much for confirming your attendance! We are super excited to have you on our special day!",
+      pl: "Bardzo dziękujemy za potwierdzenie obecności! Jesteśmy bardzo podekscytowani, że będziesz z nami w tym wyjątkowym dniu!",
+      hu: "Köszönjük, hogy visszajeleztél! Nagyon örülünk, hogy velünk ünnepelsz ezen a különleges napon!",
+    },
+    AT2026: {
+      en: "Thank you so much for confirming your attendance! We are super excited to have you on our special day!",
+      pl: "Bardzo dziękujemy za potwierdzenie obecności! Jesteśmy bardzo podekscytowani, że będziesz z nami w tym wyjątkowym dniu!",
+      hu: "Köszönjük, hogy visszajeleztél! Nagyon örülünk, hogy velünk ünnepeltek ezen a különleges napon!",
+    },
+    KR2026: {
+      en: "Thank you so much for confirming your attendance! We are super excited to have you on our special day!",
+      pl: "Bardzo dziękujemy za potwierdzenie obecności! Jesteśmy bardzo podekscytowani, że będziesz z nami w tym wyjątkowym dniu!",
+      hu: "Köszönjük, hogy visszajeleztél! Nagyon örülünk, hogy velünk ünnepeltek ezen a különleges napon!",
+    },
+    GA2026: {
       en: "Thank you so much for confirming your attendance! We are super excited to have you on our special day!",
       pl: "Bardzo dziękujemy za potwierdzenie obecności! Jesteśmy bardzo podekscytowani, że będziesz z nami w tym wyjątkowym dniu!",
       hu: "Köszönjük, hogy visszajeleztél! Nagyon örülünk, hogy velünk ünnepelsz ezen a különleges napon!",
