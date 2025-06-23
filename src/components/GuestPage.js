@@ -72,6 +72,8 @@ const customAccommodationMessages = {
     "W wyrazie naszej głębokiej wdzięczności i radości że będziecie mogli nam towarzyszyć na naszym ślubie i weselu, chelibyśmy Was właściwie ugościć. Dlatego zapewniamy i opłacamy dla Was nocleg na cały weekend od piątku 26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byście odpoczęli, wspaniale się z nami bawili i zabrali ze sobą niezapomniane wspomnienia. Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania prześlemy Wam wkrótce.",
   KL2026:
     "W wyrazie naszej głębokiej wdzięczności i radości że będziecie mogli nam towarzyszyć na naszym ślubie i weselu, chelibyśmy Was właściwie ugościć. Dlatego zapewniamy i opłacamy dla Was nocleg na cały weekend od piątku 26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byście odpoczęli, wspaniale się z nami bawili i zabrali ze sobą niezapomniane wspomnienia. Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania prześlemy Wam wkrótce.",
+  SM2026:
+    "As a small token of our deep gratitude, we would be delighted to host you. We will be taking care of your accommodation at the wedding venue for the weekend, from Friday, June 26th to Sunday, June 28th. All we want is for you to relax, celebrate with us, and create wonderful memories. We will send further details (check-in, specific room info, etc.) at a later date...",
 };
 
 const GuestPage = ({ language, guestCode }) => {
