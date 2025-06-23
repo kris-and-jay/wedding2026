@@ -41,7 +41,7 @@ const customAccommodationMessages = {
   IL2026:
     "Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek, velünk ünnepelnétek, és csodás emlékeket szereznétek.\n\nA további részletekről (bejelentkezés, pontos szoba, stb.) később küldünk tájékoztatást...",
   HG2026:
-    "Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek, velünk ünnepelnétek, és csodás emlékeket szereznétek.\n\nA további részletekről (bejelentkezés, pontos szoba, stb.) később küldünk tájékoztatást...",
+    "Az egyik VIP vendégünkként mi intézzük a hétvégi szállásodat és velünk fogsz megszállni a Villa Terranovában június 25-tól (csütörtök) június 29-ig (hétfő). Csak azt szeretnénk, ha pihennél, velünk ünnepelnél, és csodás emlékeket szereznél. A további részletekről (bejelentkezés, stb.) később küldünk tájékoztatást...",
   AT2026:
     "Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek, velünk ünnepelnétek, és csodás emlékeket szereznétek.\n\nA további részletekről (bejelentkezés, pontos szoba, stb.) később küldünk tájékoztatást...",
   SZ2026:
@@ -73,7 +73,7 @@ const customAccommodationMessages = {
   KL2026:
     "W wyrazie naszej głębokiej wdzięczności i radości że chcesz nam towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Cię właściwie ugościć. Dlatego zapewniamy dla Ciebie nocleg na cały weekend od piątku 26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byś odpoczęła, wspaniale się z nami bawiła i zabrała ze sobą niezapomniane wspomnienia. Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania prześlemy w odpowiednim czasie",
   SM2026:
-    "As a small token of our deep gratitude, we would be delighted to host you. We will be taking care of your accommodation at the wedding venue for the weekend, from Friday, June 26th to Sunday, June 28th. All we want is for you to relax, celebrate with us, and create wonderful memories. We will send further details (check-in, specific room info, etc.) at a later date...",
+    "As one of our VIPs, we will be taking care of your accommodation and you will be staying with us in Villa Terranova, from Thursday, June 25th to Monday, June 29th. All we want is for you to relax, celebrate with us, and create wonderful memories. We will send further details (check-in, etc.) at a later date...",
 };
 
 const GuestPage = ({ language, guestCode }) => {
