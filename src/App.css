@@ -38,9 +38,11 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
+  padding-bottom: 120px;
   color: #2c3e50;
   position: relative;
   z-index: 1;
+  box-sizing: border-box;
 }
 
 .App-link {
@@ -217,6 +219,7 @@ h1::after {
 
   .App-header {
     padding-top: 80px;
+    padding-bottom: 20px;
   }
 
   .guest-page {
@@ -544,6 +547,7 @@ h1::after {
   bottom: 3rem;
   left: 0;
   right: 0;
+  z-index: 10;
 }
 
 .countdown-container h2 {
@@ -604,5 +608,9 @@ h1::after {
 
   .countdown-label {
     font-size: 0.7rem;
+  }
+
+  .App-header {
+    padding-bottom: 20px;
   }
 }
