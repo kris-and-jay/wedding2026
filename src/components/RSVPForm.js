@@ -111,6 +111,11 @@ const RSVPForm = ({ language, guestCode }) => {
       pl: "Bardzo dziękujemy za potwierdzenie obecności! Jesteśmy bardzo podekscytowani, że będziesz z nami w tym wyjątkowym dniu!",
       hu: "Köszönjük, hogy visszajeleztél! Nagyon örülünk, hogy velünk ünnepeltek ezen a különleges napon!",
     },
+    YN2026: {
+      en: "Thank you so much for confirming your attendance! We are super excited to have you on our special day!",
+      pl: "Bardzo dziękujemy za potwierdzenie obecności! Jesteśmy bardzo podekscytowani, że będziesz z nami w tym wyjątkowym dniu!",
+      hu: "Köszönjük, hogy visszajeleztél! Nagyon örülünk, hogy velünk ünnepeltek ezen a különleges napon!",
+    },
     // Add more guest codes here as needed
   };
 
