@@ -484,6 +484,13 @@ h1::after {
   margin-top: 1rem;
 }
 
+.accommodation-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
 .gallery-image {
   width: 100%;
   height: 300px;
@@ -520,6 +527,10 @@ h1::after {
   }
 
   .location-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .accommodation-gallery {
     grid-template-columns: 1fr;
   }
 

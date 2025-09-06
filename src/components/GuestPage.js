@@ -41,7 +41,7 @@ const customAccommodationMessages = {
   IL2026:
     "Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek, velünk ünnepelnétek, és csodás emlékeket szereznétek.\n\nA további részletekről (bejelentkezés, pontos szoba, stb.) később küldünk tájékoztatást...",
   HG2026:
-    "Az egyik VIP vendégünkként mi intézzük a hétvégi szállásodat és velünk fogsz megszállni a Villa Terranovában június 25-tól (csütörtök) június 29-ig (hétfő). Csak azt szeretnénk, ha pihennél, velünk ünnepelnél, és csodás emlékeket szereznél. A további részletekről (bejelentkezés, stb.) később küldünk tájékoztatást...",
+    "Az egyik VIP vendégünkként mi intézzük a hétvégi szállásodat és velünk fogsz megszállni a Villa Terranovában június 25-től (csütörtök) június 29-ig (hétfő). Csak azt szeretnénk, ha pihennél, velünk ünnepelnél, és csodás emlékeket szereznél.\n\n**Szoba:** Villa Terranova\n\n**Bejelentkezés:** 2026. június 25 (csütörtök). délután 2 órától\n\n**Kijelentkezés:** 2026. június 29 (hétfő). délelőtt 11 óráig",
   AT2026:
     "Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek, velünk ünnepelnétek, és csodás emlékeket szereznétek.\n\nA további részletekről (bejelentkezés, pontos szoba, stb.) később küldünk tájékoztatást...",
   SZ2026:
@@ -136,9 +136,46 @@ const GuestPage = ({ language, guestCode }) => {
       <div className="section">
         <h2>{translations[language].accommodation}</h2>
         {customAccommodationMessages[guestCode] ? (
-          <p style={{ whiteSpace: "pre-line" }}>
-            {customAccommodationMessages[guestCode]}
-          </p>
+          <div>
+            <div
+              style={{
+                fontSize: "1.2rem",
+                lineHeight: "1.6",
+                color: "#34495e",
+                fontStyle: "italic",
+                fontWeight: "normal",
+              }}
+              dangerouslySetInnerHTML={{
+                __html: customAccommodationMessages[guestCode]
+                  .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+                  .replace(/\n/g, "<br>"),
+              }}
+            />
+            {guestCode === "HG2026" && (
+              <div className="accommodation-gallery">
+                <img
+                  src="/wedding2026/assets/accomodation/villa_terranova/villa_terranova.jpg"
+                  alt="Villa Terranova"
+                  className="gallery-image"
+                />
+                <img
+                  src="/wedding2026/assets/accomodation/villa_terranova/soggiorno.jpg"
+                  alt="Soggiorno"
+                  className="gallery-image"
+                />
+                <img
+                  src="/wedding2026/assets/accomodation/villa_terranova/20230421_105133.jpg"
+                  alt="Villa Terranova Interior"
+                  className="gallery-image"
+                />
+                <img
+                  src="/wedding2026/assets/accomodation/villa_terranova/20230421_105012.jpg"
+                  alt="Villa Terranova Interior"
+                  className="gallery-image"
+                />
+              </div>
+            )}
+          </div>
         ) : (
           <p>{translations[language].comingSoon}</p>
         )}
