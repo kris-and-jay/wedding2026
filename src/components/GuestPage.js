@@ -64,15 +64,28 @@ const hasAccommodationMessage = (guestCode) => {
 const AccommodationMessage = ({ guestCode }) => {
   const messages = {
     IL2026: (
-      <p>
-        Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az
-        esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól
-        (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek,
-        velünk ünnepelnétek, és csodás emlékeket szereznétek.
+      <div>
+        <p>
+          Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az
+          esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól
+          (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek,
+          velünk ünnepelnétek, és csodás emlékeket szereznétek.
+        </p>
         <br />
-        <br />A további részletekről (bejelentkezés, pontos szoba, stb.) később
-        küldünk tájékoztatást...
-      </p>
+        <p>
+          <strong>Szoba:</strong> Stanza 1 (Deluxe Room)
+        </p>
+        <br />
+        <p>
+          <strong>Bejelentkezés:</strong> 2026. június 26 (péntek). délután 2
+          órától
+        </p>
+        <br />
+        <p>
+          <strong>Kijelentkezés:</strong> 2026. június 28 (vasárnap). délelőtt
+          11 óráig
+        </p>
+      </div>
     ),
     HG2026: (
       <div>
@@ -370,6 +383,30 @@ const GuestPage = ({ language, guestCode }) => {
             <img
               src="/wedding2026/assets/accomodation/villa_terranova/20230421_105012.jpg"
               alt="Villa Terranova Interior"
+              className="gallery-image"
+            />
+          </div>
+        )}
+        {guestCode === "IL2026" && (
+          <div className="accommodation-gallery">
+            <img
+              src="/wedding2026/assets/accomodation/delux_room/Camera-Superior-1-1.jpg"
+              alt="Stanza 1"
+              className="gallery-image"
+            />
+            <img
+              src="/wedding2026/assets/accomodation/delux_room/Camera-Superior-2.jpg"
+              alt="Stanza 1"
+              className="gallery-image"
+            />
+            <img
+              src="/wedding2026/assets/accomodation/delux_room/superior_room_(16).jpg"
+              alt="Garden"
+              className="gallery-image"
+            />
+            <img
+              src="/wedding2026/assets/accomodation/delux_room/superior_room_(17).jpg"
+              alt="Terrace"
               className="gallery-image"
             />
           </div>
