@@ -112,15 +112,28 @@ const AccommodationMessage = ({ guestCode }) => {
       </div>
     ),
     AT2026: (
-      <p>
-        Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az
-        esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól
-        (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek,
-        velünk ünnepelnétek, és csodás emlékeket szereznétek.
+      <div>
+        <p>
+          Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az
+          esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól
+          (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek,
+          velünk ünnepelnétek, és csodás emlékeket szereznétek.
+        </p>
         <br />
-        <br />A további részletekről (bejelentkezés, pontos szoba, stb.) később
-        küldünk tájékoztatást...
-      </p>
+        <p>
+          <strong>Szoba:</strong> Limone (Suite)
+        </p>
+        <br />
+        <p>
+          <strong>Bejelentkezés:</strong> 2026. június 26 (péntek). délután 2
+          órától
+        </p>
+        <br />
+        <p>
+          <strong>Kijelentkezés:</strong> 2026. június 28 (vasárnap). délelőtt
+          11 óráig
+        </p>
+      </div>
     ),
     SZ2026: (
       <p>
@@ -145,15 +158,28 @@ const AccommodationMessage = ({ guestCode }) => {
       </p>
     ),
     KR2026: (
-      <p>
-        Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az
-        esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól
-        (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek,
-        velünk ünnepelnétek, és csodás emlékeket szereznétek.
+      <div>
+        <p>
+          Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az
+          esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól
+          (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek,
+          velünk ünnepelnétek, és csodás emlékeket szereznétek.
+        </p>
         <br />
-        <br />A további részletekről (bejelentkezés, pontos szoba, stb.) később
-        küldünk tájékoztatást...
-      </p>
+        <p>
+          <strong>Szoba:</strong> Stanza 2
+        </p>
+        <br />
+        <p>
+          <strong>Bejelentkezés:</strong> 2026. június 26 (péntek). délután 2
+          órától
+        </p>
+        <br />
+        <p>
+          <strong>Kijelentkezés:</strong> 2026. június 28 (vasárnap). délelőtt
+          11 óráig
+        </p>
+      </div>
     ),
     GB2026: (
       <p>
@@ -406,6 +432,54 @@ const GuestPage = ({ language, guestCode }) => {
             />
             <img
               src="/wedding2026/assets/accomodation/delux_room/superior_room_(17).jpg"
+              alt="Terrace"
+              className="gallery-image"
+            />
+          </div>
+        )}
+        {guestCode === "AT2026" && (
+          <div className="accommodation-gallery">
+            <img
+              src="/wedding2026/assets/accomodation/suites/20250507_112808.jpg"
+              alt="Stanza 1"
+              className="gallery-image"
+            />
+            <img
+              src="/wedding2026/assets/accomodation/suites/20250507_112628.jpg"
+              alt="Stanza 1"
+              className="gallery-image"
+            />
+            <img
+              src="/wedding2026/assets/accomodation/suites/20250507_112643.jpg"
+              alt="Garden"
+              className="gallery-image"
+            />
+            <img
+              src="/wedding2026/assets/accomodation/suites/20250507_113009.jpg"
+              alt="Terrace"
+              className="gallery-image"
+            />
+          </div>
+        )}
+        {guestCode === "KR2026" && (
+          <div className="accommodation-gallery">
+            <img
+              src="/wedding2026/assets/accomodation/double_standard/20191008_132011.jpg"
+              alt="Stanza 1"
+              className="gallery-image"
+            />
+            <img
+              src="/wedding2026/assets/accomodation/double_standard/20191008_132228.jpg"
+              alt="Stanza 1"
+              className="gallery-image"
+            />
+            <img
+              src="/wedding2026/assets/accomodation/delux_room/superior_room_(16).jpg"
+              alt="Garden"
+              className="gallery-image"
+            />
+            <img
+              src="/wedding2026/assets/accomodation/villa_terranova/20230421_105012.jpg"
               alt="Terrace"
               className="gallery-image"
             />
