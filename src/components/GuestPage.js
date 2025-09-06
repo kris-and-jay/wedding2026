@@ -215,15 +215,28 @@ const AccommodationMessage = ({ guestCode }) => {
       </p>
     ),
     PT2026: (
-      <p>
-        Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az
-        esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól
-        (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek,
-        velünk ünnepelnétek, és csodás emlékeket szereznétek.
+      <div>
+        <p>
+          Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az
+          esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól
+          (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek,
+          velünk ünnepelnétek, és csodás emlékeket szereznétek.
+        </p>
         <br />
-        <br />A további részletekről (bejelentkezés, pontos szoba, stb.) később
-        küldünk tájékoztatást...
-      </p>
+        <p>
+          <strong>Szoba:</strong> Stanza 3
+        </p>
+        <br />
+        <p>
+          <strong>Bejelentkezés:</strong> 2026. június 26 (péntek). délután 2
+          órától
+        </p>
+        <br />
+        <p>
+          <strong>Kijelentkezés:</strong> 2026. június 28 (vasárnap). délelőtt
+          11 óráig
+        </p>
+      </div>
     ),
     MK2026: (
       <p>
@@ -441,36 +454,36 @@ const GuestPage = ({ language, guestCode }) => {
           <div className="accommodation-gallery">
             <img
               src="/wedding2026/assets/accomodation/suites/20250507_112808.jpg"
-              alt="Stanza 1"
+              alt="Terrace"
               className="gallery-image"
             />
             <img
               src="/wedding2026/assets/accomodation/suites/20250507_112628.jpg"
-              alt="Stanza 1"
+              alt="Limone"
               className="gallery-image"
             />
             <img
               src="/wedding2026/assets/accomodation/suites/20250507_112643.jpg"
-              alt="Garden"
+              alt="Limone"
               className="gallery-image"
             />
             <img
               src="/wedding2026/assets/accomodation/suites/20250507_113009.jpg"
-              alt="Terrace"
+              alt="Limone"
               className="gallery-image"
             />
           </div>
         )}
-        {guestCode === "KR2026" && (
+        {(guestCode === "KR2026" || guestCode === "PT2026") && (
           <div className="accommodation-gallery">
             <img
               src="/wedding2026/assets/accomodation/double_standard/20191008_132011.jpg"
-              alt="Stanza 1"
+              alt="Stanza"
               className="gallery-image"
             />
             <img
               src="/wedding2026/assets/accomodation/double_standard/20191008_132228.jpg"
-              alt="Stanza 1"
+              alt="Terrace"
               className="gallery-image"
             />
             <img
