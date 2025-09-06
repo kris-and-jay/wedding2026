@@ -182,15 +182,28 @@ const AccommodationMessage = ({ guestCode }) => {
       </div>
     ),
     GB2026: (
-      <p>
-        Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az
-        esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól
-        (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek,
-        velünk ünnepelnétek, és csodás emlékeket szereznétek.
+      <div>
+        <p>
+          Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az
+          esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól
+          (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek,
+          velünk ünnepelnétek, és csodás emlékeket szereznétek.
+        </p>
         <br />
-        <br />A további részletekről (bejelentkezés, pontos szoba, stb.) később
-        küldünk tájékoztatást...
-      </p>
+        <p>
+          <strong>Szoba:</strong> Mirto (Junior Suite)
+        </p>
+        <br />
+        <p>
+          <strong>Bejelentkezés:</strong> 2026. június 26 (péntek). délután 2
+          órától
+        </p>
+        <br />
+        <p>
+          <strong>Kijelentkezés:</strong> 2026. június 28 (vasárnap). délelőtt
+          11 óráig
+        </p>
+      </div>
     ),
     TM2026: (
       <p>
@@ -204,15 +217,28 @@ const AccommodationMessage = ({ guestCode }) => {
       </p>
     ),
     ER2026: (
-      <p>
-        Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az
-        esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól
-        (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek,
-        velünk ünnepelnétek, és csodás emlékeket szereznétek.
+      <div>
+        <p>
+          Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az
+          esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól
+          (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek,
+          velünk ünnepelnétek, és csodás emlékeket szereznétek.
+        </p>
         <br />
-        <br />A további részletekről (bejelentkezés, pontos szoba, stb.) később
-        küldünk tájékoztatást...
-      </p>
+        <p>
+          <strong>Szoba:</strong> Mirto (Junior Suite)
+        </p>
+        <br />
+        <p>
+          <strong>Bejelentkezés:</strong> 2026. június 26 (péntek). délután 2
+          órától
+        </p>
+        <br />
+        <p>
+          <strong>Kijelentkezés:</strong> 2026. június 28 (vasárnap). délelőtt
+          11 óráig
+        </p>
+      </div>
     ),
     PT2026: (
       <div>
@@ -489,6 +515,30 @@ const GuestPage = ({ language, guestCode }) => {
             <img
               src="/wedding2026/assets/accomodation/delux_room/superior_room_(16).jpg"
               alt="Garden"
+              className="gallery-image"
+            />
+            <img
+              src="/wedding2026/assets/accomodation/villa_terranova/20230421_105012.jpg"
+              alt="Terrace"
+              className="gallery-image"
+            />
+          </div>
+        )}
+        {(guestCode === "GB2026" || guestCode === "ER2026") && (
+          <div className="accommodation-gallery">
+            <img
+              src="/wedding2026/assets/accomodation/junior_suites/superior_room_(43).jpg"
+              alt="Mirto"
+              className="gallery-image"
+            />
+            <img
+              src="/wedding2026/assets/accomodation/suites/20250507_113612.jpg"
+              alt="Mirto"
+              className="gallery-image"
+            />
+            <img
+              src="/wedding2026/assets/accomodation/suites/20250507_113515.jpg"
+              alt="Terrace"
               className="gallery-image"
             />
             <img
