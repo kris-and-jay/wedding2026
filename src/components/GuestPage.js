@@ -1,5 +1,6 @@
 import React from "react";
 import RSVPForm from "./RSVPForm";
+import TravelSection from "./TravelSection";
 
 const translations = {
   en: {
@@ -422,8 +423,7 @@ const GuestPage = ({ language, guestCode }) => {
         </div>
       </div>
       <div className="section">
-        <h2>{translations[language].travel}</h2>
-        <p>{translations[language].comingSoon}</p>
+        <TravelSection language={language} guestCode={guestCode} />
       </div>
       <div className="section">
         <h2>{translations[language].accommodation}</h2>
