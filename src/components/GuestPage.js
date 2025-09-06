@@ -37,43 +37,257 @@ const translations = {
   },
 };
 
-const customAccommodationMessages = {
-  IL2026:
-    "Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek, velünk ünnepelnétek, és csodás emlékeket szereznétek.\n\nA további részletekről (bejelentkezés, pontos szoba, stb.) később küldünk tájékoztatást...",
-  HG2026:
-    "Az egyik VIP vendégünkként mi intézzük a hétvégi szállásodat és velünk fogsz megszállni a Villa Terranovában június 25-től (csütörtök) június 29-ig (hétfő). Csak azt szeretnénk, ha pihennél, velünk ünnepelnél, és csodás emlékeket szereznél.\n\n**Szoba:** Villa Terranova\n\n**Bejelentkezés:** 2026. június 25 (csütörtök). délután 2 órától\n\n**Kijelentkezés:** 2026. június 29 (hétfő). délelőtt 11 óráig",
-  AT2026:
-    "Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek, velünk ünnepelnétek, és csodás emlékeket szereznétek.\n\nA további részletekről (bejelentkezés, pontos szoba, stb.) később küldünk tájékoztatást...",
-  SZ2026:
-    "Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek, velünk ünnepelnétek, és csodás emlékeket szereznétek.\n\nA további részletekről (bejelentkezés, pontos szoba, stb.) később küldünk tájékoztatást...",
-  ZZ2026:
-    "Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek, velünk ünnepelnétek, és csodás emlékeket szereznétek.\n\nA további részletekről (bejelentkezés, pontos szoba, stb.) később küldünk tájékoztatást...",
-  KR2026:
-    "Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek, velünk ünnepelnétek, és csodás emlékeket szereznétek.\n\nA további részletekről (bejelentkezés, pontos szoba, stb.) később küldünk tájékoztatást...",
-  GB2026:
-    "Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek, velünk ünnepelnétek, és csodás emlékeket szereznétek.\n\nA további részletekről (bejelentkezés, pontos szoba, stb.) később küldünk tájékoztatást...",
-  TM2026:
-    "Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek, velünk ünnepelnétek, és csodás emlékeket szereznétek.\n\nA további részletekről (bejelentkezés, pontos szoba, stb.) később küldünk tájékoztatást...",
-  ER2026:
-    "Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek, velünk ünnepelnétek, és csodás emlékeket szereznétek.\n\nA további részletekről (bejelentkezés, pontos szoba, stb.) később küldünk tájékoztatást...",
-  PT2026:
-    "Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek, velünk ünnepelnétek, és csodás emlékeket szereznétek.\n\nA további részletekről (bejelentkezés, pontos szoba, stb.) később küldünk tájékoztatást...",
-  MK2026:
-    "W wyrazie naszej głębokiej wdzięczności i radości że chcecie nam towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Was właściwie ugościć. Dlatego zapewniamy dla Was nocleg na cały weekend od piątku 26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byście odpoczęli, wspaniale się z nami bawili i zabrali ze sobą niezapomniane wspomnienia. Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania prześlemy w odpowiednim czasie",
-  WS2026:
-    "W wyrazie naszej głębokiej wdzięczności i radości że chcesz nam towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Cię właściwie ugościć. Dlatego zapewniamy dla Ciebie nocleg na cały weekend od piątku 26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byś odpoczęła, wspaniale się z nami bawiła i zabrała ze sobą niezapomniane wspomnienia. Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania prześlemy w odpowiednim czasie",
-  AD2026:
-    "W wyrazie naszej głębokiej wdzięczności i radości że chcesz nam towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Cię właściwie ugościć. Dlatego zapewniamy dla Ciebie nocleg na cały weekend od piątku 26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byś odpoczął, wspaniale się z nami bawił i zabrał ze sobą niezapomniane wspomnienia. Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania prześlemy w odpowiednim czasie",
-  AG2026:
-    "W wyrazie naszej głębokiej wdzięczności i radości że chcesz nam towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Cię właściwie ugościć. Dlatego zapewniamy dla Ciebie nocleg na cały weekend od piątku 26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byś odpoczęła, wspaniale się z nami bawiła i zabrała ze sobą niezapomniane wspomnienia. Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania prześlemy w odpowiednim czasie",
-  CT2026:
-    "W wyrazie naszej głębokiej wdzięczności i radości że chcesz nam towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Cię właściwie ugościć. Dlatego zapewniamy dla Ciebie nocleg na cały weekend od piątku 26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byś odpoczęła, wspaniale się z nami bawiła i zabrała ze sobą niezapomniane wspomnienia. Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania prześlemy w odpowiednim czasie",
-  WD2026:
-    "W wyrazie naszej głębokiej wdzięczności i radości że chcecie nam towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Was właściwie ugościć. Dlatego zapewniamy dla Was nocleg na cały weekend od piątku 26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byście odpoczęli, wspaniale się z nami bawili i zabrali ze sobą niezapomniane wspomnienia. Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania prześlemy w odpowiednim czasie",
-  KL2026:
-    "W wyrazie naszej głębokiej wdzięczności i radości że chcesz nam towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Cię właściwie ugościć. Dlatego zapewniamy dla Ciebie nocleg na cały weekend od piątku 26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byś odpoczęła, wspaniale się z nami bawiła i zabrała ze sobą niezapomniane wspomnienia. Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania prześlemy w odpowiednim czasie",
-  SM2026:
-    "As one of our VIPs, we will be taking care of your accommodation and you will be staying with us in Villa Terranova, from Thursday, 25th June 2026 to Monday, 29th June 2026. All we want is for you to relax, celebrate with us, and create wonderful memories.\n\n**Room:** Villa Terranova\n\n**Check-in:** 25th June 2026 (Thursday), from 2 PM\n\n**Check-out:** 29th June 2026 (Monday), until 11 AM",
+const hasAccommodationMessage = (guestCode) => {
+  const validCodes = [
+    "IL2026",
+    "HG2026",
+    "AT2026",
+    "SZ2026",
+    "ZZ2026",
+    "KR2026",
+    "GB2026",
+    "TM2026",
+    "ER2026",
+    "PT2026",
+    "MK2026",
+    "WS2026",
+    "AD2026",
+    "AG2026",
+    "CT2026",
+    "WD2026",
+    "KL2026",
+    "SM2026",
+  ];
+  return validCodes.includes(guestCode);
+};
+
+const AccommodationMessage = ({ guestCode }) => {
+  const messages = {
+    IL2026: (
+      <p>
+        Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az
+        esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól
+        (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek,
+        velünk ünnepelnétek, és csodás emlékeket szereznétek.
+        <br />
+        <br />A további részletekről (bejelentkezés, pontos szoba, stb.) később
+        küldünk tájékoztatást...
+      </p>
+    ),
+    HG2026: (
+      <div>
+        <p>
+          Az egyik VIP vendégünkként mi intézzük a hétvégi szállásodat és velünk
+          fogsz megszállni a Villa Terranovában június 25-től (csütörtök) június
+          29-ig (hétfő). Csak azt szeretnénk, ha pihennél, velünk ünnepelnél, és
+          csodás emlékeket szereznél.
+        </p>
+        <br />
+        <p>
+          <strong>Szoba:</strong> Villa Terranova
+        </p>
+        <br />
+        <p>
+          <strong>Bejelentkezés:</strong> 2026. június 25 (csütörtök). délután 2
+          órától
+        </p>
+        <br />
+        <p>
+          <strong>Kijelentkezés:</strong> 2026. június 29 (hétfő). délelőtt 11
+          óráig
+        </p>
+      </div>
+    ),
+    AT2026: (
+      <p>
+        Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az
+        esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól
+        (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek,
+        velünk ünnepelnétek, és csodás emlékeket szereznétek.
+        <br />
+        <br />A további részletekről (bejelentkezés, pontos szoba, stb.) később
+        küldünk tájékoztatást...
+      </p>
+    ),
+    SZ2026: (
+      <p>
+        Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az
+        esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól
+        (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek,
+        velünk ünnepelnétek, és csodás emlékeket szereznétek.
+        <br />
+        <br />A további részletekről (bejelentkezés, pontos szoba, stb.) később
+        küldünk tájékoztatást...
+      </p>
+    ),
+    ZZ2026: (
+      <p>
+        Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az
+        esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól
+        (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek,
+        velünk ünnepelnétek, és csodás emlékeket szereznétek.
+        <br />
+        <br />A további részletekről (bejelentkezés, pontos szoba, stb.) később
+        küldünk tájékoztatást...
+      </p>
+    ),
+    KR2026: (
+      <p>
+        Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az
+        esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól
+        (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek,
+        velünk ünnepelnétek, és csodás emlékeket szereznétek.
+        <br />
+        <br />A további részletekről (bejelentkezés, pontos szoba, stb.) később
+        küldünk tájékoztatást...
+      </p>
+    ),
+    GB2026: (
+      <p>
+        Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az
+        esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól
+        (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek,
+        velünk ünnepelnétek, és csodás emlékeket szereznétek.
+        <br />
+        <br />A további részletekről (bejelentkezés, pontos szoba, stb.) később
+        küldünk tájékoztatást...
+      </p>
+    ),
+    TM2026: (
+      <p>
+        Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az
+        esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól
+        (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek,
+        velünk ünnepelnétek, és csodás emlékeket szereznétek.
+        <br />
+        <br />A további részletekről (bejelentkezés, pontos szoba, stb.) később
+        küldünk tájékoztatást...
+      </p>
+    ),
+    ER2026: (
+      <p>
+        Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az
+        esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól
+        (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek,
+        velünk ünnepelnétek, és csodás emlékeket szereznétek.
+        <br />
+        <br />A további részletekről (bejelentkezés, pontos szoba, stb.) később
+        küldünk tájékoztatást...
+      </p>
+    ),
+    PT2026: (
+      <p>
+        Mélységes hálánk apró jeleként nagy örömmel látunk titeket vendégül az
+        esküvő helyszínén és a hétvégi szállásotokat mi intézzük június 26-tól
+        (péntek) június 28-ig (vasárnap). Csak azt szeretnénk, ha pihennétek,
+        velünk ünnepelnétek, és csodás emlékeket szereznétek.
+        <br />
+        <br />A további részletekről (bejelentkezés, pontos szoba, stb.) később
+        küldünk tájékoztatást...
+      </p>
+    ),
+    MK2026: (
+      <p>
+        W wyrazie naszej głębokiej wdzięczności i radości że chcecie nam
+        towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Was właściwie
+        ugościć. Dlatego zapewniamy dla Was nocleg na cały weekend od piątku 26
+        czerwca do niedzieli 28 czerwca. Chcemy po prostu, byście odpoczęli,
+        wspaniale się z nami bawili i zabrali ze sobą niezapomniane wspomnienia.
+        Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania
+        prześlemy w odpowiednim czasie
+      </p>
+    ),
+    WS2026: (
+      <p>
+        W wyrazie naszej głębokiej wdzięczności i radości że chcesz nam
+        towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Cię właściwie
+        ugościć. Dlatego zapewniamy dla Ciebie nocleg na cały weekend od piątku
+        26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byś odpoczęła,
+        wspaniale się z nami bawiła i zabrała ze sobą niezapomniane wspomnienia.
+        Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania
+        prześlemy w odpowiednim czasie
+      </p>
+    ),
+    AD2026: (
+      <p>
+        W wyrazie naszej głębokiej wdzięczności i radości że chcesz nam
+        towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Cię właściwie
+        ugościć. Dlatego zapewniamy dla Ciebie nocleg na cały weekend od piątku
+        26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byś odpoczął,
+        wspaniale się z nami bawił i zabrał ze sobą niezapomniane wspomnienia.
+        Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania
+        prześlemy w odpowiednim czasie
+      </p>
+    ),
+    AG2026: (
+      <p>
+        W wyrazie naszej głębokiej wdzięczności i radości że chcesz nam
+        towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Cię właściwie
+        ugościć. Dlatego zapewniamy dla Ciebie nocleg na cały weekend od piątku
+        26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byś odpoczęła,
+        wspaniale się z nami bawiła i zabrała ze sobą niezapomniane wspomnienia.
+        Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania
+        prześlemy w odpowiednim czasie
+      </p>
+    ),
+    CT2026: (
+      <p>
+        W wyrazie naszej głębokiej wdzięczności i radości że chcesz nam
+        towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Cię właściwie
+        ugościć. Dlatego zapewniamy dla Ciebie nocleg na cały weekend od piątku
+        26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byś odpoczęła,
+        wspaniale się z nami bawiła i zabrała ze sobą niezapomniane wspomnienia.
+        Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania
+        prześlemy w odpowiednim czasie
+      </p>
+    ),
+    WD2026: (
+      <p>
+        W wyrazie naszej głębokiej wdzięczności i radości że chcecie nam
+        towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Was właściwie
+        ugościć. Dlatego zapewniamy dla Was nocleg na cały weekend od piątku 26
+        czerwca do niedzieli 28 czerwca. Chcemy po prostu, byście odpoczęli,
+        wspaniale się z nami bawili i zabrali ze sobą niezapomniane wspomnienia.
+        Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania
+        prześlemy w odpowiednim czasie
+      </p>
+    ),
+    KL2026: (
+      <p>
+        W wyrazie naszej głębokiej wdzięczności i radości że chcesz nam
+        towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Cię właściwie
+        ugościć. Dlatego zapewniamy dla Ciebie nocleg na cały weekend od piątku
+        26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byś odpoczęła,
+        wspaniale się z nami bawiła i zabrała ze sobą niezapomniane wspomnienia.
+        Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania
+        prześlemy w odpowiednim czasie
+      </p>
+    ),
+    SM2026: (
+      <div>
+        <p>
+          As one of our VIPs, we will be taking care of your accommodation and
+          you will be staying with us in Villa Terranova, from Thursday, 25th
+          June 2026 to Monday, 29th June 2026. All we want is for you to relax,
+          celebrate with us, and create wonderful memories.
+        </p>
+        <br />
+        <p>
+          <strong>Room:</strong> Villa Terranova
+        </p>
+        <br />
+        <p>
+          <strong>Check-in:</strong> 25th June 2026 (Thursday), from 2 PM
+        </p>
+        <br />
+        <p>
+          <strong>Check-out:</strong> 29th June 2026 (Monday), until 11 AM
+        </p>
+      </div>
+    ),
+  };
+
+  return messages[guestCode] || null;
 };
 
 const GuestPage = ({ language, guestCode }) => {
@@ -135,48 +349,32 @@ const GuestPage = ({ language, guestCode }) => {
       </div>
       <div className="section">
         <h2>{translations[language].accommodation}</h2>
-        {customAccommodationMessages[guestCode] ? (
-          <div>
-            <div
-              style={{
-                fontSize: "1.2rem",
-                lineHeight: "1.6",
-                color: "#34495e",
-                fontStyle: "italic",
-                fontWeight: "normal",
-              }}
-              dangerouslySetInnerHTML={{
-                __html: customAccommodationMessages[guestCode]
-                  .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-                  .replace(/\n/g, "<br>"),
-              }}
+        <AccommodationMessage guestCode={guestCode} />
+        {(guestCode === "HG2026" || guestCode === "SM2026") && (
+          <div className="accommodation-gallery">
+            <img
+              src="/wedding2026/assets/accomodation/villa_terranova/villa_terranova.jpg"
+              alt="Villa Terranova"
+              className="gallery-image"
             />
-            {(guestCode === "HG2026" || guestCode === "SM2026") && (
-              <div className="accommodation-gallery">
-                <img
-                  src="/wedding2026/assets/accomodation/villa_terranova/villa_terranova.jpg"
-                  alt="Villa Terranova"
-                  className="gallery-image"
-                />
-                <img
-                  src="/wedding2026/assets/accomodation/villa_terranova/soggiorno.jpg"
-                  alt="Soggiorno"
-                  className="gallery-image"
-                />
-                <img
-                  src="/wedding2026/assets/accomodation/villa_terranova/20230421_105133.jpg"
-                  alt="Villa Terranova Interior"
-                  className="gallery-image"
-                />
-                <img
-                  src="/wedding2026/assets/accomodation/villa_terranova/20230421_105012.jpg"
-                  alt="Villa Terranova Interior"
-                  className="gallery-image"
-                />
-              </div>
-            )}
+            <img
+              src="/wedding2026/assets/accomodation/villa_terranova/soggiorno.jpg"
+              alt="Soggiorno"
+              className="gallery-image"
+            />
+            <img
+              src="/wedding2026/assets/accomodation/villa_terranova/20230421_105133.jpg"
+              alt="Villa Terranova Interior"
+              className="gallery-image"
+            />
+            <img
+              src="/wedding2026/assets/accomodation/villa_terranova/20230421_105012.jpg"
+              alt="Villa Terranova Interior"
+              className="gallery-image"
+            />
           </div>
-        ) : (
+        )}
+        {!hasAccommodationMessage(guestCode) && (
           <p>{translations[language].comingSoon}</p>
         )}
       </div>
