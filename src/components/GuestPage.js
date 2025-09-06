@@ -73,7 +73,7 @@ const customAccommodationMessages = {
   KL2026:
     "W wyrazie naszej głębokiej wdzięczności i radości że chcesz nam towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Cię właściwie ugościć. Dlatego zapewniamy dla Ciebie nocleg na cały weekend od piątku 26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byś odpoczęła, wspaniale się z nami bawiła i zabrała ze sobą niezapomniane wspomnienia. Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania prześlemy w odpowiednim czasie",
   SM2026:
-    "As one of our VIPs, we will be taking care of your accommodation and you will be staying with us in Villa Terranova, from Thursday, June 25th to Monday, June 29th. All we want is for you to relax, celebrate with us, and create wonderful memories. We will send further details (check-in, etc.) at a later date...",
+    "As one of our VIPs, we will be taking care of your accommodation and you will be staying with us in Villa Terranova, from Thursday, 25th June 2026 to Monday, 29th June 2026. All we want is for you to relax, celebrate with us, and create wonderful memories.\n\n**Room:** Villa Terranova\n\n**Check-in:** 25th June 2026 (Thursday), from 2 PM\n\n**Check-out:** 29th June 2026 (Monday), until 11 AM",
 };
 
 const GuestPage = ({ language, guestCode }) => {
@@ -151,7 +151,7 @@ const GuestPage = ({ language, guestCode }) => {
                   .replace(/\n/g, "<br>"),
               }}
             />
-            {guestCode === "HG2026" && (
+            {(guestCode === "HG2026" || guestCode === "SM2026") && (
               <div className="accommodation-gallery">
                 <img
                   src="/wedding2026/assets/accomodation/villa_terranova/villa_terranova.jpg"
