@@ -953,3 +953,257 @@ h1::after {
     font-size: 1.1rem;
   }
 }
+
+/* Alternative Travel Options Styles */
+.alternative-travel-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #d4a373;
+}
+
+.alternative-travel-section h4 {
+  color: #2c3e50;
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #d4a373;
+}
+
+.alternative-options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.train-options,
+.car-option {
+  background: white;
+  border: 2px solid #d4a373;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.train-options:hover,
+.car-option:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.train-option-header,
+.car-option-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: rgba(212, 163, 115, 0.1);
+  border-bottom: 1px solid #d4a373;
+  transition: background 0.3s ease;
+}
+
+.train-option-header:hover,
+.car-option-header:hover {
+  background: rgba(212, 163, 115, 0.2);
+}
+
+.train-option-header h4,
+.car-option-header h4 {
+  color: #2c3e50;
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+.click-hint {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-left: 1rem;
+}
+
+.expand-icon {
+  color: #d4a373;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.expand-icon.expanded {
+  transform: rotate(180deg);
+}
+
+.train-options-content,
+.car-option-content {
+  padding: 1.5rem;
+  background: white;
+}
+
+.train-option {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.train-option:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.train-option h5 {
+  color: #2c3e50;
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.train-step {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(248, 249, 250, 0.8);
+  border-radius: 8px;
+  border-left: 4px solid #d4a373;
+}
+
+.train-step:last-child {
+  margin-bottom: 0;
+}
+
+.train-step h6 {
+  color: #2c3e50;
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.train-step p {
+  color: #34495e;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.train-step p:last-child {
+  margin-bottom: 0;
+}
+
+.train-step strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.source-info {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f0f0f0;
+  text-align: center;
+}
+
+.source-info p {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.source-info a {
+  color: #d4a373;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.source-info a:hover {
+  color: #e76f51;
+  text-decoration: underline;
+}
+
+.car-option-content h5 {
+  color: #2c3e50;
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.car-option-content p {
+  color: #34495e;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Mobile Responsive Styles for Alternative Travel Options */
+@media (max-width: 768px) {
+  .train-option-header,
+  .car-option-header {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .click-hint {
+    margin-left: 0;
+    font-size: 0.8rem;
+  }
+
+  .train-options-content,
+  .car-option-content {
+    padding: 1rem;
+  }
+
+  .train-step {
+    padding: 0.8rem;
+  }
+
+  .train-option h5,
+  .car-option-content h5 {
+    font-size: 1rem;
+  }
+
+  .train-step h6 {
+    font-size: 0.95rem;
+  }
+
+  .train-step p,
+  .car-option-content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .train-option-header h4,
+  .car-option-header h4 {
+    font-size: 1.1rem;
+  }
+
+  .click-hint {
+    font-size: 0.75rem;
+  }
+
+  .train-options-content,
+  .car-option-content {
+    padding: 0.8rem;
+  }
+
+  .train-step {
+    padding: 0.6rem;
+  }
+
+  .train-option h5,
+  .car-option-content h5 {
+    font-size: 0.95rem;
+  }
+
+  .train-step h6 {
+    font-size: 0.9rem;
+  }
+
+  .train-step p,
+  .car-option-content p {
+    font-size: 0.85rem;
+  }
+}

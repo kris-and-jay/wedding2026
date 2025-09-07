@@ -89,6 +89,18 @@ const translations = {
     comingSoon: "Hamarosan",
     comingSoonMessage:
       "A járat információk hamarosan elérhetőek lesznek. Próbáld újra később, vagy lépj kapcsolatba velünk további segítségért.",
+    alternativeTravelOptions: "Alternatív utazási lehetőségek",
+    trainOption: "Vonat",
+    carOption: "Autó",
+    clickForMoreInfo: "Kattints a további információkért",
+    trainOption1:
+      "1. opció: a Bécs-Olaszország Nightjet hálókocsival - biztonságos, kényelmes, időhatékony",
+    trainOption2: "2. opció: Velencei éjszakázással - kényelmes és festői",
+    trainOption3:
+      "3. opció: Bécsben éjszakázással - ugyanaz mint az 1. opció, de éjszakai megállóval",
+    carOptionTitle: "Autóval utazás",
+    carOptionDescription:
+      "Autóval utazás részletei hamarosan elérhetőek lesznek.",
   },
 };
 
@@ -182,10 +194,241 @@ const FlightCard = ({
   );
 };
 
+const TrainOptions = ({ language }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const trainOptions = {
+    hu: {
+      option1: {
+        title:
+          "1. opció: a Bécs-Olaszország Nightjet hálókocsival - biztonságos, kényelmes, időhatékony",
+        step1: {
+          title: "1. lépés: Utazás Budapestről Bécsbe osztrák railjet vonattal",
+          details:
+            "Indulj a 15:40-es railjet vonattal Budapest Keleti pályaudvarról, amely 18:20-kor érkezik Bécs Hauptbahnhof-ra. A railjet vonatok étteremkocsival, minden ülésnél konnektorokkal és ingyenes WiFi-vel is rendelkeznek. Az 1. osztályon és business osztályon a pincér rendelést is felvesz és kiszolgálja az utasokat a helyükön.",
+          price:
+            "Az árak 19,90€-tól kezdődnek a 2. osztályon, 29,90€ az 1. osztályon vagy 44,90€ a business osztályon (prémium 1. osztály). Az árak változnak, ugyanúgy mint a repülőjegyek, ezért foglalj időben.",
+          booking:
+            "Foglalj erre a vonatra a www.thetrainline.com oldalon (könnyű használat, €, £ vagy $, nemzetközi bankkártyák nem problémásak, kis foglalási díj. A foglalás 6 hónappal előre elérhető). Vagy foglalhatsz a www.mavcsoport.hu oldalán is (MAV-nál csak 60 nappal előre nyílik meg a foglalás).",
+        },
+        step2: {
+          title:
+            "2. lépés: Utazás Bécsből Olaszországba Nightjet hálókocsi vonattal",
+          details:
+            "A Nightjet minden este 19:18-kor indul Bécs Hauptbahnhof-ról, foglalj arra a részre, ami Bologna Centrale-re 05:38-kor, Firenze Campo di Marte-re 06:48-kor és Róma Tiburtina-ra 10:05-kor érkezik. Szállj át vagy Bolognában vagy Rómában a tovább utazáshoz Nápolyba. A Nightjet Bolognába, Firenzébe és Rómába egy új generációs vonat 1 és 2 ágyas hálókocsikkal zuhanyzóval és WC-vel, vagy 4 ágyas hálókocsikkal, egyéni mini kabinokkal és hagyományos ülésekkel.",
+          price:
+            "Az új generációs Nightjet árai 59,90€-tól kezdődnek mini kabinban vagy 4 ágyas hálókocsiban, 109,90€ 2 ágyas hálókocsiban vagy 159,90€ egyágyas hálókocsiban. Az árak változnak, mint a repülőjegyek, ezért foglalj időben.",
+          booking:
+            "Foglalj erre a vonatra a www.thetrainline.com oldalon (€, £ vagy $, nemzetközi bankkártyák nem problémásak, kis foglalási díj) vagy az Osztrák Államvasutak saját oldalán www.oebb.at (ugyanazok az árak, bonyolultabb, €-ban). A foglalás 6 hónappal előre nyílik meg.",
+        },
+        step3: {
+          title: "3. lépés: Továbbutazás Rómából Nápolyba",
+          details:
+            "Külön foglalható a www.thetrainline.com oldalon (könnyű használat, angol helyneveket is felismer, kis foglalási díj) vagy a www.italiarail.com oldalon (könnyű használat, angol helyneveket is felismer, a kis foglalási díjat visszafizetik, ha emailt küldesz nekik a seat61@italiarail.com címre a PNR-rel) vagy az Olasz Államvasutak saját oldalán www.trenitalia.com (bonyolultabb használat, olasz nyelvű helyneveket igényel).",
+          note: "Javaslom hogy hagyj legalább egy órát a nightjet érkezése és bármely további vonat között. Az olasz vonatok 4 hónappal előre nyílnak meg foglalásra.",
+        },
+      },
+      option2: {
+        title: "2. opció: Velencei éjszakázással - kényelmes és festői",
+        step1: {
+          title: "1. lépés: Utazás Budapestről Bécsbe railjet vonattal",
+          details:
+            "Indulj Budapest Keleti pályaudvarról 07:40-kor, érkezés Bécs Hauptbahnhof-ra 10:20-kor. Az osztrák railjet vonat étteremkocsival, minden ülésnél konnektorokkal és ingyenes WiFi-vel is rendelkezik.",
+          price:
+            "Az árak 19,90€-tól kezdődnek a 2. osztályon, 29,90€ az 1. osztályon vagy 44,90€ a business osztályon (prémium 1. osztály). Az árak változnak, mint a repülőjegyek, ezért foglalj időben.",
+          booking:
+            "Foglalj erre a vonatra a www.thetrainline.com oldalon, a legkönnyebb használat, €, £ vagy $, kis foglalási díj, a foglalás 6 hónappal előre nyílik meg. Vagy foglalhatsz a www.mavcsoport.hu oldalán is, bonyolultabb, csak 60 nappal előre nyílik meg a foglalás.",
+        },
+        step2: {
+          title: "2. lépés: Utazás Bécsből Velencébe railjet vonattal",
+          details:
+            "Indulás Bécs Hauptbahnhof-ról 12:24-kor, érkezés Velence Santa Lucia-ra 20:04-kor. Ez a vonat a gyönyörűen festői UNESCO világörökségi Semmering vasútvonalat használja Bécstől Grazig, egy igazi élmény. Az légkondicionált osztrák railjet vonat étteremkocsival, minden ülésnél konnektorokkal és ingyenes WiFi-vel is rendelkezik. az 1. osztályon és business osztályon a pincér rendelést is felvesz és kiszolgálja az utasokat a helyükön.",
+          price:
+            "Az árak 28,30€-tól kezdődnek a 2. osztályon, 56,60€ az 1. osztályon vagy 71,60€ a business osztályon (prémium 1. osztály). Az árak változnak, mint a repülőjegyek, ezért foglalj időben.",
+          booking:
+            "Foglalj erre a vonatra a www.thetrainline.com oldalon (könnyű használat, €, £ vagy $, nemzetközi bankkártyák nem problémásak, kis foglalási díj) vagy az Osztrák Államvasutak oldalán www.oebb.at (€-ban, ugyanazok az árak). A foglalás 6 hónappal előre nyílik meg.",
+        },
+        step3: {
+          title: "3. lépés: Másnap vonattal Velencéből Nápolyba",
+          details:
+            "Indulás vonattal Velence Santa Lucia pályaudvarról Nápolyba. Nézd meg a menetrendet és vedd meg a jegyeket a www.thetrainline.com oldalon (legkönnyebb használat, €, £ vagy $, külföldi kártyák nem problémásak, kis foglalási díj) vagy a Trenitalia www.trenitalia.com oldalán (€-ban, bonyolultabb, ugyanazok az árak). A foglalás 6 hónappal előre nyílik meg.",
+        },
+      },
+      option3: {
+        title:
+          "3. opció: Bécsben éjszakázással - ugyanaz mint az 1. opció, de éjszakai megállóval",
+        day1: {
+          title: "1. nap: Utazás Budapestről Bécsbe railjet vonattal",
+          details:
+            "Indulás Budapest Keleti pályaudvarról 17:40-kor, érkezés Bécs Hauptbahnhof-ra 20:20-kor. Vagy foglalj egy korábbi vonatot hogy több időd legyen Bécsben. A railjet vonatok étteremkocsival, minden ülésnél konnektorokkal és ingyenes WiFi-vel is rendelkeznek.",
+          price:
+            "Az árak 19,90€-tól kezdődnek a 2. osztályon, 29,90€ az 1. osztályon vagy 44,90€ a business osztályon (prémium 1. osztály). Az árak változnak, mint a repülőjegyek, ezért foglalj időben.",
+          booking:
+            "Foglalj a www.thetrainline.com oldalon, legkönnyebb használat, €, £ vagy $, kis foglalási díj, a foglalás 6 hónappal előre nyílik meg. Foglalhatsz az Osztrák Államvasutak www.oebb.at oldalán is (ugyanazok az árak, €-ban) vagy a www.mavcsoport.hu oldalán, bonyolultabb, forintban, csak 60 nappal előre nyílik meg a foglalás.",
+        },
+        day2: {
+          title:
+            "2. nap: Utazás Bécsből Velencébe majd Nápolyba railjet vonattal",
+          details:
+            "Indulás Bécs Hauptbahnhof-ról 06:24-kor, érkezés Velence Santa Lucia-ra 14:14-kor majd Velence Santa Lucia pályaudvarról Nápolyba. Korai indulás, de ez a vonat a csodálatosan festői UNESCO világörökségi Semmering útvonalon halad Ausztrián keresztül Grazon, ülj hátra és élvezd az utat. Van étteremkocsi, minden ülésnél konnektorok és ingyenes WiFi. Az 1. osztályon és business osztályon a pincér rendelést is felvesz és kiszolgálja az utasokat a helyükön.",
+          price:
+            "Az árak 28,30€-tól kezdődnek a 2. osztályon, 56,60€ az 1. osztályon vagy 71,60€ a business osztályon (prémium 1. osztály). Az árak változnak, mint a repülőjegyek.",
+          booking:
+            "Foglalj erre a vonatra a www.thetrainline.com oldalon (könnyű használat, €, £ vagy $, kis foglalási díj) vagy az Osztrák Államvasutak www.oebb.at oldalán (bonyolultabb, €-ban, ugyanazok az árak). A foglalás 6 hónappal előre nyílik meg.",
+        },
+      },
+    },
+  };
+
+  const options = trainOptions[language] || trainOptions.hu;
+
+  return (
+    <div className="train-options">
+      <div
+        className="train-option-header"
+        onClick={() => setIsExpanded(!isExpanded)}
+        style={{ cursor: "pointer" }}
+      >
+        <h4>{translations[language].trainOption}</h4>
+        <span className="click-hint">
+          {translations[language].clickForMoreInfo}
+        </span>
+        <span className={`expand-icon ${isExpanded ? "expanded" : ""}`}>▼</span>
+      </div>
+
+      {isExpanded && (
+        <div className="train-options-content">
+          <div className="train-option">
+            <h5>{options.option1.title}</h5>
+            <div className="train-step">
+              <h6>{options.option1.step1.title}</h6>
+              <p>{options.option1.step1.details}</p>
+              <p>
+                <strong>Ár:</strong> {options.option1.step1.price}
+              </p>
+              <p>
+                <strong>Foglalás:</strong> {options.option1.step1.booking}
+              </p>
+            </div>
+            <div className="train-step">
+              <h6>{options.option1.step2.title}</h6>
+              <p>{options.option1.step2.details}</p>
+              <p>
+                <strong>Ár:</strong> {options.option1.step2.price}
+              </p>
+              <p>
+                <strong>Foglalás:</strong> {options.option1.step2.booking}
+              </p>
+            </div>
+            <div className="train-step">
+              <h6>{options.option1.step3.title}</h6>
+              <p>{options.option1.step3.details}</p>
+              <p>
+                <strong>Megjegyzés:</strong> {options.option1.step3.note}
+              </p>
+            </div>
+          </div>
+
+          <div className="train-option">
+            <h5>{options.option2.title}</h5>
+            <div className="train-step">
+              <h6>{options.option2.step1.title}</h6>
+              <p>{options.option2.step1.details}</p>
+              <p>
+                <strong>Ár:</strong> {options.option2.step1.price}
+              </p>
+              <p>
+                <strong>Foglalás:</strong> {options.option2.step1.booking}
+              </p>
+            </div>
+            <div className="train-step">
+              <h6>{options.option2.step2.title}</h6>
+              <p>{options.option2.step2.details}</p>
+              <p>
+                <strong>Ár:</strong> {options.option2.step2.price}
+              </p>
+              <p>
+                <strong>Foglalás:</strong> {options.option2.step2.booking}
+              </p>
+            </div>
+            <div className="train-step">
+              <h6>{options.option2.step3.title}</h6>
+              <p>{options.option2.step3.details}</p>
+            </div>
+          </div>
+
+          <div className="train-option">
+            <h5>{options.option3.title}</h5>
+            <div className="train-step">
+              <h6>{options.option3.day1.title}</h6>
+              <p>{options.option3.day1.details}</p>
+              <p>
+                <strong>Ár:</strong> {options.option3.day1.price}
+              </p>
+              <p>
+                <strong>Foglalás:</strong> {options.option3.day1.booking}
+              </p>
+            </div>
+            <div className="train-step">
+              <h6>{options.option3.day2.title}</h6>
+              <p>{options.option3.day2.details}</p>
+              <p>
+                <strong>Ár:</strong> {options.option3.day2.price}
+              </p>
+              <p>
+                <strong>Foglalás:</strong> {options.option3.day2.booking}
+              </p>
+            </div>
+          </div>
+
+          <div className="source-info">
+            <p>
+              <strong>Forrás:</strong>{" "}
+              <a
+                href="https://www.seat61.com/international-trains/trains-from-Budapest.htm#Budapest-Italy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Seat61.com - Trains from Budapest
+              </a>
+            </p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+const CarOption = ({ language }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <div className="car-option">
+      <div
+        className="car-option-header"
+        onClick={() => setIsExpanded(!isExpanded)}
+        style={{ cursor: "pointer" }}
+      >
+        <h4>{translations[language].carOption}</h4>
+        <span className="click-hint">
+          {translations[language].clickForMoreInfo}
+        </span>
+        <span className={`expand-icon ${isExpanded ? "expanded" : ""}`}>▼</span>
+      </div>
+
+      {isExpanded && (
+        <div className="car-option-content">
+          <h5>{translations[language].carOptionTitle}</h5>
+          <p>{translations[language].carOptionDescription}</p>
+        </div>
+      )}
+    </div>
+  );
+};
+
 const TravelSection = ({ language, guestCode }) => {
   const [currentRoute, setCurrentRoute] = useState(getRouteConfig(guestCode));
   const [isLoading, setIsLoading] = useState(false);
-  const [apiError, setApiError] = useState(null);
 
   useEffect(() => {
     const loadFlights = async () => {
@@ -202,7 +445,6 @@ const TravelSection = ({ language, guestCode }) => {
 
       if (hungarianGuests.includes(guestCode)) {
         setIsLoading(true);
-        setApiError(null);
         try {
           const flights = await flightApiService.getFlights(
             "BUD",
@@ -223,7 +465,6 @@ const TravelSection = ({ language, guestCode }) => {
           }));
         } catch (error) {
           console.error("Error loading flights:", error);
-          setApiError(error.message);
         } finally {
           setIsLoading(false);
         }
@@ -278,6 +519,18 @@ const TravelSection = ({ language, guestCode }) => {
       );
     }
 
+    // Check if this is a Hungarian guest
+    const hungarianGuests = [
+      "IL2026",
+      "AT2026",
+      "KR2026",
+      "GB2026",
+      "ER2026",
+      "PT2026",
+      "AGI2026",
+    ];
+    const isHungarianGuest = hungarianGuests.includes(guestCode);
+
     return (
       <div className="flights-container">
         <div className="route-header">
@@ -320,6 +573,17 @@ const TravelSection = ({ language, guestCode }) => {
               >
                 {translations[language].showAllOptions}
               </a>
+            </div>
+          </div>
+        )}
+
+        {/* Alternative Travel Options for Hungarian guests only */}
+        {isHungarianGuest && language === "hu" && (
+          <div className="alternative-travel-section">
+            <h4>{translations[language].alternativeTravelOptions}</h4>
+            <div className="alternative-options-grid">
+              <TrainOptions language={language} />
+              <CarOption language={language} />
             </div>
           </div>
         )}
