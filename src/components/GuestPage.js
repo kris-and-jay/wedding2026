@@ -90,6 +90,17 @@ const AccommodationMessage = ({ guestCode }) => {
           <strong>Kijelentkezés:</strong> 2026. június 28 (vasárnap). délelőtt
           11 óráig
         </p>
+        <p>
+          <br />
+          Hogyha szeretnétek meghosszabbítani a Sorrentói tartózkodásotokat,
+          akkor a Fattoria Terranovánál direktben tudjátok ezt megtenni.
+          Mondjátok meg, hogy az esemény amire érkeztek "Justyna + Krisz wedding
+          27.06.2026", hogy kedvezményes árat kapjatok és említsétek meg a szoba
+          nevét, ahol foglalásotok van már a hétvégére.
+          <br />
+          <br />
+          Email: info@fattoriaterranova.it vagy Whatsapp: (+39) 081 533 02 34.
+        </p>
       </div>
     ),
     HG2026: (
@@ -138,6 +149,17 @@ const AccommodationMessage = ({ guestCode }) => {
           <strong>Kijelentkezés:</strong> 2026. június 28 (vasárnap). délelőtt
           11 óráig
         </p>
+        <p>
+          <br />
+          Hogyha szeretnétek meghosszabbítani a Sorrentói tartózkodásotokat,
+          akkor a Fattoria Terranovánál direktben tudjátok ezt megtenni.
+          Mondjátok meg, hogy az esemény amire érkeztek "Justyna + Krisz wedding
+          27.06.2026", hogy kedvezményes árat kapjatok és említsétek meg a szoba
+          nevét, ahol foglalásotok van már a hétvégére.
+          <br />
+          <br />
+          Email: info@fattoriaterranova.it vagy Whatsapp: (+39) 081 533 02 34.
+        </p>
       </div>
     ),
     SZ2026: (
@@ -184,6 +206,17 @@ const AccommodationMessage = ({ guestCode }) => {
           <strong>Kijelentkezés:</strong> 2026. június 28 (vasárnap). délelőtt
           11 óráig
         </p>
+        <p>
+          <br />
+          Hogyha szeretnétek meghosszabbítani a Sorrentói tartózkodásotokat,
+          akkor a Fattoria Terranovánál direktben tudjátok ezt megtenni.
+          Mondjátok meg, hogy az esemény amire érkeztek "Justyna + Krisz wedding
+          27.06.2026", hogy kedvezményes árat kapjatok és említsétek meg a szoba
+          nevét, ahol foglalásotok van már a hétvégére.
+          <br />
+          <br />
+          Email: info@fattoriaterranova.it vagy Whatsapp: (+39) 081 533 02 34.
+        </p>
       </div>
     ),
     GB2026: (
@@ -207,6 +240,17 @@ const AccommodationMessage = ({ guestCode }) => {
         <p>
           <strong>Kijelentkezés:</strong> 2026. június 28 (vasárnap). délelőtt
           11 óráig
+        </p>
+        <p>
+          <br />
+          Hogyha szeretnétek meghosszabbítani a Sorrentói tartózkodásotokat,
+          akkor a Fattoria Terranovánál direktben tudjátok ezt megtenni.
+          Mondjátok meg, hogy az esemény amire érkeztek "Justyna + Krisz wedding
+          27.06.2026", hogy kedvezményes árat kapjatok és említsétek meg a szoba
+          nevét, ahol foglalásotok van már a hétvégére.
+          <br />
+          <br />
+          Email: info@fattoriaterranova.it vagy Whatsapp: (+39) 081 533 02 34.
         </p>
       </div>
     ),
@@ -243,6 +287,17 @@ const AccommodationMessage = ({ guestCode }) => {
           <strong>Kijelentkezés:</strong> 2026. június 28 (vasárnap). délelőtt
           11 óráig
         </p>
+        <p>
+          <br />
+          Hogyha szeretnétek meghosszabbítani a Sorrentói tartózkodásotokat,
+          akkor a Fattoria Terranovánál direktben tudjátok ezt megtenni.
+          Mondjátok meg, hogy az esemény amire érkeztek "Justyna + Krisz wedding
+          27.06.2026", hogy kedvezményes árat kapjatok és említsétek meg a szoba
+          nevét, ahol foglalásotok van már a hétvégére.
+          <br />
+          <br />
+          Email: info@fattoriaterranova.it vagy Whatsapp: (+39) 081 533 02 34.
+        </p>
       </div>
     ),
     PT2026: (
@@ -266,6 +321,17 @@ const AccommodationMessage = ({ guestCode }) => {
         <p>
           <strong>Kijelentkezés:</strong> 2026. június 28 (vasárnap). délelőtt
           11 óráig
+        </p>
+        <p>
+          <br />
+          Hogyha szeretnétek meghosszabbítani a Sorrentói tartózkodásotokat,
+          akkor a Fattoria Terranovánál direktben tudjátok ezt megtenni.
+          Mondjátok meg, hogy az esemény amire érkeztek "Justyna + Krisz wedding
+          27.06.2026", hogy kedvezményes árat kapjatok és említsétek meg a szoba
+          nevét, ahol foglalásotok van már a hétvégére.
+          <br />
+          <br />
+          Email: info@fattoriaterranova.it vagy Whatsapp: (+39) 081 533 02 34.
         </p>
       </div>
     ),
@@ -404,9 +470,9 @@ const AccommodationMessage = ({ guestCode }) => {
     AGI2026: (
       <p>
         A Fattoria Terranova fenntartja a rendelkezésre álló szobákat 2025.
-        december 31-ig a vendégeink számára. Közvetlenül náluk foglalhatsz ezek
-        közül egyet. Foglaláskor említsd meg, hogy az esemény amire érkezel
-        "Justyna + Krisz wedding 27.06.2026", hogy kedvezményes árat kapj.
+        december 31-ig a vendégeink számára. Közvetlenül náluk foglalhattok ezek
+        közül egyet. Foglaláskor említsétek meg, hogy az esemény amire érkeztek
+        "Justyna + Krisz wedding 27.06.2026", hogy kedvezményes árat kapjatok.
         <br />
         <br />
         Email: info@fattoriaterranova.it vagy Whatsapp: (+39) 081 533 02 34.
