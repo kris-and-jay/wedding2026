@@ -58,6 +58,10 @@ const hasAccommodationMessage = (guestCode) => {
     "WD2026",
     "KL2026",
     "SM2026",
+    "YN2026",
+    "GA2026",
+    "PR2026",
+    "AGI2026",
   ];
   return validCodes.includes(guestCode);
 };
@@ -363,6 +367,50 @@ const AccommodationMessage = ({ guestCode }) => {
           <strong>Check-out:</strong> 29th June 2026 (Monday), until 11 AM
         </p>
       </div>
+    ),
+    YN2026: (
+      <p>
+        Fattoria Terranova has reserved a block of rooms until 31 December 2025
+        for our wedding guests. You can book one of these directly with them.
+        Please mention “Justyna + Krisz wedding 27.06.2026” when making your
+        reservation to receive a discounted rate.
+        <br />
+        <br />
+        Email info@fattoriaterranova.it or Whatsapp (+39) 081 533 02 34.
+      </p>
+    ),
+    GA2026: (
+      <p>
+        Fattoria Terranova has reserved a block of rooms until 31 December 2025
+        for our wedding guests. You can book one of these directly with them.
+        Please mention “Justyna + Krisz wedding 27.06.2026” when making your
+        reservation to receive a discounted rate.
+        <br />
+        <br />
+        Email info@fattoriaterranova.it or Whatsapp (+39) 081 533 02 34.
+      </p>
+    ),
+    PR2026: (
+      <p>
+        Fattoria Terranova has reserved a block of rooms until 31 December 2025
+        for our wedding guests. You can book one of these directly with them.
+        Please mention “Justyna + Krisz wedding 27.06.2026” when making your
+        reservation to receive a discounted rate.
+        <br />
+        <br />
+        Email info@fattoriaterranova.it or Whatsapp (+39) 081 533 02 34.
+      </p>
+    ),
+    AGI2026: (
+      <p>
+        A Fattoria Terranova fenntartja a rendelkezésre álló szobákat 2025.
+        december 31-ig a vendégeink számára. Közvetlenül náluk foglalhatsz ezek
+        közül egyet. Foglaláskor említsd meg, hogy az esemény amire érkezel
+        "Justyna + Krisz wedding 27.06.2026", hogy kedvezményes árat kapj.
+        <br />
+        <br />
+        Email: info@fattoriaterranova.it vagy Whatsapp: (+39) 081 533 02 34.
+      </p>
     ),
   };
 
