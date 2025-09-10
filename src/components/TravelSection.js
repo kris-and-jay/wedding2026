@@ -98,9 +98,77 @@ const translations = {
     trainOption2: "2. opció: Velencei éjszakázással - kényelmes és festői",
     trainOption3:
       "3. opció: Bécsben éjszakázással - ugyanaz mint az 1. opció, de éjszakai megállóval",
-    carOptionTitle: "Autóval utazás",
-    carOptionDescription:
-      "Autóval utazás részletei hamarosan elérhetőek lesznek.",
+    carOption1: "1. opció: Velencei éjszakázással - festői és kényelmes",
+    carOption2: "2. opció: Bolognai éjszakázással - központi és gasztronómiai",
+    carOption3: "3. opció: Firenzei éjszakázással - művészeti és kulturális",
+    carRoute1Title: "1. lépés: Utazás Budapestről Velencébe",
+    carRoute1Details:
+      "Indulás Budapestről reggel 8:00-kor, érkezés Velencébe délután 15:00-kor. Az út 700 km és körülbelül 7 óra vezetést igényel. Az útvonal: Budapest → M7 autópálya → Szlovénia → Olaszország → Velence. A Velencei lagúna látványa lenyűgöző.",
+    carRoute1Price:
+      "Az útiköltség: üzemanyag ~80€, autópálya díjak ~45€, matrica ~15€. Összesen: ~140€",
+    carRoute1Tips:
+      "Velence autómentes város, parkolj a Tronchetto vagy Piazzale Roma parkolóban.",
+    carRoute2Title: "2. lépés: Utazás Velencéből Nápolyba",
+    carRoute2Details:
+      "Indulás Velencéből reggel 9:00-kor, érkezés Nápolyba délután 16:00-kor. Az út 726 km és körülbelül 7 óra vezetést igényel. Az útvonal: Velence → A4 autópálya → Bologna → A1 autópálya → Firenze → Róma → Nápoly.",
+    carRoute2Price:
+      "Az útiköltség: üzemanyag ~85€, autópálya díjak ~50€. Összesen: ~135€",
+    carRoute2Tips:
+      "Az A1 Autostrada del Sole a legjobb útvonal Olaszországon keresztül. Tervezz szüneteket Bologna és Firenze mellett.",
+    carVeniceHotel:
+      "Hotel Antiche Figure - 3 csillagos szálloda a Santa Lucia pályaudvar közelében",
+    carVeniceHotelDetails:
+      "A Hotel Antiche Figure egy kényelmes 3 csillagos szálloda a Santa Lucia pályaudvar közelében. Tiszta szobák, ingyenes WiFi és barátságos személyzet. A szobák 80-150€ között mozognak éjszakánként.",
+    carVeniceHotelBooking:
+      "www.hotelantichefigure.it vagy +39 041 275 9486. Kiváló ár-érték arány Velencében.",
+    carBolognaRoute1Title: "1. lépés: Utazás Budapestről Bolognába",
+    carBolognaRoute1Details:
+      "Indulás Budapestről reggel 7:00-kor, érkezés Bolognába délután 14:00-kor. Az út 650 km és körülbelül 7 óra vezetést igényel. Az útvonal: Budapest → M7 → Szlovénia → Olaszország → Bologna. Bologna Olaszország kulináris fővárosa.",
+    carBolognaRoute1Price:
+      "Az útiköltség: üzemanyag ~75€, autópálya díjak ~40€, matrica ~15€. Összesen: ~130€",
+    carBolognaRoute1Tips:
+      "Bologna központi helyzetű, ideális megálló Nápolyba vezető úton. A város híres a tortellini és mortadella készítéséről.",
+    carBolognaRoute2Title: "2. lépés: Utazás Bolognából Nápolyba",
+    carBolognaRoute2Details:
+      "Indulás Bolognából reggel 10:00-kor, érkezés Nápolyba délután 15:00-kor. Az út 470 km és körülbelül 5 óra vezetést igényel. Az útvonal: Bologna → A1 autópálya → Firenze → Róma → Nápoly.",
+    carBolognaRoute2Price:
+      "Az útiköltség: üzemanyag ~60€, autópálya díjak ~35€. Összesen: ~95€",
+    carBolognaRoute2Tips:
+      "Az A1 autópálya Bologna és Nápoly között közvetlen kapcsolatot biztosít. Tervezz szünetet Firenzénél.",
+    carBolognaHotel:
+      "Hotel Metropolitan - 4 csillagos szálloda a városközpontban",
+    carBolognaHotelDetails:
+      "A Hotel Metropolitan egy modern 4 csillagos szálloda Bologna központjában. Kényelmes szobák, étterem és wellness központ. A szobák 90-180€ között mozognak éjszakánként.",
+    carBolognaHotelBooking:
+      "www.hotelmetropolitan.com vagy +39 051 229 393. Központi elhelyezkedés, jó ár-érték arány.",
+    carFlorenceRoute1Title: "1. lépés: Utazás Budapestről Firenzébe",
+    carFlorenceRoute1Details:
+      "Indulás Budapestről reggel 6:00-kor, érkezés Firenzébe délután 13:00-kor. Az út 600 km és körülbelül 7 óra vezetést igényel. Az útvonal: Budapest → M7 → Szlovénia → Olaszország → Firenze. Firenze a reneszánsz bölcsője.",
+    carFlorenceRoute1Price:
+      "Az útiköltség: üzemanyag ~70€, autópálya díjak ~35€, matrica ~15€. Összesen: ~120€",
+    carFlorenceRoute1Tips:
+      "Firenze művészeti és kulturális kincsekkel teli város. Ideális megálló a reneszánsz művészetek megtekintésére.",
+    carFlorenceRoute2Title: "2. lépés: Utazás Firenzéből Nápolyba",
+    carFlorenceRoute2Details:
+      "Indulás Firenzéből reggel 11:00-kor, érkezés Nápolyba délután 16:00-kor. Az út 470 km és körülbelül 5 óra vezetést igényel. Az útvonal: Firenze → A1 autópálya → Róma → Nápoly.",
+    carFlorenceRoute2Price:
+      "Az útiköltség: üzemanyag ~60€, autópálya díjak ~35€. Összesen: ~95€",
+    carFlorenceRoute2Tips:
+      "Az A1 autópálya Firenze és Nápoly között közvetlen kapcsolatot biztosít. Tervezz szünetet Rómánál.",
+    carFlorenceHotel:
+      "Hotel Machiavelli Palace - 3 csillagos szálloda a városközpontban",
+    carFlorenceHotelDetails:
+      "A Hotel Machiavelli Palace egy kellemes 3 csillagos szálloda Firenze központjában, a pályaudvar közelében. Tiszta szobák, ingyenes WiFi, reggeli és barátságos személyzet. A szobák 90-160€ között mozognak éjszakánként.",
+    carFlorenceHotelBooking:
+      "www.hotelmachiavelli.it vagy +39 055 216 622. Központi elhelyezkedés.",
+    carTollsInfo: "Autópálya díjak és matrica",
+    carTollsSlovenia:
+      "<strong>Szlovénia:</strong> Matrica szükséges (7 napos: 15€, 1 hónapos: 30€)",
+    carTollsItaly:
+      "<strong>Olaszország:</strong> Autópálya díjak kasszánál (A1: ~35€, A4: ~15€)",
+    carBorderInfo: "Határátlépések",
+    carBorderSchengen:
+      "Magyarország, Szlovénia és Olaszország a Schengen övezet része - útlevél nélküli utazás",
   },
 };
 
@@ -417,9 +485,133 @@ const CarOption = ({ language }) => {
       </div>
 
       {isExpanded && (
-        <div className="car-option-content">
-          <h5>{translations[language].carOptionTitle}</h5>
-          <p>{translations[language].carOptionDescription}</p>
+        <div className="train-options-content">
+          {/* Option 1: Venice */}
+          <div className="train-option">
+            <h5>{translations[language].carOption1}</h5>
+            <div className="train-step">
+              <h6>{translations[language].carRoute1Title}</h6>
+              <p>{translations[language].carRoute1Details}</p>
+              <p>
+                <strong>Ár:</strong> {translations[language].carRoute1Price}
+              </p>
+              <p>
+                <strong>Tippek:</strong> {translations[language].carRoute1Tips}
+              </p>
+            </div>
+            <div className="train-step">
+              <h6>{translations[language].carRoute2Title}</h6>
+              <p>{translations[language].carRoute2Details}</p>
+              <p>
+                <strong>Ár:</strong> {translations[language].carRoute2Price}
+              </p>
+              <p>
+                <strong>Tippek:</strong> {translations[language].carRoute2Tips}
+              </p>
+            </div>
+            <div className="train-step">
+              <h6>{translations[language].carVeniceHotel}</h6>
+              <p>{translations[language].carVeniceHotelDetails}</p>
+              <p>
+                <strong>Foglalás:</strong>{" "}
+                {translations[language].carVeniceHotelBooking}
+              </p>
+            </div>
+          </div>
+
+          {/* Option 2: Bologna */}
+          <div className="train-option">
+            <h5>{translations[language].carOption2}</h5>
+            <div className="train-step">
+              <h6>{translations[language].carBolognaRoute1Title}</h6>
+              <p>{translations[language].carBolognaRoute1Details}</p>
+              <p>
+                <strong>Ár:</strong>{" "}
+                {translations[language].carBolognaRoute1Price}
+              </p>
+              <p>
+                <strong>Tippek:</strong>{" "}
+                {translations[language].carBolognaRoute1Tips}
+              </p>
+            </div>
+            <div className="train-step">
+              <h6>{translations[language].carBolognaRoute2Title}</h6>
+              <p>{translations[language].carBolognaRoute2Details}</p>
+              <p>
+                <strong>Ár:</strong>{" "}
+                {translations[language].carBolognaRoute2Price}
+              </p>
+              <p>
+                <strong>Tippek:</strong>{" "}
+                {translations[language].carBolognaRoute2Tips}
+              </p>
+            </div>
+            <div className="train-step">
+              <h6>{translations[language].carBolognaHotel}</h6>
+              <p>{translations[language].carBolognaHotelDetails}</p>
+              <p>
+                <strong>Foglalás:</strong>{" "}
+                {translations[language].carBolognaHotelBooking}
+              </p>
+            </div>
+          </div>
+
+          {/* Option 3: Florence */}
+          <div className="train-option">
+            <h5>{translations[language].carOption3}</h5>
+            <div className="train-step">
+              <h6>{translations[language].carFlorenceRoute1Title}</h6>
+              <p>{translations[language].carFlorenceRoute1Details}</p>
+              <p>
+                <strong>Ár:</strong>{" "}
+                {translations[language].carFlorenceRoute1Price}
+              </p>
+              <p>
+                <strong>Tippek:</strong>{" "}
+                {translations[language].carFlorenceRoute1Tips}
+              </p>
+            </div>
+            <div className="train-step">
+              <h6>{translations[language].carFlorenceRoute2Title}</h6>
+              <p>{translations[language].carFlorenceRoute2Details}</p>
+              <p>
+                <strong>Ár:</strong>{" "}
+                {translations[language].carFlorenceRoute2Price}
+              </p>
+              <p>
+                <strong>Tippek:</strong>{" "}
+                {translations[language].carFlorenceRoute2Tips}
+              </p>
+            </div>
+            <div className="train-step">
+              <h6>{translations[language].carFlorenceHotel}</h6>
+              <p>{translations[language].carFlorenceHotelDetails}</p>
+              <p>
+                <strong>Foglalás:</strong>{" "}
+                {translations[language].carFlorenceHotelBooking}
+              </p>
+            </div>
+          </div>
+
+          {/* Additional Information */}
+          <div className="train-step">
+            <h6>{translations[language].carTollsInfo}</h6>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: translations[language].carTollsSlovenia,
+              }}
+            />
+            <p
+              dangerouslySetInnerHTML={{
+                __html: translations[language].carTollsItaly,
+              }}
+            />
+          </div>
+
+          <div className="train-step">
+            <h6>{translations[language].carBorderInfo}</h6>
+            <p>{translations[language].carBorderSchengen}</p>
+          </div>
         </div>
       )}
     </div>
@@ -497,104 +689,111 @@ const TravelSection = ({ language, guestCode }) => {
   };
 
   const renderFlightsContent = () => {
-    // Check if this is a "coming soon" response
-    if (currentRoute.comingSoon) {
-      return (
-        <div className="coming-soon">
-          <h3>{translations[language].comingSoon}</h3>
-          <p>{translations[language].comingSoonMessage}</p>
-        </div>
-      );
-    }
-
-    const hasFlights =
-      currentRoute.preferredFlights.length > 0 ||
-      currentRoute.alternativeFlights.length > 0;
-
-    if (!hasFlights) {
-      return (
-        <div className="no-flights">
-          <p>{translations[language].noFlights}</p>
-        </div>
-      );
-    }
-
-    // Check if this is a Hungarian guest
-    const hungarianGuests = [
-      "IL2026",
-      "AT2026",
-      "KR2026",
-      "GB2026",
-      "ER2026",
-      "PT2026",
-      "AGI2026",
-    ];
-    const isHungarianGuest = hungarianGuests.includes(guestCode);
-
     return (
       <div className="flights-container">
-        <div className="route-header">
-          <h3>
-            {translations[language].route}: {currentRoute.origin} →{" "}
-            {currentRoute.destination}
-          </h3>
-          <span className="route-codes">
-            ({currentRoute.originCode} → {currentRoute.destinationCode})
-          </span>
-        </div>
+        {/* Flight Section */}
+        {(() => {
+          // Check if this is a "coming soon" response
+          if (currentRoute.comingSoon) {
+            return (
+              <div className="coming-soon">
+                <h3>{translations[language].comingSoon}</h3>
+                <p>{translations[language].comingSoonMessage}</p>
+              </div>
+            );
+          }
 
-        {currentRoute.preferredFlights.length > 0 && (
-          <div className="flight-section">
-            <h4>{translations[language].preferredFlights}</h4>
-            <div className="flight-grid">
-              {currentRoute.preferredFlights
-                .slice(0, 2)
-                .map((flight, index) => (
-                  <FlightCard
-                    key={flight.id}
-                    flight={flight}
-                    isPreferred={true}
-                    flightType={
-                      flight.combinationType ||
-                      (index === 0 ? "earliest" : "latest")
-                    }
-                    language={language}
-                  />
-                ))}
-            </div>
+          const hasFlights =
+            currentRoute.preferredFlights.length > 0 ||
+            currentRoute.alternativeFlights.length > 0;
 
-            {/* View All Options Button */}
-            <div className="view-all-options">
-              <a
-                href={`https://www.kiwi.com/en/search/results/budapest-hungary/naples-italy/2026-06-26/2026-06-28?adults=1&currency=huf`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="view-all-button"
-              >
-                {translations[language].showAllOptions}
-              </a>
-            </div>
-          </div>
-        )}
+          if (!hasFlights) {
+            return (
+              <div className="no-flights">
+                <p>{translations[language].noFlights}</p>
+              </div>
+            );
+          }
 
-        {/* Alternative Travel Options for Hungarian guests only */}
-        {isHungarianGuest && language === "hu" && (
-          <div className="alternative-travel-section">
-            <h4>{translations[language].alternativeTravelOptions}</h4>
-            <div className="alternative-options-grid">
-              <TrainOptions language={language} />
-              <CarOption language={language} />
-            </div>
-          </div>
-        )}
+          return (
+            <>
+              <div className="route-header">
+                <h3>
+                  {translations[language].route}: {currentRoute.origin} →{" "}
+                  {currentRoute.destination}
+                </h3>
+                <span className="route-codes">
+                  ({currentRoute.originCode} → {currentRoute.destinationCode})
+                </span>
+              </div>
+
+              {currentRoute.preferredFlights.length > 0 && (
+                <div className="flight-section">
+                  <h4>{translations[language].preferredFlights}</h4>
+                  <div className="flight-grid">
+                    {currentRoute.preferredFlights
+                      .slice(0, 2)
+                      .map((flight, index) => (
+                        <FlightCard
+                          key={flight.id}
+                          flight={flight}
+                          isPreferred={true}
+                          flightType={
+                            flight.combinationType ||
+                            (index === 0 ? "earliest" : "latest")
+                          }
+                          language={language}
+                        />
+                      ))}
+                  </div>
+
+                  {/* View All Options Button */}
+                  <div className="view-all-options">
+                    <a
+                      href={`https://www.kiwi.com/en/search/results/budapest-hungary/naples-italy/2026-06-26/2026-06-28?adults=1&currency=huf`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="view-all-button"
+                    >
+                      {translations[language].showAllOptions}
+                    </a>
+                  </div>
+                </div>
+              )}
+            </>
+          );
+        })()}
       </div>
     );
   };
+
+  // Check if this is a Hungarian guest
+  const hungarianGuests = [
+    "IL2026",
+    "AT2026",
+    "KR2026",
+    "GB2026",
+    "ER2026",
+    "PT2026",
+    "AGI2026",
+  ];
+  const isHungarianGuest = hungarianGuests.includes(guestCode);
 
   return (
     <div className="travel-section">
       <h2>{translations[language].travelTitle}</h2>
       {renderFlights()}
+
+      {/* Alternative Travel Options for Hungarian guests only - Always shown */}
+      {isHungarianGuest && language === "hu" && (
+        <div className="alternative-travel-section">
+          <h4>{translations[language].alternativeTravelOptions}</h4>
+          <div className="alternative-options-grid">
+            <TrainOptions language={language} />
+            <CarOption language={language} />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
