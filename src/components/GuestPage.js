@@ -339,81 +339,293 @@ const AccommodationMessage = ({ guestCode }) => {
       </div>
     ),
     MK2026: (
-      <p>
-        W wyrazie naszej głębokiej wdzięczności i radości że chcecie nam
-        towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Was właściwie
-        ugościć. Dlatego zapewniamy dla Was nocleg na cały weekend od piątku 26
-        czerwca do niedzieli 28 czerwca. Chcemy po prostu, byście odpoczęli,
-        wspaniale się z nami bawili i zabrali ze sobą niezapomniane wspomnienia.
-        Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania
-        prześlemy w odpowiednim czasie
-      </p>
+      <div>
+        <p>
+          W wyrazie naszej głębokiej wdzięczności i radości że chcecie nam
+          towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Was właściwie
+          ugościć. Dlatego zapewniamy dla Was nocleg na cały weekend od piątku
+          26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byście
+          odpoczęli, wspaniale się z nami bawili i zabrali ze sobą niezapomniane
+          wspomnienia.
+        </p>
+        <br />
+        <p>
+          <strong>Pokój:</strong> QUERCIA (Oak) - Suite (3-4 people) sea view
+        </p>
+        <br />
+        <p>
+          <strong>Zameldowanie:</strong> 26 czerwca 2026 (piątek) od godziny
+          14:00
+        </p>
+        <br />
+        <p>
+          <strong>Wymeldowanie:</strong> 28 czerwca 2026 (niedziela) do godziny
+          11:00
+        </p>
+        <p>
+          <br />
+          Jeśli chcielibyście przedłużyć Wasz pobyt w Sorrento, możecie to
+          zrobić kontaktując się bezpośrednio z Agriturismo Fattoria Terranova.
+          Aby otrzymać zniżkę na rezerwację, wspomnijcie, że przyjeżdżacie na
+          nasz ślub, czyli "Justyna + Krisz wedding 27.06.2026", i podajcie
+          nazwę pokoju, który macie już zarezerwowany na weekend.
+          <br />
+          <br />
+          Email: info@fattoriaterranova.it lub Whatsapp: (+39) 081 533 02 34.
+          <br />
+          <br />
+          Oczywiście jeśli potrzebujecie pomocy w zrobieniu rezewacji na
+          przedłużony pobyt, dajcie nam znać - chętnie pomożemy.
+        </p>
+      </div>
     ),
     WS2026: (
-      <p>
-        W wyrazie naszej głębokiej wdzięczności i radości że chcesz nam
-        towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Cię właściwie
-        ugościć. Dlatego zapewniamy dla Ciebie nocleg na cały weekend od piątku
-        26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byś odpoczęła,
-        wspaniale się z nami bawiła i zabrała ze sobą niezapomniane wspomnienia.
-        Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania
-        prześlemy w odpowiednim czasie
-      </p>
+      <div>
+        <p>
+          W wyrazie naszej głębokiej wdzięczności i radości że chcecie nam
+          towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Was właściwie
+          ugościć. Dlatego zapewniamy dla Was nocleg na cały weekend od piątku
+          26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byście
+          odpoczęli, wspaniale się z nami bawili i zabrali ze sobą niezapomniane
+          wspomnienia.
+        </p>
+        <br />
+        <p>
+          <strong>Pokój:</strong> ROSA (Rose) sea view - Superior Room
+        </p>
+        <br />
+        <p>
+          <strong>Zameldowanie:</strong> 26 czerwca 2026 (piątek) od godziny
+          14:00
+        </p>
+        <br />
+        <p>
+          <strong>Wymeldowanie:</strong> 28 czerwca 2026 (niedziela) do godziny
+          11:00
+        </p>
+        <p>
+          <br />
+          Jeśli chcielibyście przedłużyć Wasz pobyt w Sorrento, możecie to
+          zrobić kontaktując się bezpośrednio z Agriturismo Fattoria Terranova.
+          Aby otrzymać zniżkę na rezerwację, wspomnijcie, że przyjeżdżacie na
+          nasz ślub, czyli "Justyna + Krisz wedding 27.06.2026", i podajcie
+          nazwę pokoju, który macie już zarezerwowany na weekend.
+          <br />
+          <br />
+          Email: info@fattoriaterranova.it lub Whatsapp: (+39) 081 533 02 34.
+          <br />
+          <br />
+          Oczywiście jeśli potrzebujecie pomocy w zrobieniu rezewacji na
+          przedłużony pobyt, dajcie nam znać - chętnie pomożemy.
+        </p>
+      </div>
     ),
     AD2026: (
-      <p>
-        W wyrazie naszej głębokiej wdzięczności i radości że chcesz nam
-        towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Cię właściwie
-        ugościć. Dlatego zapewniamy dla Ciebie nocleg na cały weekend od piątku
-        26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byś odpoczął,
-        wspaniale się z nami bawił i zabrał ze sobą niezapomniane wspomnienia.
-        Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania
-        prześlemy w odpowiednim czasie
-      </p>
+      <div>
+        <p>
+          W wyrazie naszej głębokiej wdzięczności i radości że chcecie nam
+          towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Was właściwie
+          ugościć. Dlatego zapewniamy dla Was nocleg na cały weekend od piątku
+          26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byście
+          odpoczęli, wspaniale się z nami bawili i zabrali ze sobą niezapomniane
+          wspomnienia.
+        </p>
+        <br />
+        <p>
+          <strong>Pokój:</strong> GLICINE (Wisteria) sea view - Superior Room
+          (2-4 people)
+        </p>
+        <br />
+        <p>
+          <strong>Zameldowanie:</strong> 26 czerwca 2026 (piątek) od godziny
+          14:00
+        </p>
+        <br />
+        <p>
+          <strong>Wymeldowanie:</strong> 28 czerwca 2026 (niedziela) do godziny
+          11:00
+        </p>
+        <p>
+          <br />
+          Jeśli chcielibyście przedłużyć Wasz pobyt w Sorrento, możecie to
+          zrobić kontaktując się bezpośrednio z Agriturismo Fattoria Terranova.
+          Aby otrzymać zniżkę na rezerwację, wspomnijcie, że przyjeżdżacie na
+          nasz ślub, czyli "Justyna + Krisz wedding 27.06.2026", i podajcie
+          nazwę pokoju, który macie już zarezerwowany na weekend.
+          <br />
+          <br />
+          Email: info@fattoriaterranova.it lub Whatsapp: (+39) 081 533 02 34.
+          <br />
+          <br />
+          Oczywiście jeśli potrzebujecie pomocy w zrobieniu rezewacji na
+          przedłużony pobyt, dajcie nam znać - chętnie pomożemy.
+        </p>
+      </div>
     ),
     AG2026: (
-      <p>
-        W wyrazie naszej głębokiej wdzięczności i radości że chcesz nam
-        towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Cię właściwie
-        ugościć. Dlatego zapewniamy dla Ciebie nocleg na cały weekend od piątku
-        26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byś odpoczęła,
-        wspaniale się z nami bawiła i zabrała ze sobą niezapomniane wspomnienia.
-        Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania
-        prześlemy w odpowiednim czasie
-      </p>
+      <div>
+        <p>
+          W wyrazie naszej głębokiej wdzięczności i radości że chcecie nam
+          towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Was właściwie
+          ugościć. Dlatego zapewniamy dla Was nocleg na cały weekend od piątku
+          26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byście
+          odpoczęli, wspaniale się z nami bawili i zabrali ze sobą niezapomniane
+          wspomnienia.
+        </p>
+        <br />
+        <p>
+          <strong>Pokój:</strong> QUERCIA (Oak) - Suite (3-4 people) sea view
+        </p>
+        <br />
+        <p>
+          <strong>Zameldowanie:</strong> 26 czerwca 2026 (piątek) od godziny
+          14:00
+        </p>
+        <br />
+        <p>
+          <strong>Wymeldowanie:</strong> 28 czerwca 2026 (niedziela) do godziny
+          11:00
+        </p>
+        <p>
+          <br />
+          Jeśli chcielibyście przedłużyć Wasz pobyt w Sorrento, możecie to
+          zrobić kontaktując się bezpośrednio z Agriturismo Fattoria Terranova.
+          Aby otrzymać zniżkę na rezerwację, wspomnijcie, że przyjeżdżacie na
+          nasz ślub, czyli "Justyna + Krisz wedding 27.06.2026", i podajcie
+          nazwę pokoju, który macie już zarezerwowany na weekend.
+          <br />
+          <br />
+          Email: info@fattoriaterranova.it lub Whatsapp: (+39) 081 533 02 34.
+          <br />
+          <br />
+          Oczywiście jeśli potrzebujecie pomocy w zrobieniu rezewacji na
+          przedłużony pobyt, dajcie nam znać - chętnie pomożemy.
+        </p>
+      </div>
     ),
     CT2026: (
-      <p>
-        W wyrazie naszej głębokiej wdzięczności i radości że chcesz nam
-        towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Cię właściwie
-        ugościć. Dlatego zapewniamy dla Ciebie nocleg na cały weekend od piątku
-        26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byś odpoczęła,
-        wspaniale się z nami bawiła i zabrała ze sobą niezapomniane wspomnienia.
-        Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania
-        prześlemy w odpowiednim czasie
-      </p>
+      <div>
+        <p>
+          W wyrazie naszej głębokiej wdzięczności i radości że chcecie nam
+          towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Was właściwie
+          ugościć. Dlatego zapewniamy dla Was nocleg na cały weekend od piątku
+          26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byście
+          odpoczęli, wspaniale się z nami bawili i zabrali ze sobą niezapomniane
+          wspomnienia.
+        </p>
+        <br />
+        <p>
+          <strong>Pokój:</strong> ROSA (Rose) sea view - Superior Room
+        </p>
+        <br />
+        <p>
+          <strong>Zameldowanie:</strong> 26 czerwca 2026 (piątek) od godziny
+          14:00
+        </p>
+        <br />
+        <p>
+          <strong>Wymeldowanie:</strong> 28 czerwca 2026 (niedziela) do godziny
+          11:00
+        </p>
+        <p>
+          <br />
+          Jeśli chcielibyście przedłużyć Wasz pobyt w Sorrento, możecie to
+          zrobić kontaktując się bezpośrednio z Agriturismo Fattoria Terranova.
+          Aby otrzymać zniżkę na rezerwację, wspomnijcie, że przyjeżdżacie na
+          nasz ślub, czyli "Justyna + Krisz wedding 27.06.2026", i podajcie
+          nazwę pokoju, który macie już zarezerwowany na weekend.
+          <br />
+          <br />
+          Email: info@fattoriaterranova.it lub Whatsapp: (+39) 081 533 02 34.
+          <br />
+          <br />
+          Oczywiście jeśli potrzebujecie pomocy w zrobieniu rezewacji na
+          przedłużony pobyt, dajcie nam znać - chętnie pomożemy.
+        </p>
+      </div>
     ),
     WD2026: (
-      <p>
-        W wyrazie naszej głębokiej wdzięczności i radości że chcecie nam
-        towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Was właściwie
-        ugościć. Dlatego zapewniamy dla Was nocleg na cały weekend od piątku 26
-        czerwca do niedzieli 28 czerwca. Chcemy po prostu, byście odpoczęli,
-        wspaniale się z nami bawili i zabrali ze sobą niezapomniane wspomnienia.
-        Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania
-        prześlemy w odpowiednim czasie
-      </p>
+      <div>
+        <p>
+          W wyrazie naszej głębokiej wdzięczności i radości że chcecie nam
+          towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Was właściwie
+          ugościć. Dlatego zapewniamy dla Was nocleg na cały weekend od piątku
+          26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byście
+          odpoczęli, wspaniale się z nami bawili i zabrali ze sobą niezapomniane
+          wspomnienia.
+        </p>
+        <br />
+        <p>
+          <strong>Pokój:</strong> GLICINE (Wisteria) sea view - Superior Room
+          (2-4 people)
+        </p>
+        <br />
+        <p>
+          <strong>Zameldowanie:</strong> 26 czerwca 2026 (piątek) od godziny
+          14:00
+        </p>
+        <br />
+        <p>
+          <strong>Wymeldowanie:</strong> 28 czerwca 2026 (niedziela) do godziny
+          11:00
+        </p>
+        <p>
+          <br />
+          Jeśli chcielibyście przedłużyć Wasz pobyt w Sorrento, możecie to
+          zrobić kontaktując się bezpośrednio z Agriturismo Fattoria Terranova.
+          Aby otrzymać zniżkę na rezerwację, wspomnijcie, że przyjeżdżacie na
+          nasz ślub, czyli "Justyna + Krisz wedding 27.06.2026", i podajcie
+          nazwę pokoju, który macie już zarezerwowany na weekend.
+          <br />
+          <br />
+          Email: info@fattoriaterranova.it lub Whatsapp: (+39) 081 533 02 34.
+          <br />
+          <br />
+          Oczywiście jeśli potrzebujecie pomocy w zrobieniu rezewacji na
+          przedłużony pobyt, dajcie nam znać - chętnie pomożemy.
+        </p>
+      </div>
     ),
     KL2026: (
-      <p>
-        W wyrazie naszej głębokiej wdzięczności i radości że chcesz nam
-        towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Cię właściwie
-        ugościć. Dlatego zapewniamy dla Ciebie nocleg na cały weekend od piątku
-        26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byś odpoczęła,
-        wspaniale się z nami bawiła i zabrała ze sobą niezapomniane wspomnienia.
-        Więcej szczegółów logistycznych odnośnie kwestii zakwaterowania
-        prześlemy w odpowiednim czasie
-      </p>
+      <div>
+        <p>
+          W wyrazie naszej głębokiej wdzięczności i radości że chcecie nam
+          towarzyszyć w tym wyjątkowym wydarzeniu, chelibyśmy Was właściwie
+          ugościć. Dlatego zapewniamy dla Was nocleg na cały weekend od piątku
+          26 czerwca do niedzieli 28 czerwca. Chcemy po prostu, byście
+          odpoczęli, wspaniale się z nami bawili i zabrali ze sobą niezapomniane
+          wspomnienia.
+        </p>
+        <br />
+        <p>
+          <strong>Pokój:</strong> QUERCIA (Oak) - Suite (3-4 people) sea view
+        </p>
+        <br />
+        <p>
+          <strong>Zameldowanie:</strong> 26 czerwca 2026 (piątek) od godziny
+          14:00
+        </p>
+        <br />
+        <p>
+          <strong>Wymeldowanie:</strong> 28 czerwca 2026 (niedziela) do godziny
+          11:00
+        </p>
+        <p>
+          <br />
+          Jeśli chcielibyście przedłużyć Wasz pobyt w Sorrento, możecie to
+          zrobić kontaktując się bezpośrednio z Agriturismo Fattoria Terranova.
+          Aby otrzymać zniżkę na rezerwację, wspomnijcie, że przyjeżdżacie na
+          nasz ślub, czyli "Justyna + Krisz wedding 27.06.2026", i podajcie
+          nazwę pokoju, który macie już zarezerwowany na weekend.
+          <br />
+          <br />
+          Email: info@fattoriaterranova.it lub Whatsapp: (+39) 081 533 02 34.
+          <br />
+          <br />
+          Oczywiście jeśli potrzebujecie pomocy w zrobieniu rezewacji na
+          przedłużony pobyt, dajcie nam znać - chętnie pomożemy.
+        </p>
+      </div>
     ),
     SM2026: (
       <div>
@@ -701,6 +913,80 @@ const GuestPage = ({ language, guestCode }) => {
             <img
               src="/wedding2026/assets/accomodation/suites/20250507_113515.jpg"
               alt="Terrace"
+              className="gallery-image"
+            />
+            <img
+              src="/wedding2026/assets/accomodation/villa_terranova/20230421_105012.jpg"
+              alt="Terrace"
+              className="gallery-image"
+            />
+          </div>
+        )}
+        {(guestCode === "MK2026" ||
+          guestCode === "AG2026" ||
+          guestCode === "KL2026") && (
+          <div className="accommodation-gallery">
+            <img
+              src="/wedding2026/assets/accomodation/suites/20250507_112628.jpg"
+              alt="Quercia"
+              className="gallery-image"
+            />
+            <img
+              src="/wedding2026/assets/accomodation/suites/20250507_112643.jpg"
+              alt="Quercia"
+              className="gallery-image"
+            />
+            <img
+              src="/wedding2026/assets/accomodation/suites/20250507_113515.jpg"
+              alt="Terrace"
+              className="gallery-image"
+            />
+            <img
+              src="/wedding2026/assets/accomodation/villa_terranova/20230421_105012.jpg"
+              alt="Terrace"
+              className="gallery-image"
+            />
+          </div>
+        )}
+        {(guestCode === "WS2026" || guestCode === "CT2026") && (
+          <div className="accommodation-gallery">
+            <img
+              src="/wedding2026/assets/accomodation/delux_room/Camera-Superior-1-1.jpg"
+              alt="Rosa"
+              className="gallery-image"
+            />
+            <img
+              src="/wedding2026/assets/accomodation/delux_room/Camera-Superior-2.jpg"
+              alt="Rosa"
+              className="gallery-image"
+            />
+            <img
+              src="/wedding2026/assets/accomodation/delux_room/superior_room_(16).jpg"
+              alt="Garden"
+              className="gallery-image"
+            />
+            <img
+              src="/wedding2026/assets/accomodation/delux_room/superior_room_(17).jpg"
+              alt="Terrace"
+              className="gallery-image"
+            />
+          </div>
+        )}
+        {(guestCode === "AD2026" || guestCode === "WD2026") && (
+          <div className="accommodation-gallery">
+            <img
+              src="/wedding2026/assets/accomodation/double_standard/20191008_132011.jpg"
+              alt="Glicine"
+              className="gallery-image"
+            />
+            <img
+              src="/wedding2026/assets/accomodation/double_standard/20191008_132228.jpg"
+              alt="Terrace"
+              className="gallery-image"
+            />
+            <img
+              src="/wedding2026/assets/accomodation/delux_room/superior_room_(16).jpg"
+              alt="Garden"
               className="gallery-image"
             />
             <img
