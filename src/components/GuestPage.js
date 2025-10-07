@@ -62,6 +62,9 @@ const hasAccommodationMessage = (guestCode) => {
     "GA2026",
     "PR2026",
     "AGI2026",
+    "KS2026",
+    "PL2026",
+    "SD2026",
   ];
   return validCodes.includes(guestCode);
 };
@@ -476,6 +479,51 @@ const AccommodationMessage = ({ guestCode }) => {
         <br />
         <br />
         Email: info@fattoriaterranova.it vagy Whatsapp: (+39) 081 533 02 34.
+      </p>
+    ),
+    KS2026: (
+      <p>
+        Fattoria Terranova zarezerwowała dla naszych gości pulę pokoi do 31
+        grudnia 2025 r. Możecie je zarezerwować kontaktując się bezpośrednio z
+        hotelem. Przy rezerwacji, prosimy o powołanie się na „Justyna/Krisz
+        wedding”, aby otrzymać zniżkę.
+        <br />
+        <br />
+        Email: info@fattoriaterranova.it lub Whatsapp: (+39) 081 533 02 34.
+        <br />
+        <br />
+        Możecie również sprawdzić popularne platformy rezerwacyjne, aby znaleźć
+        inne opcje zakwaterowania w odległości pieszej od Fattoria Terranova.
+      </p>
+    ),
+    PL2026: (
+      <p>
+        Fattoria Terranova zarezerwowała dla naszych gości pulę pokoi do 31
+        grudnia 2025 r. Możecie je zarezerwować kontaktując się bezpośrednio z
+        hotelem. Przy rezerwacji, prosimy o powołanie się na „Justyna/Krisz
+        wedding”, aby otrzymać zniżkę.
+        <br />
+        <br />
+        Email: info@fattoriaterranova.it lub Whatsapp: (+39) 081 533 02 34.
+        <br />
+        <br />
+        Możecie również sprawdzić popularne platformy rezerwacyjne, aby znaleźć
+        inne opcje zakwaterowania w odległości pieszej od Fattoria Terranova.
+      </p>
+    ),
+    SD2026: (
+      <p>
+        Fattoria Terranova zarezerwowała dla naszych gości pulę pokoi do 31
+        grudnia 2025 r. Możecie je zarezerwować kontaktując się bezpośrednio z
+        hotelem. Przy rezerwacji, prosimy o powołanie się na „Justyna/Krisz
+        wedding”, aby otrzymać zniżkę.
+        <br />
+        <br />
+        Email: info@fattoriaterranova.it lub Whatsapp: (+39) 081 533 02 34.
+        <br />
+        <br />
+        Możecie również sprawdzić popularne platformy rezerwacyjne, aby znaleźć
+        inne opcje zakwaterowania w odległości pieszej od Fattoria Terranova.
       </p>
     ),
   };

@@ -634,10 +634,14 @@ const TravelSection = ({ language, guestCode }) => {
         "PT2026",
         "AGI2026",
       ];
+
+      // UK guests (edge cases)
+      const ukGuests = ["SD2026"];
       const isPolishGuest =
-        language === "pl" ||
-        (typeof guestCode === "string" &&
-          guestCode.toUpperCase().startsWith("PL"));
+        (language === "pl" ||
+          (typeof guestCode === "string" &&
+            guestCode.toUpperCase().startsWith("PL"))) &&
+        guestCode !== "SD2026"; // SD2026 is a UK guest, not Polish
 
       if (hungarianGuests.includes(guestCode)) {
         setIsLoading(true);
@@ -698,6 +702,20 @@ const TravelSection = ({ language, guestCode }) => {
         } finally {
           setIsLoading(false);
         }
+      } else if (ukGuests.includes(guestCode)) {
+        // For UK guests, show coming soon message (edge case)
+        setCurrentRoute((prevRoute) => ({
+          ...prevRoute,
+          origin: "United Kingdom",
+          originCode: "UK",
+          destination: "Italy",
+          destinationCode: "IT",
+          preferredFlights: [],
+          alternativeFlights: [],
+          comingSoon: true,
+          message:
+            "Flight information for this route will be available soon. Please check back later or contact us for assistance.",
+        }));
       } else {
         // For non-Hungarian guests, show coming soon message
         setCurrentRoute((prevRoute) => ({
@@ -712,7 +730,7 @@ const TravelSection = ({ language, guestCode }) => {
     };
 
     loadFlights();
-  }, [guestCode]);
+  }, [guestCode, language]);
 
   const renderFlights = () => {
     if (isLoading) {
@@ -806,9 +824,10 @@ const TravelSection = ({ language, guestCode }) => {
                     <a
                       href={(() => {
                         const isPolishGuestLink =
-                          language === "pl" ||
-                          (typeof guestCode === "string" &&
-                            guestCode.toUpperCase().startsWith("PL"));
+                          (language === "pl" ||
+                            (typeof guestCode === "string" &&
+                              guestCode.toUpperCase().startsWith("PL"))) &&
+                          guestCode !== "SD2026"; // SD2026 is a UK guest, not Polish
                         if (isPolishGuestLink) {
                           return `https://www.kiwi.com/en/search/results/poznan-poland,warsaw-poland,katowice-poland,gdansk-poland,wroclaw-poland/naples-italy,rome-italy/2026-06-26/2026-06-28?adults=1&currency=pln`;
                         }

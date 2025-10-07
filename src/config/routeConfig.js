@@ -101,14 +101,6 @@ export const routeConfig = {
     preferredFlights: [],
     alternativeFlights: [],
   },
-  SD2026: {
-    origin: "Poland",
-    originCode: "PL",
-    destination: "Italy",
-    destinationCode: "IT",
-    preferredFlights: [],
-    alternativeFlights: [],
-  },
 
   AT2026: {
     origin: "Budapest",
