@@ -392,11 +392,15 @@ class FlightApiService {
 
       // Return departure scoring (prefer close to 3pm, then later, then earlier)
       const returnDiff = Math.abs(returnDepartureTime - targetReturnDeparture);
+      // Ensure any flight after 3pm always outranks any flight before 3pm
+      // by applying a large group bonus for after-3pm departures.
+      const afterThreePmBonus =
+        returnDepartureTime >= targetReturnDeparture ? 1000 : 0;
       if (returnDepartureTime >= targetReturnDeparture) {
         // 3pm or later - higher score for closer to 3pm
-        score += Math.max(0, 100 - returnDiff);
+        score += afterThreePmBonus + Math.max(0, 100 - returnDiff);
       } else {
-        // Before 3pm - lower score
+        // Before 3pm - lower score (no group bonus)
         score += Math.max(0, 50 - returnDiff);
       }
 
@@ -494,8 +498,11 @@ class FlightApiService {
 
     // Return departure scoring
     const returnDiff = Math.abs(returnDepartureTime - targetReturnDeparture);
+    // Apply a strong group bonus to guarantee any after-3pm beats any before-3pm
+    const afterThreePmBonus =
+      returnDepartureTime >= targetReturnDeparture ? 1000 : 0;
     if (returnDepartureTime >= targetReturnDeparture) {
-      score += Math.max(0, 100 - returnDiff);
+      score += afterThreePmBonus + Math.max(0, 100 - returnDiff);
     } else {
       score += Math.max(0, 50 - returnDiff);
     }
