@@ -21,6 +21,25 @@ class FlightApiService {
     this.currentApi = "kiwi";
   }
 
+  // Attempt to normalize display city names from various sources
+  normalizeCityName(name) {
+    if (!name || typeof name !== "string") return "";
+    const n = name.toLowerCase();
+    if (/poznan|poznań/.test(n)) return "Poznań";
+    if (/warsaw|warszawa/.test(n)) return "Warsaw";
+    if (/katowice/.test(n)) return "Katowice";
+    if (/gdansk|gdańsk/.test(n)) return "Gdańsk";
+    if (/wroclaw|wrocław/.test(n)) return "Wrocław";
+    if (/naples|napoli/.test(n)) return "Naples";
+    if (/rome|roma/.test(n)) return "Rome";
+    // Try to extract first token for airport names like "Naples International Airport"
+    const firstWord = name.split(/[,\s-]+/)[0];
+    if (firstWord && firstWord.length >= 3) {
+      return firstWord.charAt(0).toUpperCase() + firstWord.slice(1);
+    }
+    return name;
+  }
+
   // Set the API to use
   setApi(apiName) {
     this.currentApi = apiName;
@@ -33,7 +52,8 @@ class FlightApiService {
     departureDate,
     returnDate = null,
     passengers = 1,
-    guestCode = null
+    guestCode = null,
+    options = {}
   ) {
     try {
       // Hungarian guests with real flight data
@@ -46,6 +66,10 @@ class FlightApiService {
         "PT2026",
         "AGI2026",
       ];
+
+      const isPolishGuest =
+        typeof guestCode === "string" &&
+        guestCode.toUpperCase().startsWith("PL");
 
       if (
         hungarianGuests.includes(guestCode) &&
@@ -62,6 +86,59 @@ class FlightApiService {
         } catch (error) {
           console.error(
             "Kiwi API failed, falling back to coming soon message:",
+            error
+          );
+          // Fall through to coming soon message
+        }
+      }
+
+      // Polish guests with real flight data from multiple source/destination cities
+      if (isPolishGuest) {
+        try {
+          const sourceCities =
+            options.sourceCities ||
+            "City:poznan_pl,City:warsaw_pl,City:katowice_pl,City:gdansk_pl,City:wroclaw_pl";
+          const destinationCities =
+            options.destinationCities || "City:naples_it,City:rome_it";
+          return await this.searchKiwiRapidAPI(
+            origin,
+            destination,
+            departureDate,
+            returnDate,
+            passengers,
+            {
+              sourceCities,
+              destinationCities,
+              currency: options.currency || "pln",
+              isPolishSearch: true,
+            }
+          );
+        } catch (error) {
+          console.error(
+            "Kiwi API failed for Polish guests, falling back to coming soon:",
+            error
+          );
+          // Fall through to coming soon message
+        }
+      }
+
+      // If explicit multi-city options are provided, perform search regardless of guest code
+      if (options && (options.sourceCities || options.destinationCities)) {
+        try {
+          const sourceCities = options.sourceCities || "City:budapest_hu";
+          const destinationCities =
+            options.destinationCities || "City:naples_it";
+          return await this.searchKiwiRapidAPI(
+            origin,
+            destination,
+            departureDate,
+            returnDate,
+            passengers,
+            { sourceCities, destinationCities, currency: options.currency }
+          );
+        } catch (error) {
+          console.error(
+            "Kiwi API failed for multi-city options, falling back to coming soon:",
             error
           );
           // Fall through to coming soon message
@@ -115,7 +192,8 @@ class FlightApiService {
     destination,
     departureDate,
     returnDate,
-    passengers
+    passengers,
+    extra = {}
   ) {
     const config = API_CONFIG.kiwi;
 
@@ -123,13 +201,14 @@ class FlightApiService {
       throw new Error("Kiwi API key not configured");
     }
 
+    const selectedCurrency = (extra.currency || "huf").toLowerCase();
     const options = {
       method: "GET",
       url: `${config.baseUrl}${config.endpoints.roundTrip}`,
       params: {
-        source: "City:budapest_hu",
-        destination: "City:naples_it",
-        currency: "huf",
+        source: extra.sourceCities || "City:budapest_hu",
+        destination: extra.destinationCities || "City:naples_it",
+        currency: selectedCurrency,
         adults: passengers,
         transportTypes: "FLIGHT",
         contentProviders: "FLIXBUS_DIRECTS,FRESH,KAYAK,KIWI",
@@ -149,8 +228,12 @@ class FlightApiService {
       const response = await axios.request(options);
 
       const searchData = response.data;
-
-      return this.parseKiwiRapidAPIResults(searchData);
+      const parsed = this.parseKiwiRapidAPIResults(
+        searchData,
+        selectedCurrency,
+        extra
+      );
+      return parsed;
     } catch (error) {
       console.error("Kiwi API error:", error);
       if (error.response) {
@@ -162,7 +245,7 @@ class FlightApiService {
   }
 
   // Parse Kiwi RapidAPI results
-  parseKiwiRapidAPIResults(data) {
+  parseKiwiRapidAPIResults(data, currency = "huf", context = {}) {
     try {
       const preferredFlights = [];
       const alternativeFlights = [];
@@ -235,6 +318,73 @@ class FlightApiService {
           inbound.sectorSegments.length === 1;
         const isDirectFlight = isDirectOutbound && isDirectInbound;
 
+        // Attempt to extract city/airport names and codes for display/prioritization
+        const safeGet = (...vals) =>
+          vals.find((v) => typeof v === "string" && v.trim().length > 0) || "";
+        const outboundSourceRaw = safeGet(
+          outboundSegment?.source?.airport?.city?.name,
+          outboundSegment?.source?.city?.name,
+          outboundSegment?.source?.airport?.name,
+          outboundSegment?.source?.name,
+          outboundSegment?.source?.code
+        );
+        const outboundDestinationRaw = safeGet(
+          outboundSegment?.destination?.airport?.city?.name,
+          outboundSegment?.destination?.city?.name,
+          outboundSegment?.destination?.airport?.name,
+          outboundSegment?.destination?.name,
+          outboundSegment?.destination?.code
+        );
+        const inboundFirstSourceRaw = safeGet(
+          inboundFirstSegment?.source?.airport?.city?.name,
+          inboundFirstSegment?.source?.city?.name,
+          inboundFirstSegment?.source?.airport?.name,
+          inboundFirstSegment?.source?.name,
+          inboundFirstSegment?.source?.code
+        );
+        const inboundFinalDestinationRaw = safeGet(
+          inboundSegment?.destination?.airport?.city?.name,
+          inboundSegment?.destination?.city?.name,
+          inboundSegment?.destination?.airport?.name,
+          inboundSegment?.destination?.name,
+          inboundSegment?.destination?.code
+        );
+
+        const outboundSourceCity = this.normalizeCityName(outboundSourceRaw);
+        const outboundDestinationCity = this.normalizeCityName(
+          outboundDestinationRaw
+        );
+        const inboundFirstSourceCity = this.normalizeCityName(
+          inboundFirstSourceRaw
+        );
+        const inboundFinalDestinationCity = this.normalizeCityName(
+          inboundFinalDestinationRaw
+        );
+
+        const outboundSourceCode =
+          outboundSegment?.source?.airport?.code ||
+          outboundSegment?.source?.code ||
+          "";
+        const outboundDestinationCode =
+          outboundSegment?.destination?.airport?.code ||
+          outboundSegment?.destination?.code ||
+          "";
+        const inboundFirstSourceCode =
+          inboundFirstSegment?.source?.airport?.code ||
+          inboundFirstSegment?.source?.code ||
+          "";
+        const inboundFinalDestinationCode =
+          inboundSegment?.destination?.airport?.code ||
+          inboundSegment?.destination?.code ||
+          "";
+
+        const isPoznanToNaplesOutbound =
+          /poznan/i.test(outboundSourceCity) &&
+          /naples|napoli/i.test(outboundDestinationCity);
+        const isNaplesToPoznanInbound =
+          /naples|napoli/i.test(inboundFirstSourceCity) &&
+          /poznan/i.test(inboundFinalDestinationCity);
+
         const flightData = {
           id: `kiwi_${index}`,
           // Outbound flight details
@@ -270,10 +420,23 @@ class FlightApiService {
             ? inboundSegment.destination.localTime.split("T")[0]
             : "2026-06-28",
           // Common details
-          price: price ? this.formatPrice(price.amount, "HUF") : "Price N/A",
+          price: price
+            ? this.formatPrice(price.amount, currency.toUpperCase())
+            : "Price N/A",
           priceValue: price ? parseFloat(price.amount) : Infinity, // For sorting
           bookingUrl: bookingUrl,
           isDirect: isDirectFlight,
+          // Polish prioritization flags
+          outboundSourceCity,
+          outboundDestinationCity,
+          inboundFirstSourceCity,
+          inboundFinalDestinationCity,
+          outboundSourceCode,
+          outboundDestinationCode,
+          inboundFirstSourceCode,
+          inboundFinalDestinationCode,
+          plPoznanNaplesPriority:
+            isPoznanToNaplesOutbound || isNaplesToPoznanInbound,
         };
 
         // Add all flights to a temporary array for sorting
@@ -290,15 +453,53 @@ class FlightApiService {
           directFlights.push(...allFlights);
         }
 
+        // For Polish guests, prioritize Poznań↔Naples routes at the top
+        const prioritizedDirectFlights = directFlights.sort((a, b) => {
+          const aPriority = a.plPoznanNaplesPriority ? 1 : 0;
+          const bPriority = b.plPoznanNaplesPriority ? 1 : 0;
+          return bPriority - aPriority;
+        });
+
         // Create ideal flight combinations
-        const idealCombinations =
-          this.createIdealFlightCombinations(directFlights);
+        let idealCombinations = this.createIdealFlightCombinations(
+          prioritizedDirectFlights
+        );
+
+        // For Polish searches, ensure earliest outbound is included (but not ahead of best timing)
+        if (context && context.isPolishSearch) {
+          const earliest = [...prioritizedDirectFlights].sort(
+            (a, b) =>
+              this.parseTimeToMinutes(a.departure) -
+              this.parseTimeToMinutes(b.departure)
+          )[0];
+          if (
+            earliest &&
+            !idealCombinations.find((f) => f.id === earliest.id)
+          ) {
+            idealCombinations.push({
+              ...earliest,
+              combinationType: "earliest_departure",
+              score: Number.MAX_SAFE_INTEGER - 1,
+            });
+          }
+        }
+
+        // Ensure Best Timing appears first if present
+        const bestIdx = idealCombinations.findIndex(
+          (f) =>
+            f.combinationType === "best_timing" ||
+            f.combinationType === "best_timing_and_cheapest"
+        );
+        if (bestIdx > 0) {
+          const [best] = idealCombinations.splice(bestIdx, 1);
+          idealCombinations.unshift(best);
+        }
 
         // Select the best combinations
         preferredFlights.push(...idealCombinations.slice(0, 2));
 
         // Add remaining direct flights as alternatives
-        directFlights.forEach((flight) => {
+        prioritizedDirectFlights.forEach((flight) => {
           if (!preferredFlights.find((pf) => pf.id === flight.id)) {
             alternativeFlights.push(flight);
           }
@@ -351,8 +552,18 @@ class FlightApiService {
       });
     }
 
-    // Sort combinations by score (higher is better)
-    return combinations.sort((a, b) => b.score - a.score);
+    // Sort combinations with strong preference for arrivals before 14:00
+    const isBeforeTwo = (flight) => {
+      const mins = this.parseTimeToMinutes(flight.arrival);
+      return mins > 0 && mins <= 14 * 60;
+    };
+    return combinations.sort((a, b) => {
+      const aBefore = isBeforeTwo(a);
+      const bBefore = isBeforeTwo(b);
+      if (aBefore && !bBefore) return -1;
+      if (!aBefore && bBefore) return 1;
+      return b.score - a.score;
+    });
   }
 
   // Find the flight with best timing (outbound lands close to 2pm, return leaves close to 3pm)
@@ -368,6 +579,7 @@ class FlightApiService {
 
     flights.forEach((flight) => {
       const outboundArrivalTime = this.parseTimeToMinutes(flight.arrival);
+      const outboundDepartureTime = this.parseTimeToMinutes(flight.departure);
       const returnDepartureTime = this.parseTimeToMinutes(
         flight.returnDeparture
       );
@@ -375,19 +587,23 @@ class FlightApiService {
       // Calculate timing score
       let score = 0;
 
-      // Outbound arrival scoring (prefer close to 2pm, then earlier, then after 3pm)
-      const outboundDiff = Math.abs(
-        outboundArrivalTime - targetOutboundArrival
-      );
+      // Strong preference for arrivals before 2pm (14:00)
       if (outboundArrivalTime <= targetOutboundArrival) {
-        // Earlier or on time - higher score for closer to 2pm
-        score += Math.max(0, 100 - outboundDiff);
-      } else if (outboundArrivalTime <= 1500) {
-        // Between 2pm and 3pm - lower score
-        score += Math.max(0, 50 - outboundDiff);
+        // Before 2pm gets massive bonus - closer to 2pm is better
+        const outboundDiff = Math.abs(
+          outboundArrivalTime - targetOutboundArrival
+        );
+        score += 2000 + Math.max(0, 100 - outboundDiff); // 2000+ base bonus
       } else {
-        // After 3pm - lowest score
-        score += Math.max(0, 25 - outboundDiff);
+        // After 2pm gets heavily penalized - especially late evening arrivals
+        const outboundDiff = Math.abs(
+          outboundArrivalTime - targetOutboundArrival
+        );
+        if (outboundArrivalTime >= 2000) {
+          // After 8 PM arrival
+          score -= 1000; // Heavy penalty for late evening arrivals
+        }
+        score += Math.max(-500, 50 - outboundDiff); // Can go negative
       }
 
       // Return departure scoring (prefer close to 3pm, then later, then earlier)
@@ -402,6 +618,24 @@ class FlightApiService {
       } else {
         // Before 3pm - lower score (no group bonus)
         score += Math.max(0, 50 - returnDiff);
+      }
+
+      // Outbound departure morning bonus (prefer 06:00–10:00, peak at ~08:00)
+      const morningStart = 6 * 60;
+      const morningEnd = 10 * 60;
+      if (
+        outboundDepartureTime >= morningStart &&
+        outboundDepartureTime <= morningEnd
+      ) {
+        const targetMorning = 8 * 60;
+        const morningDiff = Math.abs(outboundDepartureTime - targetMorning);
+        score += Math.max(0, 200 - morningDiff / 2); // Increased bonus
+      }
+
+      // Heavy penalty for late evening departures (after 8 PM)
+      if (outboundDepartureTime >= 2000) {
+        // 8 PM
+        score -= 500; // Heavy penalty for late evening departures
       }
 
       if (score > bestScore) {
@@ -482,18 +716,46 @@ class FlightApiService {
     const targetReturnDeparture = 1500; // 3:00 PM
 
     const outboundArrivalTime = this.parseTimeToMinutes(flight.arrival);
+    const outboundDepartureTime = this.parseTimeToMinutes(flight.departure);
     const returnDepartureTime = this.parseTimeToMinutes(flight.returnDeparture);
 
     let score = 200; // Base score for being direct
 
-    // Outbound arrival scoring
-    const outboundDiff = Math.abs(outboundArrivalTime - targetOutboundArrival);
+    // Strong preference for arrivals before 2pm (14:00)
     if (outboundArrivalTime <= targetOutboundArrival) {
-      score += Math.max(0, 100 - outboundDiff);
-    } else if (outboundArrivalTime <= 1500) {
-      score += Math.max(0, 50 - outboundDiff);
+      // Before 2pm gets massive bonus - closer to 2pm is better
+      const outboundDiff = Math.abs(
+        outboundArrivalTime - targetOutboundArrival
+      );
+      score += 2000 + Math.max(0, 100 - outboundDiff); // 2000+ base bonus
     } else {
-      score += Math.max(0, 25 - outboundDiff);
+      // After 2pm gets heavily penalized - especially late evening arrivals
+      const outboundDiff = Math.abs(
+        outboundArrivalTime - targetOutboundArrival
+      );
+      if (outboundArrivalTime >= 2000) {
+        // After 8 PM arrival
+        score -= 1000; // Heavy penalty for late evening arrivals
+      }
+      score += Math.max(-500, 50 - outboundDiff); // Can go negative
+    }
+
+    // Outbound departure morning bonus (prefer 06:00–10:00, peak at ~08:00)
+    const morningStart = 6 * 60;
+    const morningEnd = 10 * 60;
+    if (
+      outboundDepartureTime >= morningStart &&
+      outboundDepartureTime <= morningEnd
+    ) {
+      const targetMorning = 8 * 60;
+      const morningDiff = Math.abs(outboundDepartureTime - targetMorning);
+      score += Math.max(0, 200 - morningDiff / 2); // Increased bonus
+    }
+
+    // Heavy penalty for late evening departures (after 8 PM)
+    if (outboundDepartureTime >= 2000) {
+      // 8 PM
+      score -= 500; // Heavy penalty for late evening departures
     }
 
     // Return departure scoring

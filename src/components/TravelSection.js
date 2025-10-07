@@ -634,6 +634,10 @@ const TravelSection = ({ language, guestCode }) => {
         "PT2026",
         "AGI2026",
       ];
+      const isPolishGuest =
+        language === "pl" ||
+        (typeof guestCode === "string" &&
+          guestCode.toUpperCase().startsWith("PL"));
 
       if (hungarianGuests.includes(guestCode)) {
         setIsLoading(true);
@@ -648,6 +652,40 @@ const TravelSection = ({ language, guestCode }) => {
           );
 
           // Update the route with real flight data or coming soon message
+          setCurrentRoute((prevRoute) => ({
+            ...prevRoute,
+            origin: "Poland",
+            originCode: "PL",
+            destination: "Italy",
+            destinationCode: "IT",
+            preferredFlights: flights.preferredFlights || [],
+            alternativeFlights: flights.alternativeFlights || [],
+            comingSoon: flights.comingSoon || false,
+            message: flights.message || null,
+          }));
+        } catch (error) {
+          console.error("Error loading flights:", error);
+        } finally {
+          setIsLoading(false);
+        }
+      } else if (isPolishGuest) {
+        setIsLoading(true);
+        try {
+          const flights = await flightApiService.getFlights(
+            "PL",
+            "IT",
+            "2026-06-26",
+            "2026-06-28",
+            1,
+            guestCode,
+            {
+              sourceCities:
+                "City:poznan_pl,City:warsaw_pl,City:katowice_pl,City:gdansk_pl,City:wroclaw_pl",
+              destinationCities: "City:naples_it,City:rome_it",
+              currency: "pln",
+            }
+          );
+
           setCurrentRoute((prevRoute) => ({
             ...prevRoute,
             preferredFlights: flights.preferredFlights || [],
@@ -719,11 +757,27 @@ const TravelSection = ({ language, guestCode }) => {
             <>
               <div className="route-header">
                 <h3>
-                  {translations[language].route}: {currentRoute.origin} →{" "}
-                  {currentRoute.destination}
+                  {translations[language].route}:{" "}
+                  {(() => {
+                    if (language === "hu") {
+                      return "Budapest → Nápoly";
+                    }
+                    if (language === "pl") {
+                      return "Polska → Włochy";
+                    }
+                    return `${currentRoute.origin} → ${currentRoute.destination}`;
+                  })()}
                 </h3>
                 <span className="route-codes">
-                  ({currentRoute.originCode} → {currentRoute.destinationCode})
+                  {(() => {
+                    if (language === "hu") {
+                      return "(BUD → NAP)";
+                    }
+                    if (language === "pl") {
+                      return "(PL → IT)";
+                    }
+                    return `(${currentRoute.originCode} → ${currentRoute.destinationCode})`;
+                  })()}
                 </span>
               </div>
 
@@ -750,7 +804,16 @@ const TravelSection = ({ language, guestCode }) => {
                   {/* View All Options Button */}
                   <div className="view-all-options">
                     <a
-                      href={`https://www.kiwi.com/en/search/results/budapest-hungary/naples-italy/2026-06-26/2026-06-28?adults=1&currency=huf`}
+                      href={(() => {
+                        const isPolishGuestLink =
+                          language === "pl" ||
+                          (typeof guestCode === "string" &&
+                            guestCode.toUpperCase().startsWith("PL"));
+                        if (isPolishGuestLink) {
+                          return `https://www.kiwi.com/en/search/results/poznan-poland,warsaw-poland,katowice-poland,gdansk-poland,wroclaw-poland/naples-italy,rome-italy/2026-06-26/2026-06-28?adults=1&currency=pln`;
+                        }
+                        return `https://www.kiwi.com/en/search/results/budapest-hungary/naples-italy/2026-06-26/2026-06-28?adults=1&currency=huf`;
+                      })()}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="view-all-button"
