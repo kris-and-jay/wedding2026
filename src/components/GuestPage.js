@@ -1,6 +1,7 @@
 import React from "react";
 import RSVPForm from "./RSVPForm";
 import TravelSection from "./TravelSection";
+import FAQComponent from "./FAQSection";
 
 const translations = {
   en: {
@@ -932,7 +933,7 @@ const GuestPage = ({ language, guestCode }) => {
               className="gallery-image"
             />
             <img
-              src="/wedding2026/assets/accomodation/suites/20250507_112643.jpg"
+              src="/wedding2026/assets/accomodation/suites/20250507_113544.jpg"
               alt="Quercia"
               className="gallery-image"
             />
@@ -1003,6 +1004,9 @@ const GuestPage = ({ language, guestCode }) => {
       <div className="section">
         <h2>{translations[language].itinerary}</h2>
         <p>{translations[language].comingSoon}</p>
+      </div>
+      <div className="section">
+        <FAQComponent language={language} />
       </div>
     </div>
   );
