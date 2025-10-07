@@ -213,6 +213,11 @@ const FlightCard = ({
         <h5>
           {translations[language].outboundFlight} - {flight.airline}
         </h5>
+        {flight.outboundSourceCity && flight.outboundDestinationCity && (
+          <div className="city-route">
+            {flight.outboundSourceCity} → {flight.outboundDestinationCity}
+          </div>
+        )}
         <div className="flight-details">
           <div className="time-info">
             <div className="departure">
@@ -233,6 +238,13 @@ const FlightCard = ({
         <h5>
           {translations[language].returnFlight} - {flight.returnAirline}
         </h5>
+        {flight.inboundFirstSourceCity &&
+          flight.inboundFinalDestinationCity && (
+            <div className="city-route">
+              {flight.inboundFirstSourceCity} →{" "}
+              {flight.inboundFinalDestinationCity}
+            </div>
+          )}
         <div className="flight-details">
           <div className="time-info">
             <div className="departure">

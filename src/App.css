@@ -719,6 +719,18 @@ h1::after {
   font-weight: 600;
 }
 
+.city-route {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  padding: 0.25rem 0.5rem;
+  background: rgba(212, 163, 115, 0.1);
+  border-radius: 4px;
+  border: 1px solid rgba(212, 163, 115, 0.2);
+}
+
 .flight-header {
   display: flex;
   justify-content: space-between;

@@ -81,7 +81,10 @@ class FlightApiService {
             destination,
             departureDate,
             returnDate,
-            passengers
+            passengers,
+            {
+              locale: "hu",
+            }
           );
         } catch (error) {
           console.error(
@@ -110,6 +113,7 @@ class FlightApiService {
               sourceCities,
               destinationCities,
               currency: options.currency || "pln",
+              locale: "pl",
               isPolishSearch: true,
             }
           );
@@ -134,7 +138,12 @@ class FlightApiService {
             departureDate,
             returnDate,
             passengers,
-            { sourceCities, destinationCities, currency: options.currency }
+            {
+              sourceCities,
+              destinationCities,
+              currency: options.currency,
+              locale: options.locale || "en",
+            }
           );
         } catch (error) {
           console.error(
@@ -202,6 +211,8 @@ class FlightApiService {
     }
 
     const selectedCurrency = (extra.currency || "huf").toLowerCase();
+    const locale = extra.locale || "en"; // Default to English if no locale specified
+
     const options = {
       method: "GET",
       url: `${config.baseUrl}${config.endpoints.roundTrip}`,
@@ -213,6 +224,7 @@ class FlightApiService {
         transportTypes: "FLIGHT",
         contentProviders: "FLIXBUS_DIRECTS,FRESH,KAYAK,KIWI",
         limit: 20,
+        locale: locale,
         inboundDepartureDateStart: `${returnDate}T00:00:00`,
         inboundDepartureDateEnd: `${returnDate}T23:59:59`,
         outboundDepartureDateStart: `${departureDate}T00:00:00`,
@@ -262,6 +274,31 @@ class FlightApiService {
 
       if (data && data.itineraries && Array.isArray(data.itineraries)) {
         flights = data.itineraries;
+        console.log("Full API response:", data);
+        // Log the structure of the first flight to understand the data format
+        if (flights.length > 0) {
+          console.log("First flight structure:", flights[0]);
+          if (
+            flights[0].outbound &&
+            flights[0].outbound.sectorSegments &&
+            flights[0].outbound.sectorSegments.length > 0
+          ) {
+            console.log(
+              "Outbound segment structure:",
+              flights[0].outbound.sectorSegments[0]
+            );
+          }
+          if (
+            flights[0].inbound &&
+            flights[0].inbound.sectorSegments &&
+            flights[0].inbound.sectorSegments.length > 0
+          ) {
+            console.log(
+              "Inbound segment structure:",
+              flights[0].inbound.sectorSegments[0]
+            );
+          }
+        }
       } else if (data && data.data && Array.isArray(data.data)) {
         flights = data.data;
       } else if (data && Array.isArray(data)) {
@@ -318,34 +355,38 @@ class FlightApiService {
           inbound.sectorSegments.length === 1;
         const isDirectFlight = isDirectOutbound && isDirectInbound;
 
-        // Attempt to extract city/airport names and codes for display/prioritization
+        // Extract city names using the exact paths provided
         const safeGet = (...vals) =>
           vals.find((v) => typeof v === "string" && v.trim().length > 0) || "";
+
+        // For outbound flights: source and destination cities
         const outboundSourceRaw = safeGet(
+          outboundSegment?.source?.station?.city?.name,
           outboundSegment?.source?.airport?.city?.name,
           outboundSegment?.source?.city?.name,
-          outboundSegment?.source?.airport?.name,
           outboundSegment?.source?.name,
           outboundSegment?.source?.code
         );
         const outboundDestinationRaw = safeGet(
+          outboundSegment?.destination?.station?.city?.name,
           outboundSegment?.destination?.airport?.city?.name,
           outboundSegment?.destination?.city?.name,
-          outboundSegment?.destination?.airport?.name,
           outboundSegment?.destination?.name,
           outboundSegment?.destination?.code
         );
+
+        // For inbound flights: source and destination cities
         const inboundFirstSourceRaw = safeGet(
+          inboundFirstSegment?.source?.station?.city?.name,
           inboundFirstSegment?.source?.airport?.city?.name,
           inboundFirstSegment?.source?.city?.name,
-          inboundFirstSegment?.source?.airport?.name,
           inboundFirstSegment?.source?.name,
           inboundFirstSegment?.source?.code
         );
         const inboundFinalDestinationRaw = safeGet(
+          inboundSegment?.destination?.station?.city?.name,
           inboundSegment?.destination?.airport?.city?.name,
           inboundSegment?.destination?.city?.name,
-          inboundSegment?.destination?.airport?.name,
           inboundSegment?.destination?.name,
           inboundSegment?.destination?.code
         );
@@ -360,6 +401,18 @@ class FlightApiService {
         const inboundFinalDestinationCity = this.normalizeCityName(
           inboundFinalDestinationRaw
         );
+
+        // Debug logging for city names
+        console.log(`Flight ${index} city names:`, {
+          outboundSourceRaw,
+          outboundDestinationRaw,
+          inboundFirstSourceRaw,
+          inboundFinalDestinationRaw,
+          outboundSourceCity,
+          outboundDestinationCity,
+          inboundFirstSourceCity,
+          inboundFinalDestinationCity,
+        });
 
         const outboundSourceCode =
           outboundSegment?.source?.airport?.code ||
