@@ -73,77 +73,77 @@ const RSVPForm = ({ language, guestCode }) => {
   const specialThankYouMessages = {
     IL2026: {
       en: "Thank you so much for confirming your attendance! We are super excited to have you on our special day!",
-      pl: "Bardzo dziękujemy za potwierdzenie obecności! Jesteśmy bardzo podekscytowani, że będziesz z nami w tym wyjątkowym dniu!",
+      pl: "Bardzo dziękujemy za potwierdzenie obecności! Cieszymy się niezmiernie, że będziesz z nami w tym wyjątkowym dniu!",
       hu: "Köszönjük, hogy visszajeleztél! Nagyon örülünk, hogy velünk ünnepeltek ezen a különleges napon!",
     },
     HG2026: {
       en: "Thank you so much for confirming your attendance! We are super excited to have you on our special day!",
-      pl: "Bardzo dziękujemy za potwierdzenie obecności! Jesteśmy bardzo podekscytowani, że będziesz z nami w tym wyjątkowym dniu!",
+      pl: "Bardzo dziękujemy za potwierdzenie obecności! Cieszymy się niezmiernie, że będziesz z nami w tym wyjątkowym dniu!",
       hu: "Köszönjük, hogy visszajeleztél! Nagyon örülünk, hogy velünk ünnepelsz ezen a különleges napon!",
     },
     AT2026: {
       en: "Thank you so much for confirming your attendance! We are super excited to have you on our special day!",
-      pl: "Bardzo dziękujemy za potwierdzenie obecności! Jesteśmy bardzo podekscytowani, że będziesz z nami w tym wyjątkowym dniu!",
+      pl: "Bardzo dziękujemy za potwierdzenie obecności! Cieszymy się niezmiernie, że będziesz z nami w tym wyjątkowym dniu!",
       hu: "Köszönjük, hogy visszajeleztél! Nagyon örülünk, hogy velünk ünnepeltek ezen a különleges napon!",
     },
     KR2026: {
       en: "Thank you so much for confirming your attendance! We are super excited to have you on our special day!",
-      pl: "Bardzo dziękujemy za potwierdzenie obecności! Jesteśmy bardzo podekscytowani, że będziesz z nami w tym wyjątkowym dniu!",
+      pl: "Bardzo dziękujemy za potwierdzenie obecności! Cieszymy się niezmiernie, że będziesz z nami w tym wyjątkowym dniu!",
       hu: "Köszönjük, hogy visszajeleztél! Nagyon örülünk, hogy velünk ünnepeltek ezen a különleges napon!",
     },
     GA2026: {
       en: "Thank you so much for confirming your attendance! We are super excited to have you on our special day!",
-      pl: "Bardzo dziękujemy za potwierdzenie obecności! Jesteśmy bardzo podekscytowani, że będziesz z nami w tym wyjątkowym dniu!",
+      pl: "Bardzo dziękujemy za potwierdzenie obecności! Cieszymy się niezmiernie, że będziesz z nami w tym wyjątkowym dniu!",
       hu: "Köszönjük, hogy visszajeleztél! Nagyon örülünk, hogy velünk ünnepelsz ezen a különleges napon!",
     },
     PR2026: {
       en: "Thank you so much for confirming your attendance! We are super excited to have you on our special day!",
-      pl: "Bardzo dziękujemy za potwierdzenie obecności! Jesteśmy bardzo podekscytowani, że będziesz z nami w tym wyjątkowym dniu!",
+      pl: "Bardzo dziękujemy za potwierdzenie obecności! Cieszymy się niezmiernie, że będziesz z nami w tym wyjątkowym dniu!",
       hu: "Köszönjük, hogy visszajeleztél! Nagyon örülünk, hogy velünk ünnepelsz ezen a különleges napon!",
     },
     AGI2026: {
       en: "Thank you so much for confirming your attendance! We are super excited to have you on our special day!",
-      pl: "Bardzo dziękujemy za potwierdzenie obecności! Jesteśmy bardzo podekscytowani, że będziesz z nami w tym wyjątkowym dniu!",
+      pl: "Bardzo dziękujemy za potwierdzenie obecności! Cieszymy się niezmiernie, że będziesz z nami w tym wyjątkowym dniu!",
       hu: "Köszönjük, hogy visszajeleztél! Nagyon örülünk, hogy velünk ünnepeltek ezen a különleges napon!",
     },
     SM2026: {
       en: "Thank you so much for confirming your attendance! We are super excited to have you on our special day!",
-      pl: "Bardzo dziękujemy za potwierdzenie obecności! Jesteśmy bardzo podekscytowani, że będziesz z nami w tym wyjątkowym dniu!",
+      pl: "Bardzo dziękujemy za potwierdzenie obecności! Cieszymy się niezmiernie, że będziesz z nami w tym wyjątkowym dniu!",
       hu: "Köszönjük, hogy visszajeleztél! Nagyon örülünk, hogy velünk ünnepeltek ezen a különleges napon!",
     },
     YN2026: {
       en: "Thank you so much for confirming your attendance! We are super excited to have you on our special day!",
-      pl: "Bardzo dziękujemy za potwierdzenie obecności! Jesteśmy bardzo podekscytowani, że będziesz z nami w tym wyjątkowym dniu!",
+      pl: "Bardzo dziękujemy za potwierdzenie obecności! Cieszymy się niezmiernie, że będziesz z nami w tym wyjątkowym dniu!",
       hu: "Köszönjük, hogy visszajeleztél! Nagyon örülünk, hogy velünk ünnepeltek ezen a különleges napon!",
     },
     WS2026: {
       en: "Thank you so much for confirming your attendance! We are super excited to have you on our special day!",
-      pl: "Bardzo dziękujemy za potwierdzenie obecności! Jesteśmy bardzo podekscytowani, że będziesz z nami w tym wyjątkowym dniu!",
+      pl: "Bardzo dziękujemy za potwierdzenie obecności! Cieszymy się niezmiernie, że będziesz z nami w tym wyjątkowym dniu!",
       hu: "Köszönjük, hogy visszajeleztél! Nagyon örülünk, hogy velünk ünnepeltek ezen a különleges napon!",
     },
     AG2026: {
       en: "Thank you so much for confirming your attendance! We are super excited to have you on our special day!",
-      pl: "Bardzo dziękujemy za potwierdzenie obecności! Jesteśmy bardzo podekscytowani, że będziesz z nami w tym wyjątkowym dniu!",
+      pl: "Bardzo dziękujemy za potwierdzenie obecności! Cieszymy się niezmiernie, że będziesz z nami w tym wyjątkowym dniu!",
       hu: "Köszönjük, hogy visszajeleztél! Nagyon örülünk, hogy velünk ünnepeltek ezen a különleges napon!",
     },
     CT2026: {
       en: "Thank you so much for confirming your attendance! We are super excited to have you on our special day!",
-      pl: "Bardzo dziękujemy za potwierdzenie obecności! Jesteśmy bardzo podekscytowani, że będziesz z nami w tym wyjątkowym dniu!",
+      pl: "Bardzo dziękujemy za potwierdzenie obecności! Cieszymy się niezmiernie, że będziesz z nami w tym wyjątkowym dniu!",
       hu: "Köszönjük, hogy visszajeleztél! Nagyon örülünk, hogy velünk ünnepeltek ezen a különleges napon!",
     },
     WD2026: {
       en: "Thank you so much for confirming your attendance! We are super excited to have you on our special day!",
-      pl: "Bardzo dziękujemy za potwierdzenie obecności! Jesteśmy bardzo podekscytowani, że będziesz z nami w tym wyjątkowym dniu!",
+      pl: "Bardzo dziękujemy za potwierdzenie obecności! Cieszymy się niezmiernie, że będziesz z nami w tym wyjątkowym dniu!",
       hu: "Köszönjük, hogy visszajeleztél! Nagyon örülünk, hogy velünk ünnepeltek ezen a különleges napon!",
     },
     ER2026: {
       en: "Thank you so much for confirming your attendance! We are super excited to have you on our special day!",
-      pl: "Bardzo dziękujemy za potwierdzenie obecności! Jesteśmy bardzo podekscytowani, że będziesz z nami w tym wyjątkowym dniu!",
+      pl: "Bardzo dziękujemy za potwierdzenie obecności! Cieszymy się niezmiernie, że będziesz z nami w tym wyjątkowym dniu!",
       hu: "Köszönjük, hogy visszajeleztél! Nagyon örülünk, hogy velünk ünnepeltek ezen a különleges napon!",
     },
     MK2026: {
       en: "Thank you so much for confirming your attendance! We are super excited to have you on our special day!",
-      pl: "Bardzo dziękujemy za potwierdzenie obecności! Jesteśmy bardzo podekscytowani, że będziesz z nami w tym wyjątkowym dniu!",
+      pl: "Bardzo dziękujemy za potwierdzenie obecności! Cieszymy się niezmiernie, że będziesz z nami w tym wyjątkowym dniu!",
       hu: "Köszönjük, hogy visszajeleztél! Nagyon örülünk, hogy velünk ünnepeltek ezen a különleges napon!",
     },
     // Add more guest codes here as needed
