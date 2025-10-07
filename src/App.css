@@ -484,6 +484,30 @@ h1::after {
   margin-top: 1rem;
 }
 
+.location-additional-info {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #34495e;
+}
+
+.location-additional-info h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-family: "Playfair Display", serif;
+}
+
+.location-additional-info p {
+  margin-bottom: 1.2rem;
+  text-align: justify;
+}
+
+.location-additional-info p:last-child {
+  margin-bottom: 0;
+}
+
 .accommodation-gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -537,6 +561,21 @@ h1::after {
   .gallery-image {
     height: 250px;
   }
+
+  .location-additional-info {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .location-additional-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .location-additional-info p {
+    margin-bottom: 1rem;
+    text-align: left;
+  }
 }
 
 @media (max-width: 400px) {
@@ -546,6 +585,20 @@ h1::after {
 
   .gallery-image {
     height: 200px;
+  }
+
+  .location-additional-info {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+
+  .location-additional-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .location-additional-info p {
+    margin-bottom: 0.8rem;
   }
 }
 

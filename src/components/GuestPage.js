@@ -14,6 +14,14 @@ const translations = {
     locationText:
       "Our ceremony and reception will be held at Fattoria Terranova, a working farm, hotel and restaurant situated in the beautiful Sorrento hills, featuring a swimming pool and garden areas with wonderful views of the Bay of Naples, Vesuvius, and Capri island.\n\nAll the food served is grown on the farm, which also produces its own olive oil and limoncello from the region's famous Sorrento lemons.\n\nYou can find more details on their website: ",
     websiteLink: "fattoriaterranova.it",
+    locationAdditionalTitle: "What else is there to do in the area?",
+    locationAdditionalText: [
+      "Adjoining the farmland is the WWF oasis spot \"Le Tore\" where you can jog throughout the pine forest pathways or stroll all the way down to the stunning beaches.",
+      "Distancing only a few meters away is Sant'Agata sui Due Golfi, a small and very characteristic town that is named so because it overlooks both the Gulf of Naples and the Gulf of Salerno on opposite sides.",
+      "With its famous beaches and clear blue waters, Massa Lubrense is only a 5 minute drive away: a great place to spend a relaxing day at the beach.",
+      "The town center of Sorrento is only a 15 minute drive or 20 minutes bus ride. From there you board trains to visit the Pompeii and Herculaneum ruins or walk down to the port and catch one of the many ferry boats that go to Naples, Capri and Ischia.",
+      "Less than five minutes away from the farmland Terranova is the street that leads you to the Amalfi Coast with its winding curves and spectacular views of the sea. In less than twenty minutes, you'll arrive in Positano."
+    ]
   },
   pl: {
     rsvp: "Potwierdzenie obecności",
@@ -25,6 +33,14 @@ const translations = {
     locationText:
       "Nasza ceremonia ślubna i przyjęcie weselne odbędą się w Fattoria Terranova – gospodarstwie agroturystycznym z restauracją, basenem i terenami ogrodowymi, położonym na pięknych wzgórzach Sorrento, z których roztaczają się oszałamiające widoki na Zatokę Neapolitańską, Wezuwiusza i wyspę Capri.\n\nWszystkie dania serwowane w restauracji powstają z lokalnych produktów, a gospodarstwo wytwarza nawet własną oliwę z oliwek i limoncello ze słynnych cytryn z Sorrento!\n\nWięcej szczegółów znajdziecie na ich stronie internetowej: ",
     websiteLink: "fattoriaterranova.it",
+    locationAdditionalTitle: "Co można zobaczyć w okolicy?",
+    locationAdditionalText: [
+      "Przy farmie znajduje się oaza WWF \"Le Tore\", gdzie można biegać leśnymi ścieżkami lub spacerować aż do przepięknych plaż.",
+      "Zaledwie kilka metrów dalej leży Sant'Agata sui Due Golfi, małe i bardzo charakterystyczne miasteczko nazwane tak, ponieważ góruje nad Zatoką Neapolitańską i Zatoką Salerno, położonymi po przeciwnych stronach.",
+      "Massa Lubrense, ze swoimi słynnymi plażami i krystalicznie czystą wodą, znajduje się zaledwie 5 minut jazdy samochodem: to świetne miejsce na relaksujący dzień na plaży.",
+      "Centrum Sorrento to tylko 15 minut jazdy samochodem lub 20 minut autobusem. Stamtąd można wsiąść do pociągu, aby odwiedzić ruiny Pompejów i Herkulanum lub zejść do portu i złapać jeden z wielu promów płynących do Neapolu, Capri i Ischii.",
+      "Niecałe pięć minut drogi od farmy Terranova znajduje się ulica, która prowadzi na Wybrzeże Amalfi z jego krętymi zakrętami i spektakularnymi widokami na morze. W niespełna dwadzieścia minut dotrzesz do Positano."
+    ]
   },
   hu: {
     rsvp: "Visszajelzés",
@@ -36,6 +52,14 @@ const translations = {
     locationText:
       "A szertartást és a fogadást a Fattoria Terranovában tartjuk, egy étteremként is működő gazdaságban a gyönyörű Sorrento-i dombokon, ahonnan csodálatos kilátás nyílik a Nápolyi-öbölre, a Vezúvra és Capri szigetére.\n\nA vendégek rendelkezésére áll az úszómedence és a kert is. Minden felszolgált étel a farmon termesztett alapanyagokból készül, sőt, a gazdaság saját olívaolajat és limoncello-t is készít a híres Sorrento-i citromból!\n\nTovábbi részletek a weboldalukon: ",
     websiteLink: "fattoriaterranova.it",
+    locationAdditionalTitle: "Mi más látnivaló van a környéken?",
+    locationAdditionalText: [
+      "A farm mellett található a WWF \"Le Tore\" oázisa, ahol végig lehet kocogni a fenyőerdő ösvényein vagy le lehet sétálni egészen a gyönyörű tengerpartokig.",
+      "A közelben van Sant'Agata sui Due Golfi is, egy kis és nagyon jellegzetes városka, amely azért kapta ezt a nevet, mert mind a Nápolyi-öbölre, mind a Salernói-öbölre van kilátás, amelyek a domb ellentétes oldalain helyezkednek el.",
+      "A híres strandjaival és kristálytiszta vizeivel a Massa Lubrense mindössze 5 perces autóútra van: tökéletes hely egy pihentető napozásra a tengerparton.",
+      "Sorrento városközpontja mindössze 15 perces autóút vagy 20 perces buszút. Onnan vonatra szállva, el lehet jutni Pompeii és Herculaneum romjaihoz, vagy a kikötőből az egyik komppal Nápolyba, Caprira vagy Ischiára.",
+      "A Fattoria Terranovától kevesebb mint öt percre található az az út, amely az Amalfi-partra vezet a kanyargós szerpentinjeivel és a tengerre néző bámulatos kilátásával. Kevesebb mint húsz perc az út Positanóba."
+    ]
   },
 };
 
@@ -753,48 +777,52 @@ const GuestPage = ({ language, guestCode }) => {
       </div>
       <div className="section">
         <h2>{translations[language].location}</h2>
-        <div className="location-content">
-          <div className="location-text">
-            {translations[language].locationText
-              .split("\n\n")
-              .map((paragraph, index) => (
-                <p key={index}>
-                  {paragraph}
-                  {index === 2 && (
-                    <a
-                      href="https://www.fattoriaterranova.it"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="website-link"
-                    >
-                      {translations[language].websiteLink}
-                    </a>
-                  )}
-                </p>
-              ))}
-          </div>
-          <div className="location-gallery">
-            <img
-              src="/wedding2026/assets/fattoria/1.jpg"
-              alt="Fattoria Terranova"
-              className="gallery-image"
-            />
-            <img
-              src="/wedding2026/assets/fattoria/2.jpg"
-              alt="Fattoria Terranova"
-              className="gallery-image"
-            />
-            <img
-              src="/wedding2026/assets/fattoria/3.jpg"
-              alt="Fattoria Terranova"
-              className="gallery-image"
-            />
-            <img
-              src="/wedding2026/assets/fattoria/4.jpg"
-              alt="Fattoria Terranova"
-              className="gallery-image"
-            />
-          </div>
+        <div className="location-text">
+          {translations[language].locationText
+            .split("\n\n")
+            .map((paragraph, index) => (
+              <p key={index}>
+                {paragraph}
+                {index === 2 && (
+                  <a
+                    href="https://www.fattoriaterranova.it"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="website-link"
+                  >
+                    {translations[language].websiteLink}
+                  </a>
+                )}
+              </p>
+            ))}
+        </div>
+        <div className="location-gallery">
+          <img
+            src="/wedding2026/assets/fattoria/1.jpg"
+            alt="Fattoria Terranova"
+            className="gallery-image"
+          />
+          <img
+            src="/wedding2026/assets/fattoria/2.jpg"
+            alt="Fattoria Terranova"
+            className="gallery-image"
+          />
+          <img
+            src="/wedding2026/assets/fattoria/3.jpg"
+            alt="Fattoria Terranova"
+            className="gallery-image"
+          />
+          <img
+            src="/wedding2026/assets/fattoria/4.jpg"
+            alt="Fattoria Terranova"
+            className="gallery-image"
+          />
+        </div>
+        <div className="location-additional-info">
+          <h3>{translations[language].locationAdditionalTitle}</h3>
+          {translations[language].locationAdditionalText.map((paragraph, index) => (
+            <p key={index}>{paragraph}</p>
+          ))}
         </div>
       </div>
       <div className="section">
