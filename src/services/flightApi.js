@@ -100,7 +100,7 @@ class FlightApiService {
         try {
           const sourceCities =
             options.sourceCities ||
-            "City:poznan_pl,City:warsaw_pl,City:katowice_pl,City:gdansk_pl,City:wroclaw_pl";
+            "City:poznan_pl,City:warsaw_pl,City:katowice_pl,City:gdansk_pl,City:wroclaw_pl,City:berlin_de";
           const destinationCities =
             options.destinationCities || "City:naples_it,City:rome_it";
           return await this.searchKiwiRapidAPI(
