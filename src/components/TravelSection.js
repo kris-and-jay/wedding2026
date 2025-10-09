@@ -696,7 +696,7 @@ const TravelSection = ({ language, guestCode }) => {
             guestCode,
             {
               sourceCities:
-                "City:poznan_pl,City:warsaw_pl,City:katowice_pl,City:gdansk_pl,City:wroclaw_pl",
+                "City:poznan_pl,City:warsaw_pl,City:katowice_pl,City:gdansk_pl,City:wroclaw_pl,City:berlin_de",
               destinationCities: "City:naples_it,City:rome_it",
               currency: "pln",
             }
@@ -841,7 +841,7 @@ const TravelSection = ({ language, guestCode }) => {
                               guestCode.toUpperCase().startsWith("PL"))) &&
                           guestCode !== "SD2026"; // SD2026 is a UK guest, not Polish
                         if (isPolishGuestLink) {
-                          return `https://www.kiwi.com/en/search/results/poznan-poland,warsaw-poland,katowice-poland,gdansk-poland,wroclaw-poland/naples-italy,rome-italy/2026-06-26/2026-06-28?adults=1&currency=pln`;
+                          return `https://www.kiwi.com/en/search/results/poznan-poland,warsaw-poland,katowice-poland,gdansk-poland,wroclaw-poland,berlin-germany/naples-italy,rome-italy/2026-06-26/2026-06-28?adults=1&currency=pln`;
                         }
                         return `https://www.kiwi.com/en/search/results/budapest-hungary/naples-italy/2026-06-26/2026-06-28?adults=1&currency=huf`;
                       })()}
