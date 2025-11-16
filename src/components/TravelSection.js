@@ -650,6 +650,9 @@ const TravelSection = ({ language, guestCode }) => {
       // UK guests (edge cases)
       const ukGuests = ["SD2026"];
       
+      // UK guests from Manchester
+      const manchesterGuests = ["HG2026", "SM2026"];
+      
       // French guests
       const frenchGuests = ["PR2026", "YN2026"];
       
@@ -747,6 +750,40 @@ const TravelSection = ({ language, guestCode }) => {
             ...prevRoute,
             origin: "Portugal",
             originCode: "PT",
+            destination: "Italy",
+            destinationCode: "IT",
+            preferredFlights: flights.preferredFlights || [],
+            alternativeFlights: flights.alternativeFlights || [],
+            comingSoon: flights.comingSoon || false,
+            message: flights.message || null,
+          }));
+        } catch (error) {
+          console.error("Error loading flights:", error);
+        } finally {
+          setIsLoading(false);
+        }
+      } else if (manchesterGuests.includes(guestCode)) {
+        setIsLoading(true);
+        try {
+          const flights = await flightApiService.getFlights(
+            "UK",
+            "IT",
+            "2026-06-25",
+            "2026-06-29",
+            1,
+            guestCode,
+            {
+              sourceCities:
+                "City:manchester_gb",
+              destinationCities: "City:naples_it",
+              currency: "gbp",
+            }
+          );
+
+          setCurrentRoute((prevRoute) => ({
+            ...prevRoute,
+            origin: "United Kingdom",
+            originCode: "UK",
             destination: "Italy",
             destinationCode: "IT",
             preferredFlights: flights.preferredFlights || [],
@@ -864,6 +901,13 @@ const TravelSection = ({ language, guestCode }) => {
                 <h3>
                   {translations[language].route}:{" "}
                   {(() => {
+                    // Check for Manchester guests first (even if language is Hungarian)
+                    if (currentRoute.originCode === "UK" || guestCode === "HG2026" || guestCode === "SM2026") {
+                      if (language === "hu") {
+                        return "Manchester → Nápoly";
+                      }
+                      return "Manchester → Naples";
+                    }
                     if (language === "hu") {
                       return "Budapest → Nápoly";
                     }
@@ -881,6 +925,10 @@ const TravelSection = ({ language, guestCode }) => {
                 </h3>
                 <span className="route-codes">
                   {(() => {
+                    // Check for Manchester guests first (even if language is Hungarian)
+                    if (currentRoute.originCode === "UK" || guestCode === "HG2026" || guestCode === "SM2026") {
+                      return "(MAN → NAP)";
+                    }
                     if (language === "hu") {
                       return "(BUD → NAP)";
                     }
@@ -929,6 +977,7 @@ const TravelSection = ({ language, guestCode }) => {
                           guestCode !== "SD2026"; // SD2026 is a UK guest, not Polish
                         const isFrenchGuestLink = ["PR2026", "YN2026"].includes(guestCode);
                         const isPortugueseGuestLink = ["GA2026"].includes(guestCode);
+                        const isManchesterGuestLink = ["HG2026", "SM2026"].includes(guestCode);
                         if (isPolishGuestLink) {
                           return `https://www.kiwi.com/en/search/results/poznan-poland,warsaw-poland,katowice-poland,gdansk-poland,wroclaw-poland,berlin-germany/naples-italy,rome-italy/2026-06-26/2026-06-28?adults=1&currency=pln`;
                         }
@@ -937,6 +986,9 @@ const TravelSection = ({ language, guestCode }) => {
                         }
                         if (isPortugueseGuestLink) {
                           return `https://www.kiwi.com/en/search/results/lisbon-portugal/naples-italy/2026-06-26/2026-06-28?adults=1&currency=eur`;
+                        }
+                        if (isManchesterGuestLink) {
+                          return `https://www.kiwi.com/en/search/results/manchester-united-kingdom/naples-italy/2026-06-25/2026-06-29?adults=1&currency=gbp`;
                         }
                         return `https://www.kiwi.com/en/search/results/budapest-hungary/naples-italy/2026-06-26/2026-06-28?adults=1&currency=huf`;
                       })()}

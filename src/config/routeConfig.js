@@ -185,6 +185,25 @@ export const routeConfig = {
     alternativeFlights: [],
   },
 
+  // UK guests - Manchester to Naples
+  HG2026: {
+    origin: "United Kingdom",
+    originCode: "UK",
+    destination: "Italy",
+    destinationCode: "IT",
+    preferredFlights: [],
+    alternativeFlights: [],
+  },
+
+  SM2026: {
+    origin: "United Kingdom",
+    originCode: "UK",
+    destination: "Italy",
+    destinationCode: "IT",
+    preferredFlights: [],
+    alternativeFlights: [],
+  },
+
   // Default route for guests without specific configuration
   default: {
     origin: "Your City",

@@ -77,6 +77,9 @@ class FlightApiService {
       // Portuguese guest
       const portugueseGuests = ["GA2026"];
 
+      // UK guests from Manchester
+      const manchesterGuests = ["HG2026", "SM2026"];
+
       if (
         hungarianGuests.includes(guestCode) &&
         origin.toUpperCase() === "BUD"
@@ -153,6 +156,35 @@ class FlightApiService {
         } catch (error) {
           console.error(
             "Kiwi API failed for Portuguese guest, falling back to coming soon:",
+            error
+          );
+          // Fall through to coming soon message
+        }
+      }
+
+      // UK guests from Manchester with real flight data
+      if (manchesterGuests.includes(guestCode)) {
+        try {
+          const sourceCities = options.sourceCities || "City:manchester_gb";
+          const destinationCities =
+            options.destinationCities || "City:naples_it";
+          return await this.searchKiwiRapidAPI(
+            origin,
+            destination,
+            departureDate,
+            returnDate,
+            passengers,
+            {
+              sourceCities,
+              destinationCities,
+              currency: options.currency || "gbp",
+              locale: options.locale || "en",
+              isManchesterSearch: true,
+            }
+          );
+        } catch (error) {
+          console.error(
+            "Kiwi API failed for Manchester guests, falling back to coming soon:",
             error
           );
           // Fall through to coming soon message
