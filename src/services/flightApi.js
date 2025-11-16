@@ -71,6 +71,9 @@ class FlightApiService {
         typeof guestCode === "string" &&
         guestCode.toUpperCase().startsWith("PL");
 
+      // French guests
+      const frenchGuests = ["PR2026", "YN2026"];
+
       if (
         hungarianGuests.includes(guestCode) &&
         origin.toUpperCase() === "BUD"
@@ -89,6 +92,35 @@ class FlightApiService {
         } catch (error) {
           console.error(
             "Kiwi API failed, falling back to coming soon message:",
+            error
+          );
+          // Fall through to coming soon message
+        }
+      }
+
+      // French guests with real flight data from Paris to Naples
+      if (frenchGuests.includes(guestCode)) {
+        try {
+          const sourceCities = options.sourceCities || "City:paris_fr";
+          const destinationCities =
+            options.destinationCities || "City:naples_it";
+          return await this.searchKiwiRapidAPI(
+            origin,
+            destination,
+            departureDate,
+            returnDate,
+            passengers,
+            {
+              sourceCities,
+              destinationCities,
+              currency: options.currency || "eur",
+              locale: options.locale || "en",
+              isFrenchSearch: true,
+            }
+          );
+        } catch (error) {
+          console.error(
+            "Kiwi API failed for French guests, falling back to coming soon:",
             error
           );
           // Fall through to coming soon message

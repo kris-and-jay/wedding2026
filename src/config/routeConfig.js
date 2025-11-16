@@ -156,6 +156,25 @@ export const routeConfig = {
     alternativeFlights: [],
   },
 
+  // French guests - Paris to Naples
+  PR2026: {
+    origin: "France",
+    originCode: "FR",
+    destination: "Italy",
+    destinationCode: "IT",
+    preferredFlights: [],
+    alternativeFlights: [],
+  },
+
+  YN2026: {
+    origin: "France",
+    originCode: "FR",
+    destination: "Italy",
+    destinationCode: "IT",
+    preferredFlights: [],
+    alternativeFlights: [],
+  },
+
   // Default route for guests without specific configuration
   default: {
     origin: "Your City",
