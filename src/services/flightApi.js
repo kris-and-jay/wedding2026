@@ -74,6 +74,9 @@ class FlightApiService {
       // French guests
       const frenchGuests = ["PR2026", "YN2026"];
 
+      // Portuguese guest
+      const portugueseGuests = ["GA2026"];
+
       if (
         hungarianGuests.includes(guestCode) &&
         origin.toUpperCase() === "BUD"
@@ -121,6 +124,35 @@ class FlightApiService {
         } catch (error) {
           console.error(
             "Kiwi API failed for French guests, falling back to coming soon:",
+            error
+          );
+          // Fall through to coming soon message
+        }
+      }
+
+      // Portuguese guest with real flight data from Lisbon to Naples
+      if (portugueseGuests.includes(guestCode)) {
+        try {
+          const sourceCities = options.sourceCities || "City:lisbon_pt";
+          const destinationCities =
+            options.destinationCities || "City:naples_it";
+          return await this.searchKiwiRapidAPI(
+            origin,
+            destination,
+            departureDate,
+            returnDate,
+            passengers,
+            {
+              sourceCities,
+              destinationCities,
+              currency: options.currency || "eur",
+              locale: options.locale || "en",
+              isPortugueseSearch: true,
+            }
+          );
+        } catch (error) {
+          console.error(
+            "Kiwi API failed for Portuguese guest, falling back to coming soon:",
             error
           );
           // Fall through to coming soon message
@@ -245,23 +277,35 @@ class FlightApiService {
     const selectedCurrency = (extra.currency || "huf").toLowerCase();
     const locale = extra.locale || "en"; // Default to English if no locale specified
 
+    const params = {
+      source: extra.sourceCities || "City:budapest_hu",
+      destination: extra.destinationCities || "City:naples_it",
+      currency: selectedCurrency,
+      adults: passengers,
+      transportTypes: "FLIGHT",
+      contentProviders: "FLIXBUS_DIRECTS,FRESH,KAYAK,KIWI",
+      limit: 20,
+      locale: locale,
+      inboundDepartureDateStart: `${returnDate}T00:00:00`,
+      inboundDepartureDateEnd: `${returnDate}T23:59:59`,
+      outboundDepartureDateStart: `${departureDate}T00:00:00`,
+      outboundDepartureDateEnd: `${departureDate}T23:59:59`,
+    };
+
+    // Add direct flight only parameters for Portuguese guest
+    if (extra.isPortugueseSearch) {
+      params.allowChangeInboundDestination = "false";
+      params.allowChangeInboundSource = "false";
+      params.allowChangeOutboundDestination = "false";
+      params.allowChangeOutboundSource = "false";
+      params.enableSelfTransfer = "false";
+      console.log("Portuguese search: Adding direct flight only parameters", params);
+    }
+
     const options = {
       method: "GET",
       url: `${config.baseUrl}${config.endpoints.roundTrip}`,
-      params: {
-        source: extra.sourceCities || "City:budapest_hu",
-        destination: extra.destinationCities || "City:naples_it",
-        currency: selectedCurrency,
-        adults: passengers,
-        transportTypes: "FLIGHT",
-        contentProviders: "FLIXBUS_DIRECTS,FRESH,KAYAK,KIWI",
-        limit: 20,
-        locale: locale,
-        inboundDepartureDateStart: `${returnDate}T00:00:00`,
-        inboundDepartureDateEnd: `${returnDate}T23:59:59`,
-        outboundDepartureDateStart: `${departureDate}T00:00:00`,
-        outboundDepartureDateEnd: `${departureDate}T23:59:59`,
-      },
+      params: params,
       headers: {
         "x-rapidapi-key": config.apiKey,
         "x-rapidapi-host": "kiwi-com-cheap-flights.p.rapidapi.com",

@@ -653,6 +653,9 @@ const TravelSection = ({ language, guestCode }) => {
       // French guests
       const frenchGuests = ["PR2026", "YN2026"];
       
+      // Portuguese guest
+      const portugueseGuests = ["GA2026"];
+      
       const isPolishGuest =
         (language === "pl" ||
           (typeof guestCode === "string" &&
@@ -710,6 +713,40 @@ const TravelSection = ({ language, guestCode }) => {
             ...prevRoute,
             origin: "France",
             originCode: "FR",
+            destination: "Italy",
+            destinationCode: "IT",
+            preferredFlights: flights.preferredFlights || [],
+            alternativeFlights: flights.alternativeFlights || [],
+            comingSoon: flights.comingSoon || false,
+            message: flights.message || null,
+          }));
+        } catch (error) {
+          console.error("Error loading flights:", error);
+        } finally {
+          setIsLoading(false);
+        }
+      } else if (portugueseGuests.includes(guestCode)) {
+        setIsLoading(true);
+        try {
+          const flights = await flightApiService.getFlights(
+            "PT",
+            "IT",
+            "2026-06-26",
+            "2026-06-28",
+            1,
+            guestCode,
+            {
+              sourceCities:
+                "City:lisbon_pt",
+              destinationCities: "City:naples_it",
+              currency: "eur",
+            }
+          );
+
+          setCurrentRoute((prevRoute) => ({
+            ...prevRoute,
+            origin: "Portugal",
+            originCode: "PT",
             destination: "Italy",
             destinationCode: "IT",
             preferredFlights: flights.preferredFlights || [],
@@ -836,6 +873,9 @@ const TravelSection = ({ language, guestCode }) => {
                     if (language === "en" && (currentRoute.originCode === "FR")) {
                       return "Paris → Naples";
                     }
+                    if (language === "en" && (currentRoute.originCode === "PT")) {
+                      return "Lisbon → Naples";
+                    }
                     return `${currentRoute.origin} → ${currentRoute.destination}`;
                   })()}
                 </h3>
@@ -849,6 +889,9 @@ const TravelSection = ({ language, guestCode }) => {
                     }
                     if (language === "en" && (currentRoute.originCode === "FR")) {
                       return "(CDG/ORY → NAP)";
+                    }
+                    if (language === "en" && (currentRoute.originCode === "PT")) {
+                      return "(LIS → NAP)";
                     }
                     return `(${currentRoute.originCode} → ${currentRoute.destinationCode})`;
                   })()}
@@ -885,11 +928,15 @@ const TravelSection = ({ language, guestCode }) => {
                               guestCode.toUpperCase().startsWith("PL"))) &&
                           guestCode !== "SD2026"; // SD2026 is a UK guest, not Polish
                         const isFrenchGuestLink = ["PR2026", "YN2026"].includes(guestCode);
+                        const isPortugueseGuestLink = ["GA2026"].includes(guestCode);
                         if (isPolishGuestLink) {
                           return `https://www.kiwi.com/en/search/results/poznan-poland,warsaw-poland,katowice-poland,gdansk-poland,wroclaw-poland,berlin-germany/naples-italy,rome-italy/2026-06-26/2026-06-28?adults=1&currency=pln`;
                         }
                         if (isFrenchGuestLink) {
                           return `https://www.kiwi.com/en/search/results/paris-france/naples-italy/2026-06-26/2026-06-28?adults=1&currency=eur`;
+                        }
+                        if (isPortugueseGuestLink) {
+                          return `https://www.kiwi.com/en/search/results/lisbon-portugal/naples-italy/2026-06-26/2026-06-28?adults=1&currency=eur`;
                         }
                         return `https://www.kiwi.com/en/search/results/budapest-hungary/naples-italy/2026-06-26/2026-06-28?adults=1&currency=huf`;
                       })()}

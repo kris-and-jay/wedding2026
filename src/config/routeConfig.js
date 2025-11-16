@@ -175,6 +175,16 @@ export const routeConfig = {
     alternativeFlights: [],
   },
 
+  // Portuguese guest - Lisbon to Naples
+  GA2026: {
+    origin: "Portugal",
+    originCode: "PT",
+    destination: "Italy",
+    destinationCode: "IT",
+    preferredFlights: [],
+    alternativeFlights: [],
+  },
+
   // Default route for guests without specific configuration
   default: {
     origin: "Your City",
