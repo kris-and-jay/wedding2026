@@ -24,6 +24,8 @@ const translations = {
     ],
     timeline: "Timeline",
     mapTitle: "Map of Fattoria Terranova",
+    addressLabel: "Address:",
+    locationAddress: "Via Pontone 10, 80061 Sant'Agata sui Due Golfi NA, Italy",
   },
   pl: {
     rsvp: "Potwierdzenie obecności",
@@ -45,6 +47,8 @@ const translations = {
     ],
     timeline: "Weekend Świętowania",
     mapTitle: "Mapa Fattoria Terranova",
+    addressLabel: "Adres:",
+    locationAddress: "Via Pontone 10, 80061 Sant'Agata sui Due Golfi NA, Italy",
   },
   hu: {
     rsvp: "Visszajelzés",
@@ -66,6 +70,8 @@ const translations = {
     ],
     timeline: "Hétvégi Program",
     mapTitle: "Térkép",
+    addressLabel: "Cím:",
+    locationAddress: "Via Pontone 10, 80061 Sant'Agata sui Due Golfi NA, Italy",
   },
 };
 
@@ -801,6 +807,9 @@ const GuestPage = ({ language, guestCode }) => {
                 )}
               </p>
             ))}
+          <p className="location-address">
+            {translations[language].addressLabel} {translations[language].locationAddress}
+          </p>
         </div>
         <div className="location-gallery">
           <img
