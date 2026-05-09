@@ -5,6 +5,10 @@ import FAQComponent from "./FAQSection";
 
 const translations = {
   en: {
+    guestForm: "Your meal choices",
+    guestFormPreview:
+      "Please let us know your meal choices for the first and second courses of the wedding dinner.",
+    openFormInNewTab: "Open form in a new tab",
     rsvp: "RSVP",
     travel: "Travel",
     accommodation: "Accommodation",
@@ -28,6 +32,10 @@ const translations = {
     locationAddress: "Via Pontone 10, 80061 Sant'Agata sui Due Golfi NA, Italy",
   },
   pl: {
+    guestForm: "Twój wybór dań weselnych",
+    guestFormPreview:
+      "Prosimy o wybranie dań na pierwsze i drugie danie kolacji weselnej do niedzieli, 24 maja 2026 r.\nJeśli do tego czasu nie otrzymamy od Was odpowiedzi, nie martwcie się! Z przyjemnością wybierzemy dania za Was, według waszych preferencji dietetycznych podanych w potwierdzeniu przybycia.",
+    openFormInNewTab: "Otwórz formularz w nowej karcie",
     rsvp: "Potwierdzenie obecności",
     travel: "Podróż",
     accommodation: "Nocleg",
@@ -51,6 +59,10 @@ const translations = {
     locationAddress: "Via Pontone 10, 80061 Sant'Agata sui Due Golfi NA, Italy",
   },
   hu: {
+    guestForm: "Menüválasztás",
+    guestFormPreview:
+      "Kérjük, legkésőbb 2026. május 24-ig (vasárnapig) jelezzétek nekünk, mit szeretnétek fogyasztani az esküvői vacsora első és második fogásaként.\nHa addig nem érkezik tőletek válasz, akkor sincs probléma! Szívesen választunk helyettetek az RSVP-ben megadott étrendi preferenciáitok alapján.",
+    openFormInNewTab: "Űrlap megnyitása új lapon",
     rsvp: "Visszajelzés",
     travel: "Utazás",
     accommodation: "Szállás",
@@ -72,6 +84,24 @@ const translations = {
     mapTitle: "Térkép",
     addressLabel: "Cím:",
     locationAddress: "Via Pontone 10, 80061 Sant'Agata sui Due Golfi NA, Italy",
+  },
+};
+
+const embeddedForms = {
+  en: {
+    src: "https://docs.google.com/forms/d/e/1FAIpQLSdl9IAFO1ZQZ4l5SooFe8hbP74NfTJKxl63ciQrxta_BS6j1A/viewform?embedded=true",
+    publicUrl: "https://forms.gle/Aq8byiT3H1cVuZ7cA",
+    height: 1260,
+  },
+  pl: {
+    src: "https://docs.google.com/forms/d/e/1FAIpQLScykXvU7s-V3W5wh23mvbwty8sq6C8lzp4X2ZdJGcYAuwFRdQ/viewform?embedded=true",
+    publicUrl: "https://forms.gle/mam8p5Rnw945pU3K7",
+    height: 1317,
+  },
+  hu: {
+    src: "https://docs.google.com/forms/d/e/1FAIpQLScYcxqW5hIdalOymTksZfvIT7Kok6NFgtHEs1V9WjNB6K90jw/viewform?embedded=true",
+    publicUrl: "https://forms.gle/VD7dM8yK8PcSRkC2A",
+    height: 1280,
   },
 };
 
@@ -780,8 +810,87 @@ const AccommodationMessage = ({ guestCode }) => {
 };
 
 const GuestPage = ({ language, guestCode }) => {
+  const formConfig = embeddedForms[language] || embeddedForms.en;
+
   return (
     <div className="guest-page">
+      <div className="section">
+        <h2>{translations[language].guestForm}</h2>
+        <div className="guest-form-preview">
+          <div className="embedded-form-wrapper">
+            <iframe
+              src={formConfig.src}
+              title={`${translations[language].guestForm} - ${language}`}
+              className="embedded-form-iframe"
+              height={formConfig.height}
+              loading="lazy"
+            >
+              Loading...
+            </iframe>
+          </div>
+          {language === "en" ? (
+            <>
+              <p>
+                Please let us know your meal choices for the first and second
+                courses of the wedding dinner by Sunday,{" "}
+                <strong>24th May 2026</strong>.
+              </p>
+              <p className="guest-form-second-paragraph">
+                If we don't hear from you by then, don't worry! We will happily
+                select a dish for you based on the dietary requirements you
+                provided in your RSVP.
+              </p>
+            </>
+          ) : language === "hu" ? (
+            <>
+              <p>
+                Kérjük, legkésőbb <strong>2026. május 24-ig (vasárnapig)</strong>{" "}
+                jelezzétek nekünk, mit szeretnétek fogyasztani az esküvői vacsora
+                első és második fogásaként.
+              </p>
+              <p className="guest-form-second-paragraph">
+                Ha addig nem érkezik tőletek válasz, akkor sincs probléma!
+                Szívesen választunk helyettetek az RSVP-ben megadott étrendi
+                preferenciáitok alapján.
+              </p>
+            </>
+          ) : language === "pl" ? (
+            <>
+              <p>
+                Prosimy o wybranie dań na pierwsze i drugie danie kolacji
+                weselnej do niedzieli, <strong>24 maja 2026 r.</strong>
+              </p>
+              <p className="guest-form-second-paragraph">
+                Jeśli do tego czasu nie otrzymamy od Was odpowiedzi, nie
+                martwcie się! Z przyjemnością wybierzemy dania za Was, według
+                waszych preferencji dietetycznych podanych w potwierdzeniu
+                przybycia.
+              </p>
+            </>
+          ) : (
+            translations[language].guestFormPreview
+              .split("\n")
+              .map((paragraph, index) => (
+                <p
+                  key={`${language}-guest-form-preview-${index}`}
+                  className={index > 0 ? "guest-form-second-paragraph" : ""}
+                >
+                  {paragraph}
+                </p>
+              ))
+          )}
+          <div className="guest-form-actions">
+            <a
+              href={formConfig.publicUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="book-button"
+            >
+              {translations[language].openFormInNewTab}
+            </a>
+          </div>
+        </div>
+      </div>
       <div className="section">
         <h2>{translations[language].rsvp}</h2>
         <RSVPForm language={language} guestCode={guestCode} />

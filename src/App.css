@@ -267,6 +267,51 @@ h1::after {
   font-style: italic;
 }
 
+.guest-form-preview {
+  width: 100%;
+  border: 2px solid rgba(212, 163, 115, 0.25);
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(212, 163, 115, 0.08) 100%
+  );
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  padding: 1.2rem;
+}
+
+.guest-form-preview p {
+  margin: 0;
+  color: #34495e;
+  font-style: italic;
+}
+
+.guest-form-second-paragraph {
+  margin-top: 0.9rem !important;
+}
+
+.embedded-form-wrapper {
+  width: 100%;
+  border: 2px solid rgba(212, 163, 115, 0.35);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1rem;
+}
+
+.embedded-form-iframe {
+  width: 100%;
+  border: 0;
+  display: block;
+}
+
+.guest-form-actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
 @media (max-width: 768px) {
   .guest-page {
     padding: 20px;
@@ -283,6 +328,12 @@ h1::after {
   .section p {
     font-size: 1.1rem;
   }
+
+  .guest-form-preview {
+    border-radius: 10px;
+    padding: 1rem;
+  }
+
 }
 
 .rsvp-form {
@@ -427,6 +478,10 @@ h1::after {
   .section p {
     font-size: 0.95rem;
   }
+  .guest-form-actions {
+    margin-top: 0.8rem;
+  }
+
   .form-group label {
     font-size: 0.95rem;
   }
