@@ -47,6 +47,10 @@ const translations = {
       "What else is there to do at Agriturismo Fattoria Terranova?",
     activitiesAnswer:
       "Agriturismo Fattoria Terranova offers the following activities / services (charges may apply):\nHiking\nChildren's playground\nWalking tours\nTour or class about local culture\nSwimming pool\nCooking class\nWine tasting\nBicycle rental",
+    hikingRoutesQuestion:
+      "Where can I see hiking routes around Agriturismo Fattoria Terranova?",
+    hikingRoutesAnswer:
+      "Komoot app is the best for hiking routes, and [here](https://www.giovis.com/QR/tolomeo3k2015.gif) you can see the map of the area.\n\nFor instance, the trail to the Crapolla Fjord starts just around the corner. Get ready for a legendary number of steps (there are over 600!) that lead down to a hidden fjord with a small beach and the ruins of a Roman villa.",
   },
   pl: {
     faqTitle: "Najczęściej Zadawane Pytania",
@@ -94,6 +98,10 @@ const translations = {
     activitiesQuestion: "Co jeszcze oferuje Agriturismo Fattoria Terranova?",
     activitiesAnswer:
       "Agriturismo Fattoria Terranova oferuje następujące atrakcje/usługi (mogą obowiązywać opłaty):\nWędrówki piesze\nPlac zabaw dla dzieci\nSpacery\nWycieczki lub zajęcia o lokalnej kulturze\nBasen\nKurs gotowania\nTestowanie wina\nWypożyczalnia rowerów",
+    hikingRoutesQuestion:
+      "Gdzie mogę zobaczyć szlaki turystyczne w okolicy Agriturismo Fattoria Terranova?",
+    hikingRoutesAnswer:
+      "Aplikacja Komoot jest najlepsza do planowania tras pieszych, a [tutaj](https://www.giovis.com/QR/tolomeo3k2015.gif) możesz zobaczyć mapę okolicy.\n\nNp. Szlak do Fiordu Crapolla zaczyna się rzut beretem od Sant’Agata. Przygotujcie się na legendarną liczbę schodów (jest ich ponad 600!), które prowadzą do ukrytego fiordu z małą plażą i ruinami rzymskiej willi.",
   },
   hu: {
     faqTitle: "Gyakran ismételt kérdések",
@@ -140,7 +148,57 @@ const translations = {
       "Mi mást lehet csinálni a Fattoria Terranovában vagy a környéken?",
     activitiesAnswer:
       "A Fattoria Terranova a következő tevékenységeket / szolgáltatásokat kínálja:\nKirándulás a közeli dombokon\nJátszótér gyermekeknek\nHelyi kultúráról szóló túrák vagy előadások\nÚszómedence\nFőzőóra\nBor degusztálás\nKerékpár bérlés",
+    hikingRoutesQuestion:
+      "Hol találok túraútvonalakat az Agriturismo Fattoria Terranova környékén?",
+    hikingRoutesAnswer:
+      "A Komoot app a legjobb túraútvonalak tervezéséhez, [itt](https://www.giovis.com/QR/tolomeo3k2015.gif) pedig meg tudod nézni a környék térképét.\n\nA Crapolla-fjordhoz vezető ösvény például a gazdaság közvetlen közelétől indul. Készülj jelentős mennyiségű lépcsőzésre (több mint 600!), ami egy eldugott fjordhoz vezet, egy kisebb stranddal és egy római villa romjaival.",
   },
+};
+
+const renderAnswerWithLinks = (text) => {
+  const markdownLinkPattern = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g;
+  const urlPattern = /(https?:\/\/[^\s]+)/g;
+  const renderUrlsInPlainText = (plainText, keyPrefix) =>
+    plainText.split(urlPattern).map((part, index) => {
+      if (/^https?:\/\/[^\s]+$/.test(part)) {
+        return (
+          <a
+            key={`${keyPrefix}-url-${index}`}
+            href={part}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {part}
+          </a>
+        );
+      }
+      return part;
+    });
+
+  const chunks = text.split(markdownLinkPattern);
+  const rendered = [];
+
+  for (let i = 0; i < chunks.length; i += 3) {
+    const plainText = chunks[i];
+    rendered.push(...renderUrlsInPlainText(plainText, `plain-${i}`));
+
+    if (i + 2 < chunks.length) {
+      const linkText = chunks[i + 1];
+      const linkUrl = chunks[i + 2];
+      rendered.push(
+        <a
+          key={`md-link-${i}`}
+          href={linkUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {linkText}
+        </a>
+      );
+    }
+  }
+
+  return rendered;
 };
 
 const FAQItem = ({ question, answer, language }) => {
@@ -158,7 +216,7 @@ const FAQItem = ({ question, answer, language }) => {
       </div>
       {isExpanded && (
         <div className="faq-answer">
-          <p style={{ whiteSpace: "pre-line" }}>{answer}</p>
+          <p style={{ whiteSpace: "pre-line" }}>{renderAnswerWithLinks(answer)}</p>
         </div>
       )}
     </div>
@@ -274,6 +332,14 @@ const FAQComponent = ({ language }) => {
               question: translations[language].activitiesQuestion,
               answer: translations[language].activitiesAnswer,
             },
+            ...(translations[language].hikingRoutesQuestion
+              ? [
+                  {
+                    question: translations[language].hikingRoutesQuestion,
+                    answer: translations[language].hikingRoutesAnswer,
+                  },
+                ]
+              : []),
           ]}
           language={language}
         />
