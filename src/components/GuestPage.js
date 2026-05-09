@@ -387,7 +387,7 @@ const AccommodationMessage = ({ guestCode }) => {
         </p>
         <br />
         <p>
-          <strong>Pokój:</strong> QUERCIA (Oak) - Suite (3-4 people) sea view
+          <strong>Pokój:</strong> ROSA (Rose) sea view - Superior Room (3 osoby)
         </p>
         <br />
         <p>
@@ -428,7 +428,7 @@ const AccommodationMessage = ({ guestCode }) => {
         </p>
         <br />
         <p>
-          <strong>Pokój:</strong> ROSA (Rose) sea view - Superior Room
+          <strong>Pokój:</strong> QUERCIA (Oak) - Suite (3 osoby) sea view
         </p>
         <br />
         <p>
@@ -469,8 +469,7 @@ const AccommodationMessage = ({ guestCode }) => {
         </p>
         <br />
         <p>
-          <strong>Pokój:</strong> GLICINE (Wisteria) sea view - Superior Room
-          (2-4 people)
+          <strong>Pokój:</strong> ROSA (Rose) sea view - Superior Room (3 osoby)
         </p>
         <br />
         <p>
@@ -511,7 +510,7 @@ const AccommodationMessage = ({ guestCode }) => {
         </p>
         <br />
         <p>
-          <strong>Pokój:</strong> QUERCIA (Oak) - Suite (3-4 people) sea view
+          <strong>Pokój:</strong> ROSA (Rose) sea view - Superior Room (3 osoby)
         </p>
         <br />
         <p>
@@ -552,7 +551,7 @@ const AccommodationMessage = ({ guestCode }) => {
         </p>
         <br />
         <p>
-          <strong>Pokój:</strong> ROSA (Rose) sea view - Superior Room
+          <strong>Pokój:</strong> QUERCIA (Oak) - Suite (3 osoby) sea view
         </p>
         <br />
         <p>
@@ -968,8 +967,8 @@ const GuestPage = ({ language, guestCode }) => {
             />
           </div>
         )}
-        {(guestCode === "MK2026" ||
-          guestCode === "AG2026" ||
+        {(guestCode === "WS2026" ||
+          guestCode === "CT2026" ||
           guestCode === "KL2026") && (
           <div className="accommodation-gallery">
             <img
@@ -994,7 +993,9 @@ const GuestPage = ({ language, guestCode }) => {
             />
           </div>
         )}
-        {(guestCode === "WS2026" || guestCode === "CT2026") && (
+        {(guestCode === "MK2026" ||
+          guestCode === "AG2026" ||
+          guestCode === "AD2026") && (
           <div className="accommodation-gallery">
             <img
               src="/wedding2026/assets/accomodation/delux_room/Camera-Superior-1-1.jpg"
@@ -1018,7 +1019,7 @@ const GuestPage = ({ language, guestCode }) => {
             />
           </div>
         )}
-        {(guestCode === "AD2026" || guestCode === "WD2026") && (
+        {guestCode === "WD2026" && (
           <div className="accommodation-gallery">
             <img
               src="/wedding2026/assets/accomodation/double_standard/20191008_132011.jpg"
