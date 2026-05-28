@@ -267,51 +267,6 @@ h1::after {
   font-style: italic;
 }
 
-.guest-form-preview {
-  width: 100%;
-  border: 2px solid rgba(212, 163, 115, 0.25);
-  border-radius: 12px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(212, 163, 115, 0.08) 100%
-  );
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  padding: 1.2rem;
-}
-
-.guest-form-preview p {
-  margin: 0;
-  color: #34495e;
-  font-style: italic;
-}
-
-.guest-form-second-paragraph {
-  margin-top: 0.9rem !important;
-}
-
-.embedded-form-wrapper {
-  width: 100%;
-  border: 2px solid rgba(212, 163, 115, 0.35);
-  border-radius: 12px;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  margin-bottom: 1rem;
-}
-
-.embedded-form-iframe {
-  width: 100%;
-  border: 0;
-  display: block;
-}
-
-.guest-form-actions {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: flex-start;
-}
-
 @media (max-width: 768px) {
   .guest-page {
     padding: 20px;
@@ -329,102 +284,6 @@ h1::after {
     font-size: 1.1rem;
   }
 
-  .guest-form-preview {
-    border-radius: 10px;
-    padding: 1rem;
-  }
-
-}
-
-.rsvp-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.form-group label {
-  font-family: "Playfair Display", serif;
-  color: #2c3e50;
-  font-size: 1.1rem;
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="number"],
-.form-group textarea {
-  padding: 12px;
-  border: 2px solid #d4a373;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-family: inherit;
-  background: white;
-  transition: all 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: #e76f51;
-  box-shadow: 0 0 0 3px rgba(231, 111, 81, 0.2);
-}
-
-.form-group input.error,
-.form-group textarea.error {
-  border-color: #e76f51;
-}
-
-.error-message {
-  color: #e76f51;
-  font-size: 0.9rem;
-  margin-top: 4px;
-}
-
-.radio-group {
-  display: flex;
-  gap: 20px;
-}
-
-.radio-group label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-}
-
-.radio-group input[type="radio"] {
-  width: 18px;
-  height: 18px;
-  accent-color: #d4a373;
-}
-
-.status-message {
-  padding: 12px;
-  border-radius: 8px;
-  text-align: center;
-  font-weight: 500;
-}
-
-.status-message.success {
-  background-color: rgba(34, 139, 34, 0.1);
-  color: #228b22;
-}
-
-.status-message.error {
-  background-color: rgba(255, 71, 87, 0.1);
-  color: #ff4757;
-}
-
-@media (max-width: 768px) {
-  .radio-group {
-    flex-direction: column;
-    gap: 12px;
-  }
 }
 
 @media (max-width: 400px) {
@@ -477,27 +336,6 @@ h1::after {
   }
   .section p {
     font-size: 0.95rem;
-  }
-  .guest-form-actions {
-    margin-top: 0.8rem;
-  }
-
-  .form-group label {
-    font-size: 0.95rem;
-  }
-  .form-group input[type="text"],
-  .form-group input[type="email"],
-  .form-group input[type="number"],
-  .form-group textarea {
-    padding: 7px;
-    font-size: 0.95rem;
-    border-radius: 6px;
-  }
-  .radio-group {
-    gap: 8px;
-  }
-  .error-message {
-    font-size: 0.8rem;
   }
 }
 
