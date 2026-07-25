@@ -25,26 +25,26 @@ const translations = {
   pl: {
     title: "Galeria",
     description:
-      "Przeglądajcie nasze profesjonalne zdjęcia oraz wspomnienia od gości.",
+      "Przeglądajcie profesjonalne ujęcia od fotografów oraz wspomnienia od gości.",
     tabs: {
       photographer: "Zdjęcia profesjonalne",
       guest: "Wspomnienia gości",
     },
     emptyPhotographer: "Profesjonalne zdjęcia pojawią się tutaj wkrótce.",
     emptyGuest: "Zaakceptowane zdjęcia gości pojawią się tutaj.",
-    loading: "Ładowanie galerii...",
-    configMissing: "Galeria nie jest jeszcze skonfigurowana. Sprawdźcie wkrótce.",
-    loadError: "Nie udało się załadować galerii. Spróbujcie ponownie później.",
+    loading: "Pobieranie galerii...",
+    configMissing: "Galeria nie jest jeszcze skonfigurowana. Spróbuj ponownie wkrótce.",
+    loadError: "Nie udało się załadować galerii. Spróbuj ponownie później.",
     by: "autor:",
     close: "Zamknij",
   },
   hu: {
     title: "Galéria",
     description:
-      "Böngésszetek a profi fotók és a vendégeink által megosztott emlékek között.",
+      "Böngésszetek a profi fotók és a vendégeink által megosztott pillanatok között.",
     tabs: {
       photographer: "Profi fotók",
-      guest: "Vendég emlékek",
+      guest: "Vendég fotók",
     },
     emptyPhotographer: "A profi fotók hamarosan megjelennek itt.",
     emptyGuest: "A jóváhagyott vendégfeltöltések itt fognak megjelenni.",

@@ -33,11 +33,11 @@ const translations = {
     },
   },
   pl: {
-    title: "Podzielcie się zdjęciami i filmami",
+    title: "Podzielcie się swoimi zdjęciami i filmami",
     description:
       "Prześlijcie swoje ulubione momenty z naszego ślubu. Każde zgłoszenie sprawdzimy, zanim pojawi się w galerii poniżej.",
-    nameLabel: "Wasze imię i nazwisko",
-    namePlaceholder: "np. Anna Kowalska",
+    nameLabel: "Twoje imię",
+    namePlaceholder: "np. Anna",
     dropzone: "Przeciągnij pliki tutaj lub kliknij, aby je wybrać",
     fileHint:
       "Zdjęcia (JPG, PNG, WebP) i filmy (MP4, MOV, WebM). Maks. 50 MB na plik.",
@@ -45,16 +45,16 @@ const translations = {
     uploadButton: "Prześlij",
     uploading: "Przesyłanie...",
     success:
-      "Dziękujemy! Wasze pliki zostały wysłane i pojawią się w galerii po naszej akceptacji.",
+      "Dziękujemy! Wasze pliki zostały przesłane i pojawią się w galerii po naszej akceptacji.",
     configMissing:
       "Przesyłanie zdjęć nie jest jeszcze skonfigurowane. Sprawdźcie ponownie wkrótce.",
     errors: {
-      nameRequired: "Prosimy podać imię i nazwisko przed przesłaniem plików.",
+      nameRequired: "Prosimy podać imię przed przesłaniem plików.",
       noFiles: "Prosimy wybrać co najmniej jedno zdjęcie lub film.",
       fileTooLarge: "Każdy plik może mieć maksymalnie 50 MB.",
       invalidType: "Dozwolone są tylko zdjęcia i filmy.",
       uploadFailed:
-        "Coś poszło nie tak podczas przesyłania. Spróbujcie ponownie.",
+        "Coś poszło nie tak podczas przesyłania. Spróbuj ponownie.",
     },
   },
   hu: {

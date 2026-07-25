@@ -13,15 +13,15 @@ const translations = {
   pl: {
     introTitle: "Nasze wspomnienia ze ślubu",
     introText:
-      "Dziękujemy, że byliście z nami! Podzielcie się swoimi zdjęciami i filmami z weekendu oraz przeglądajcie galerię ze zdjęciami profesjonalnymi i wspomnieniami gości.",
+      "Dziękujemy, że byliście z nami! Podzielcie się swoimi zdjęciami i filmami z weekendu oraz przeglądajcie galerie ze zdjęciami od fotografów i wspomnieniami gości.",
     uploadTitle: "Prześlijcie swoje wspomnienia",
     galleryTitle: "Galeria",
   },
   hu: {
-    introTitle: "Az esküvőnk emlékei",
+    introTitle: "Az esküvő pillanatai",
     introText:
-      "Köszönjük, hogy velünk ünnepeltetek! Osszátok meg a hétvégi fotóitokat és videóitokat, és böngésszetek a galériában a profi képek és vendég emlékek között.",
-    uploadTitle: "Töltsétek fel az emlékeiteket",
+      "Köszönjük, hogy velünk ünnepeltetek! Osszátok meg a hétvége során készített fotóitokat és videóitokat, és böngésszetek a galériában a profi és vendég fotók között.",
+    uploadTitle: "Töltsétek fel az esküvőről készült fotóitokat és videóitokat",
     galleryTitle: "Galéria",
   },
 };
