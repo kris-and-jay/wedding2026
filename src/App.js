@@ -41,6 +41,11 @@ const translations = {
 
 // Guest codes and their corresponding languages
 const guestLanguages = {
+  // Generic codes (shareable for photo & video uploads)
+  HU2026: "hu",
+  PL2026: "pl",
+  EN2026: "en",
+
   // Hungarian guests
   IL2026: "hu", // Ildiko
   HG2026: "hu", // Hugi
@@ -63,7 +68,7 @@ const guestLanguages = {
   WD2026: "pl", // Uncle Darek
   CM2026: "pl", // Aunti Monia
   KL2026: "pl", // Klaudia
-  PL2026: "pl", // Paulina
+  // PL2026 also listed above as generic Polish code (Paulina's personal code)
   KS2026: "pl", // Kasia
   SD2026: "pl", // Sandra
 
