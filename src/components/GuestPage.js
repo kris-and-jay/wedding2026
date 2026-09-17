@@ -34,6 +34,15 @@ const GuestPage = ({ language, guestCode }) => {
       <div className="section">
         <h2>{t.introTitle}</h2>
         <p className="guest-intro-text">{t.introText}</p>
+        <div className="wedding-video-embed">
+          <iframe
+            src="https://www.youtube.com/embed/uWJIQTdCtFk?si=PWQRf8Ba_iMvP0Uc"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        </div>
       </div>
 
       <div className="section">
